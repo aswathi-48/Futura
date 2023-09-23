@@ -1,0 +1,74 @@
+#main{
+    /* background-color: rgb(192, 194, 194); */
+    width: 950px;
+    /* height: 500px;
+    padding: 10px; */
+    padding: 10px;
+}
+
+ul{
+    padding:20px;
+    text-align: end;
+    color: white;
+    background-color: rgb(87, 85, 85);
+    border-radius: 20px;
+    margin: 30px;
+}
+li{  
+    display: inline;
+    /* padding: 5px; */
+    font-weight: bold;
+    /* background-color: rgb(124, 123, 123); */
+    margin: 10px;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+h1{
+    color: white;
+    word-spacing: 20px;
+}
+p{
+    color: white;
+}
+#aa{
+    text-align: center;
+}
+#div3{
+    /* background-color: black;
+    color: black; */
+    text-indent: 10px;
+}
+/* button{
+    margin-left: 20px;
+    font-size: 15px;
+    
+} */
+
+.button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+  }
+  body{
+    background-image:url("https://media.istockphoto.com/id/1213695547/photo/3d-rendering-of-an-elegant-bedroom.jpg?s=612x612&w=0&k=20&c=yxOoaz2IAd9zvtlXeS-Th-AiXhaCtMIxOONfGbtGeG8=");
+    background-size: cover;
+  }
+  .abb{
+    text-align: start;
+    color: white;
+    font-size: 30px;
+    margin: -10px;
+    
+  }
+  

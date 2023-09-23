@@ -1,0 +1,326 @@
+
+    .main{
+        /* width: 100%; */
+        display: flex;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    #div1{
+        width: 100%;
+    }
+    #div2{
+        margin-left: 2015px;
+    }
+    /* #div2 img{
+        padding: 10px;
+    } */
+    .div3{
+        display: flex;
+        justify-content: center;
+    }
+    ul{
+        padding: 5px;
+        background-color: rgb(24, 22, 22);
+    }
+
+    li{
+        display: inline;
+    }
+
+    li a{
+        color: rgb(252, 245, 245);
+        padding: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        
+    }
+
+    li a:hover{
+        background-color: black;
+    }
+
+    .nykkaimg{
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+    .nbutton{
+        border: 1px solid white;
+        margin-top: 20px;
+        margin-left: 50px;
+        margin-right: 10px;
+        background-color: white;
+        font-size: 20px;
+    }
+    .div3{
+        margin-right: 100px;
+    }
+
+    .wrap{
+        margin-left: 10px;
+        margin-left: 20px;
+        padding: 10px;
+        display: flex;
+        width: 200px;
+    }
+    .search {
+        display: flex;
+        align-items: center;
+        margin: 10px 20px;
+        border: 1px solid rgb(235, 223, 223);
+        margin-left: 100px;
+        width: 190px;
+    }
+    .search input{
+        border: none;
+    }
+    .abb{
+        border-radius: 1.25rem;
+        
+    }
+    .thin img{
+        width: 25px;
+        height: 25px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .cart{
+        margin-top: 10px;
+        /* margin-left: 10px; */
+    }
+    .div4{
+        display: flex;
+        /* width: 50%; */
+        margin-left: 30px;
+    }
+    .card{
+        border: 1px solid white(240, 207, 207);
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        border-radius: 50px;
+        padding: 5px;
+        text-align: center;
+        margin-left: 150px;
+        margin-top: 50px;
+        /* background-image: conic-gradient(rgb(240, 218, 119),rgb(252, 205, 145) 30deg,rgb(230, 92, 127) 50deg) ; */
+    }
+    .card:hover{
+        transform: scale(2,2);
+
+    }
+
+    .slidimg img{
+        margin-left: 115px;
+        /* width: 2000px; */
+        width: 90%;
+    }
+    .div5{
+        display: flex;
+        margin-left: 90px;
+    }
+    .card2{
+        margin-left: 70px;
+        margin-top: 100px;
+        
+    }
+    .div6{
+        display: flex;
+        justify-content: center; 
+        background-color: rgb(238, 198, 205);
+        height: 500px;
+        width: 100%;
+        margin-left: 40px;
+
+        /* width: 100%; */
+        /* margin-top: 20px; */
+    }
+    .home{
+        display: block;
+        text-align: center;
+        background-color: rgb(238, 198, 205);
+        margin-top: 30px;
+        width: 100%;
+        margin-left: 40px;
+    }
+    .home h4{
+        
+        display: flex;
+        justify-content: center;
+        
+    }
+    .home h2{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .card3{
+        padding: 15px;
+        margin-left: 10px;
+        margin-top: 40px;
+    }
+    .text1{
+        display: block;
+        justify-content: center;
+        margin-left: 70px;
+    }
+    .shop{
+        display: block;
+
+    }
+
+    .shop p{
+        display: flex;
+        justify-content: center;
+    }
+    .shop h2{
+        display: flex;
+        justify-content: center;
+    }
+    .div7{
+        display: flex;
+        margin-left: 50px;
+    }
+    .card4{
+        margin-left: 95px;
+        margin-top: 20px;
+    }
+    .card4:hover{
+        transform: scale(2,2);
+    }
+    .rs{
+        margin-left: 30px;
+    }
+    .week{
+        display: block;
+        margin-top: 15px;
+    }
+    .week h5{
+        display: flex;
+        justify-content: center;
+    }
+    .week h2{
+        display: flex;
+        justify-content: center;
+    }
+    .div8{
+        display: flex;
+        margin-left: 50px;
+
+    }
+    .card5{
+        margin: 55px;
+    }
+
+    .div9{
+        margin-left: 110px;
+        width: 100%;
+    }
+    .get{
+        display: block;
+    }
+    .get h5{
+        display: flex;
+        justify-content: center;
+    }
+    .get h2{
+        display: flex;
+        justify-content: center;
+    }
+    .div10{
+        display: flex;
+    }
+    .card6{
+        margin-left: 100px;
+    }
+    .offer{
+        margin-left: 50px;
+    }
+    .trend{
+        display: block;
+        background-color: rgb(225, 226, 228);
+        width: 100%;
+        margin-left: 50px;
+
+    }
+    .trend h5{
+        display: flex;
+        justify-content: center;
+    }
+    .trend h2{
+        display: flex;
+        justify-content: center;
+    }
+    .div11{
+        display: flex;
+        background-color: rgb(225, 226, 228);
+        width: 980%;
+        margin-left: 50px;
+
+    }
+    .card7{
+        margin: 40px;
+        
+    }
+    .text2{
+        margin-left: 65px;
+    }
+    .main{
+        display: block;
+        background-color:rgb(243, 218, 222) ;
+        width: 99%;
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    .main h5{
+        display: flex;
+        justify-content: center;
+    }
+    .main h2{
+        display: flex;
+        justify-content: center;
+    }
+    .div12{
+        display: flex;
+        background-color:rgb(243, 218, 222) ;
+        height: 300px;
+        width: 99%;
+        margin-left: 50px;
+    }
+    .card8{
+        margin-left: 60px;
+        margin-top: 30px;
+    }
+    .card8:hover{
+        transform: scale(2,2);
+    }
+    .text3{
+        margin-left:40px;
+    }
+    .main2{
+        display: block;
+    }
+    .main2 h5{
+        display: flex;
+        justify-content: center;
+    }
+    .main2 h2{
+        display: flex;
+        justify-content: center;
+    }
+    .div13{
+        display: flex;
+        width: 90%;
+        margin-left: 40px;
+    }
+    .card9{
+        margin-left: 60px;
+        
+    }
+    .card9 img{
+        height: 510px;
+    }
+    .text4{
+        margin-left: 120px;
+    }

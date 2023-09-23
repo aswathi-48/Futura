@@ -1,0 +1,21 @@
+.main{
+    background-color: rgb(215, 218, 218);
+    width: 500px;
+    height: 350px;
+    margin-top: 40px;
+    border-radius: 10px;
+    text-align: center;
+    background-image: url("https://media.istockphoto.com/id/529426874/photo/woman-using-tablet-at-night.jpg?s=612x612&w=0&k=20&c=GcIXI4wB1eWtvBQRMaPisCCLUhthdzw2Yam_BU5K6n8=");
+}
+.main2{
+    margin-top: 50px;
+}
+.main2 p{
+    color: black;
+}
+h4{
+    margin-top: 20px;
+    padding: 40px;
+    font-weight: 500;
+    margin-right: 20px;
+}

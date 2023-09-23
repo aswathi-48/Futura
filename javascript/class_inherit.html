@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class parent
+        {
+            test()
+            {
+                document.write("hello welcome <br>")
+            }
+        }
+        class child extends parent
+        {
+            childfun()
+            {
+                document.write("childfun() involked")
+            }
+        }
+        var ob = new child();
+        ob.test();
+        ob.childfun();
+
+    </script> 
+</body>
+</html>

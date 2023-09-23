@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a1">
+    <input type="text" id="a2"><br><br>
+    <input type="button" onclick="add()" value="Add">
+    <script>
+        function add()
+        {
+            var a=Number(document.getElementById("a1").value);
+            var b=Number(document.getElementById("a2").value);
+
+            document.write(a+b)
+
+        }
+    </script>
+     <input type="button" onclick="multiply()" value="Multiply">
+     <script>
+         function multiply()
+         {
+             var a=Number(document.getElementById("a1").value);
+             var b=Number(document.getElementById("a2").value);
+ 
+             document.write(a*b)
+ 
+         }
+     </script><br><br>
+     <input type="button" onclick="divide()" value="Divide">
+     <script>
+         function divide()
+         {
+             var a=Number(document.getElementById("a1").value);
+             var b=Number(document.getElementById("a2").value);
+ 
+             document.write(a/b)
+ 
+         }
+     </script>
+      <input type="button" onclick="subtract()" value="Subtract">
+      <script>
+          function subtract()
+          {
+              var a=Number(document.getElementById("a1").value);
+              var b=Number(document.getElementById("a2").value);
+  
+              document.write(a-b)
+  
+          }
+      </script>
+ 
+</body>
+</html>

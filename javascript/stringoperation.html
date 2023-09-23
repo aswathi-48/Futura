@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // append 
+
+        var str1='Hello';
+        var str2='World';
+        var result = str1+ " " +str2;
+        document.write(result + "<br>")
+
+        var str3='hello';
+        var str4='World';
+        var result2 = str3.concat(" ",str4);
+        document.write(result2 + "<br> <br>");
+
+        // stringlength
+
+        var str='Hello';
+        var len=str.length;
+        document.write(len + "<br> <br>")
+
+        // substring
+
+        var str='Hello World';
+        var sub1=str.substring(0,4);
+        document.write(sub1+ "<br> <br>");
+
+        // slicing
+
+        var sub2 = str[6] + str[7] + str[8] + str[9] + str[10];
+        document.write(sub2 + "<br>")
+         
+        // index
+        var str =" Hello World";
+        var index = str.indexOf("World");
+        document.write(index + "<br><br>");
+
+        // includes
+        var includes = str.includes("Help");
+        document.write(includes + "<br><br>");
+
+        // repalce
+        var str = "Hello World";
+        var newstr = str.replace("World","Universe");
+        document.write(newstr + "<br><br>");
+
+        // tolower
+        var lowercasestring = "HELLO";
+        var uppercasestring = lowercasestring.toLowerCase();
+        document.write(uppercasestring + "<br><br>")
+
+        // **************************************************************************
+
+
+        var text = "Hello world";
+        var result = text.endsWith("world");
+        document.write(result + "<br><br>")
+
+
+        var text = "HELLO WORLD";
+        var letter = text.charAt(0);
+        document.write(letter + "<br> <br>")
+
+        var text = "Hello planet earth, you are a great planet.";
+        var result = text.lastIndexOf("planet");
+        document.write(result +"<br><br>")
+
+        var text = "Hello world!";
+        var result = text.repeat(2);
+        document.write(result +"<br><br>")
+
+        var text = "I love cats. Cats are very easy to love. Cats are very popular."
+        text = text.replaceAll("Cats","Dogs");
+        text = text.replaceAll("cats","dogs");
+        document.write(text +"<br><br>")
+
+
+        var text = "string for a value"
+        var position = text.search("for");
+        document.write(position +"<br><br>")
+
+        var text = "How are you doing today?";
+        var myArray = text.split(" ");
+        document.write(myArray +"<br><br>")
+
+
+        var text = "Hello world, welcome to the universe.";
+        var result = text.startsWith("Hello");
+        document.write(result +"<br><br>")
+
+
+
+
+
+
+    </script>
+</body>
+</html>

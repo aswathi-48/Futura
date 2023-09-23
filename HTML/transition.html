@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition-property: width,height,background-color;
+            transition-duration: 4s;
+            transition-delay: 0.5s;
+            transition-timing-function: ease-in-out;
+        }
+        .box:hover{
+            width: 300px;
+            height: 300px;
+            /* background-color: blueviolet; */
+            background-image: url("https://images.wallpaperscraft.ru/image/single/romashki_polevye_tsvety_122441_3840x2400.jpg");
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            margin-top: 200px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Helloo</h1>
+    </div>
+</body>
+</html>

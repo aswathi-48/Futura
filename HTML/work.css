@@ -1,0 +1,48 @@
+.row{
+    background-color: rgb(160, 157, 157);
+    /* padding: 5px; */
+    width: 700px;
+}
+
+ul{
+    padding: 20px;
+    background-color: rgb(36, 35, 35);
+}
+li{
+    display: inline;
+}
+
+li a{
+    color: aliceblue;
+font-weight: bold;
+    padding: 5px;
+}
+li a:hover{
+    background-color: black;
+}
+#footer{
+    background-color: black;
+    text-align: center;
+    color: aliceblue;
+    padding: 5px;
+}
+.abc{
+    text-align: center;
+    word-spacing: 8px;
+}
+#acb{
+    display: flex;
+    text-align: center;
+    padding: 15px;
+}
+p{
+    padding: 10px;
+}
+button{
+    background-color: brown;
+    padding: 10px;
+  
+}
+a{
+    text-decoration: none;
+}

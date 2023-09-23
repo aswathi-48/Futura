@@ -1,0 +1,13 @@
+.main_div{
+    background-color: rgb(220, 223, 223);
+    width: 300;
+    padding: 30px;
+    margin: 100px;
+}
+#abc li{
+    display: inline;
+
+}
+a{
+    text-decoration: none;
+}

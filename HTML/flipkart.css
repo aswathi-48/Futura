@@ -1,0 +1,161 @@
+.main{
+    width: 100%;
+    display: flex;
+    
+}
+.flipimg{
+  margin-top: 10px;
+  margin-left: 30px;
+}
+header{
+  display: flex;
+  justify-content: center;
+  background-color:#2874f0;
+
+}
+.wrap{
+    margin-left: 10px;
+    margin-left: 20px;
+    padding: 10px;
+    display: flex;
+  }
+  .search {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.searchTerm {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+}
+
+.searchButton {
+    padding: 10px;
+    background: white;
+    color: #2874f0;
+    font-size: 14px;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+  .SButton {
+    background: #2874f0;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+  
+  .searchButton {
+    margin-left: 80px;
+    margin-top: 5px;
+    width: 200px;
+    height: 30px;
+    padding: auto;
+    background: white;
+    text-align: center;
+    color: #346eeb;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border: 0;
+  }
+
+  /* .more {
+    background:#2874f0;
+    background-color: #2874f0;
+    border:none;
+    color:#fff; 
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+  } */
+
+  .CButton {
+    background: #2874f0;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.CButton i {
+    margin-right: 5px;
+}
+.aa{
+  display: flex;
+}
+#parent{
+  display: flex;
+  /* background-color: #fff;
+  width: 100%; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center; 
+  justify-content: center;
+  
+}
+.child{
+  background-color: #fff;
+  float: left;
+  display: block;
+  color: black;
+  padding: 1px 16px;
+  margin: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: block;
+}
+#ab{
+  display: flex;
+}
+.acc{
+  display: flex;
+  margin: auto;
+  width: 100%;
+}
+
+.main2{
+    display: flex;
+    justify-content: center;
+    /* margin: 10px 90px; */
+    flex-direction: row ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   
+    
+}
+.abb{
+  max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    display:block;
+    text-align: center;
+}
+button{
+  background-color: #1c29df;
+  font-size: 30px;
+}
+
+.bcontent{
+  display: flex;
+  flex-direction: column;
+}
+  

@@ -1,0 +1,15 @@
+a{
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    font-style: bold;
+    background-color: rgb(247, 238, 238);
+}
+button{
+    width: 110px;
+
+}
+.main{
+    width: 1600px;
+    padding: 20px;
+}

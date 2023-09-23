@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes abc{
+        0%{
+            background-color: aqua ;
+            transform: rotate(-20deg) scale(2,2) translate(100px,100px); 
+        }
+        50%{
+            background-color: bisque;
+             transform: rotate((50deg));
+        }
+        75%{
+            background-color: blueviolet; 
+            transform: rotate(-20deg) translate(150px,150px);
+        }
+        100%{
+            background-color: brown;
+            transform: rotate(30deg)scale(2,2) translate(100px);
+        }
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box{
+            margin-top: 300px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: anim;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">Hiiiiii</div>
+</body>
+</html>

@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React,{useState} from 'react'
 
-const Form = () => {
-
+const Useform = () => {
     const [name,setName]=useState()
     const [email,setEmail]=useState()
     const [password,setPassword]=useState()
@@ -10,9 +9,9 @@ const Form = () => {
     const display=(e)=>{
         e.preventDefault();  
         console.log(name);
-        // console.log(email);
-        // console.log(password);
-        // console.log(mobile);
+        console.log(email);
+        console.log(password);
+        console.log(mobile);
 
 
     }
@@ -24,7 +23,7 @@ const Form = () => {
         <input type="email" placeholder='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
         <input type="password" placeholder='password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
         <input type="mobile" placeholder='mobile'value={mobile} onChange={(e)=>setMobile(e.target.value)}/>
-        <button onClick={display}>Submit</button>
+        {/* <button onClick={display}>Submit</button> */}
         <input type="submit" />
         </form>
 
@@ -32,4 +31,5 @@ const Form = () => {
   )
 }
 
-export default Form
+
+export default Useform

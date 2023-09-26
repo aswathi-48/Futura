@@ -16,7 +16,7 @@
 
 // export default Sampleref
 
-import React, {useEffect, useRef} from "react"
+import React, {useEffect, useRef} from "react"    //directly access and manage dom elements 
 
 function Userefhook() {
     const Sampleref=useRef()
@@ -24,7 +24,7 @@ function Userefhook() {
     const input1=useRef()
 
     useEffect(()=>{
-      input1.current.focus()
+      input1.current.focus()   //input fieldil input1 ne focus cheyyan vendi aanu current.focus use cheyyunnath   
     },[])
 
     const show=()=>{

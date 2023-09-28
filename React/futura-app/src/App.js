@@ -1,5 +1,5 @@
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
-import Sample from "./Components/Sample";
+// import Sample from "./Components/Sample";
 import Sample2 from "./Components/Sample2";
 import Sample3 from "./Components/Sample3";
 import Sign from "./Components/Sign";
@@ -10,14 +10,15 @@ import { Appcontext } from "./Components/Context";
 // import Sampleref from "./Components/Sampleref";
 // import { UseReduceregx } from "./Components/UseReduceregx";
 import UsereduceruseIF from './Components/UsereduceruseIF';
+import Redux from './Components/Redux';
 
 
 function App() {
   const router=createBrowserRouter([
-    {
-      path:'/',
-      element:<Sample/>
-    },
+    // {
+    //   path:'/',
+    //   element:<Sample/>
+    // },
     {
       path:'/sample',
       element:<Sample2/>
@@ -33,6 +34,10 @@ function App() {
     {
       path:'/usereducerif',
       element:<UsereduceruseIF/>
+    },
+    {
+      path:'redux',
+      element:<Redux/>
     }
     
 

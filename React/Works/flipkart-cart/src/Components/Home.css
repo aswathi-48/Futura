@@ -1,0 +1,137 @@
+.navbar{
+    width: 100%;
+}
+li{
+    display: inline;
+    margin-bottom: 40px;
+}
+.main img{
+    width: 30px;
+    margin-top: 10px;
+}
+.main{
+    background-color: rgb(67, 154, 236);
+}
+.main li{
+    margin-left: 10px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+svg{
+    margin-left: 800px;
+}
+.aa{
+    margin-bottom: 40px;
+    margin-left: 450px; 
+    font-size: 29px;
+    position: absolute;
+    top: 0;
+    margin-top: 23PX;
+
+}
+
+
+.card-container {
+    width: 1200px;
+    display: flex;
+    /* overflow: auto; */
+    flex-wrap: wrap;
+    min-height: 100vh;
+    /* align-items: center; */
+    justify-content: center;
+  }
+  .card-card {
+    width: 264px;
+    height: 489px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    /* flex-shrink: 1; */
+    background-color: rgba(217, 217, 217, 1);
+    margin: 30px;
+  }
+  .card-text {
+    top: 17px;
+    left: 6px;
+    color: rgba(0, 0, 0, 1);
+    width: 18px;
+    height: auto;
+    position: absolute;
+    font-size: 32px;
+    font-style: Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .card-grocerygettyf1 {
+    top: 59px;
+    left: 38px;
+    width: 187px;
+    height: 174px;
+    position: absolute;
+  }
+  .card-text1 {
+    top: 252px;
+    left: 48px;
+    color: rgba(0, 0, 0, 1);
+    width: 153px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .card-text3 {
+    top: 280px;
+    left: 28px;
+    color: rgba(0, 0, 0, 1);
+    width: 135px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .card-add-to-cart-button {
+    top: 370px;
+    left: 55px;
+    width: 155px;
+    height: 51px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    border: none;
+    border-radius: 20px ;
+    background-image: linear-gradient(69deg, rgba(255, 156, 27, 1) 0%, rgba(236, 27, 9, 1) 100%);
+  }
+  .card-text5 {
+    top: 14px;
+    left: 16px;
+    color: rgba(255, 255, 255, 1);
+    width: 126px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }

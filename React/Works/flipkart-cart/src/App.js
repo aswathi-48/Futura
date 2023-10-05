@@ -1,4 +1,5 @@
 
+import CartDisplay from './Components/CartDisplay';
 import Home from './Components/Home';
 import Homecard from './Components/Homecard';
 
@@ -8,6 +9,8 @@ function App() {
 
       <Home/>
       {/* <Homecard/> */}
+      {/* <CartDisplay/> */}
+
     </div>
   );
 }

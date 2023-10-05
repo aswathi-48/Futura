@@ -2,6 +2,7 @@
 import './App.css';
 import Card from './components/Card';
 import Changebuttonclr from './components/Changebuttonclr';
+import SignupPersist from './components/SignupPersist';
 import Test from './components/Test';
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       {/* <Card/> */}
       {/* <Changebuttonclr/> */}
-      <Test/>
+      {/* <Test/> */}
+      <SignupPersist/>
       
     </div>
   );

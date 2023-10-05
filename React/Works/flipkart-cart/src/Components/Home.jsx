@@ -2,14 +2,21 @@ import React, { useState } from 'react'
 import './Home.css'
 import { BiCart } from "react-icons/bi";
 import Homecard from './Homecard';
+import { useDispatch } from 'react-redux';
+import { cartpage } from '../Redux/homepage';
+import CartDisplay from './CartDisplay';
 
 const Home = () => {
     const [Count, setCartCount] = useState(0);
 
-    const CartCount = (id) => {
+    const dispatch=useDispatch();
+
+    const CartCount = (user) => {
         console.log("adding to cart");
         setCartCount(Count + 1)
-        console.log(`user id ${id}`);
+        console.log(`user id ${user.id}`);
+
+        dispatch(cartpage(user))
     }
     return (
         <div>
@@ -30,6 +37,7 @@ const Home = () => {
             </div>
             <div>
                 <Homecard CartCount={CartCount} />
+                
 
             </div>
         </div>

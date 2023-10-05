@@ -38,9 +38,9 @@ const Homecard = ({ CartCount }) => {
                         <button
                             className="card-add-to-cart-button"
                             onClick={() => {
-                                CartCount(user.id);
+                                CartCount(user);
                             }}
-                        >
+                        > 
                             <span className="card-text5">Add To Cart</span>
                         </button>
                     </div>

@@ -11,6 +11,10 @@ import { Appcontext } from "./Components/Context";
 // import { UseReduceregx } from "./Components/UseReduceregx";
 import UsereduceruseIF from './Components/UsereduceruseIF';
 import Redux from './Components/Redux';
+import SignupPersist from './Components/SignupPersist';
+import Persist from './Components/Persist';
+import Usenavigate1 from './Components/Usenavigate1';
+import UsenavSettimeout from './Components/UsenavSettimeout';
 
 
 function App() {
@@ -31,6 +35,7 @@ function App() {
       path:'/sign',
       element: <Sign/>
     },
+    
     {
       path:'/usereducerif',
       element:<UsereduceruseIF/>
@@ -38,6 +43,22 @@ function App() {
     {
       path:'redux',
       element:<Redux/>
+    },
+    {
+      path:'signup',
+      element:<SignupPersist/>
+    },
+    {
+      path:'persistsignup',
+      element:<Persist/>
+    },
+    {
+      path:'nav',
+      element:<Usenavigate1/>
+    },
+    {
+      path:'navsettimeout/:id',
+      element:<UsenavSettimeout/>
     }
     
 

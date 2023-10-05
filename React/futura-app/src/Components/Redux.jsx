@@ -26,3 +26,9 @@ const dispatch=useDispatch();  //just dispatch enna variablene declare cheyyunnu
 }
 
 export default Redux
+
+
+
+
+
+

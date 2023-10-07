@@ -21,7 +21,9 @@ const dispatch=useDispatch();  //just dispatch enna variablene declare cheyyunnu
     console.log('state data',state)
   },[])
   return (
-    <div></div>
+    <div>
+      
+    </div>
   ) 
 }
 

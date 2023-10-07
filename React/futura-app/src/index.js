@@ -7,16 +7,20 @@ import { Provider } from 'react-redux';   //dispatching actions and reading the 
 import {store,persistor} from './Redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import reportWebVitals from './reportWebVitals';
+import { UserInfocontextprovider } from './ContextReducer/Context1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    
         <Provider store={store}>   
         <PersistGate loading={null} persistor={persistor}>
-
+        <UserInfocontextprovider>
     <App />
+    </UserInfocontextprovider>
     </PersistGate>
     </Provider>
+    
 
   </React.StrictMode>
 );

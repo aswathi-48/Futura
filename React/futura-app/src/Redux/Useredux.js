@@ -12,6 +12,9 @@ userPage:(state)=>{
 userPage:(state,action)=>{ 
        console.log('************************************',action);                   //fuction name is userdefind     state=initialstate
     state.userInfo.push(action.payload)  //                        kodukkunna datas payloadil aanu undavuka athine access cheyyan aanu .payload kodukkunnath
+},
+removeData:(state)=>{
+    state.userData=[]
 }
     }
 })

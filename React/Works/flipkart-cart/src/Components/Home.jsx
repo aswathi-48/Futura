@@ -1,23 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './Home.css'
 import { BiCart } from "react-icons/bi";
 import Homecard from './Homecard';
 import { useDispatch } from 'react-redux';
 import { cartpage } from '../Redux/homepage';
 import CartDisplay from './CartDisplay';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const [Count, setCartCount] = useState(0);
+    const [Count, setCartCount] = useState(parseInt(localStorage.getItem('cartCount')) || (0));
 
     const dispatch=useDispatch();
 
     const CartCount = (user) => {
         console.log("adding to cart");
-        setCartCount(Count + 1)
+        setCartCount(Count+1)
         console.log(`user id ${user.id}`);
-
+        
         dispatch(cartpage(user))
     }
+
+    useEffect(() => {
+        localStorage.setItem('cartCount', Count.toString());
+      }, [Count]);
+
+      window.onbeforeunload = () => {
+        localStorage.clear();
+    };
     return (
         <div>
             <div className='navbar'>
@@ -29,7 +38,7 @@ const Home = () => {
                         <li>Find the location</li>
                         <li style={{ marginLeft: 110, fontSize: 18 }}>Items:{Count}</li>
                         <div className='aa'>
-                            <BiCart />
+                            <Link to={'/cartpage'}><BiCart /></Link>
                         </div>
                     </ul>
                 </div>
@@ -45,3 +54,5 @@ const Home = () => {
 }
 
 export default Home
+
+

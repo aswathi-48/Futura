@@ -11,6 +11,10 @@ import UseEffecthook from './components/hooks/UseEffecthook';
 import { Appcontext } from './components/hooks/Context';
 import UseContexts from './components/hooks/UseContexts';
 import UseRefHook from './components/hooks/UseRefHook';
+import { UseReducer } from './components/hooks/UseReducer';
+import UseMemoHook from './components/hooks/UseMemoHook';
+import ReactMemo from './components/hooks/ReactMemo';
+import UseCallbackOne from './components/hooks/UseCallbackOne';
 
 function App() {
   const router=createBrowserRouter([
@@ -38,6 +42,22 @@ function App() {
     {
       path:'useref',
       element:<UseRefHook/>
+    },
+    {
+      path:'usereducer',
+      element:<UseReducer/>
+    },
+    {
+      path:'usememo',
+      element:<UseMemoHook/>
+    },
+    {
+      path:'reactmemo',
+      element:<ReactMemo/>
+    },
+    {
+      path:'usecallback',
+      element:<UseCallbackOne/>
     }
   ])
     return (
@@ -47,7 +67,7 @@ function App() {
 
     {/* <h1>Show/Hide Password Example</h1> */}
      {/* <PasswordInput/> */}
-      {/* <Card/> */}
+      <Card/>
       {/* <Changebuttonclr/> */}
       {/* <Test/> */}
       <RouterProvider router={router}></RouterProvider>

@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+.b-card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 20px; /* Adjust gap as needed */
+    border: solid 1px #e0e0e0;
+    justify-content: space-evenly;
+  }
+  .card-items{
+    max-width: 300px;
+  }
+  .card-items:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .card-image{
+    width: 300px;
+    height: 400px;
+    object-fit: contain;
+  }
+  .card-item-details{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .card-item-title{
+    color: #4747f5;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Courgette;
+
+  }
+  .card-item-description{
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+
+  }

@@ -8,13 +8,16 @@ import Sign from "./Components/Sign";
 // import LocalStorage from "./LocalStorage";
 import { Appcontext } from "./Components/Context";
 // import Sampleref from "./Components/Sampleref";
-// import { UseReduceregx } from "./Components/UseReduceregx";
+import { UseReduceregx } from "./Components/UseReduceregx";
 import UsereduceruseIF from './Components/UsereduceruseIF';
 import Redux from './Components/Redux';
 import SignupPersist from './Components/SignupPersist';
 // import Persist from './Components/Persist';
 import Usenavigate1 from './Components/Usenavigate1';
 import UsenavSettimeout from './Components/UsenavSettimeout';
+import { UseMemohook } from './Components/Useemohooks';
+import Dispatch1 from './Components/Dispatch1';
+import GetData from './Components/GetData';
 
 
 function App() {
@@ -35,10 +38,18 @@ function App() {
       path:'/sign',
       element: <Sign/>
     },
+    {
+      path:'usereducer',
+      element:<UseReduceregx/>
+    },
     
     {
       path:'/usereducerif',
       element:<UsereduceruseIF/>
+    },
+    {
+      path:'usememo',
+      element:<UseMemohook/>
     },
     {
       path:'redux',
@@ -59,6 +70,14 @@ function App() {
     {
       path:'navsettimeout/:id',
       element:<UsenavSettimeout/>
+    },
+    {
+      path:'dispatch',
+      element:<Dispatch1/>
+    },
+    {
+      path:'data',
+      element:<GetData/>
     }
     
 
@@ -81,7 +100,7 @@ function App() {
       {/* <Api/> */}
     
       {/* <LocalStorage/> */}
-      {/* <UseReduceregx/>
+      {/* 
        */}
        <RouterProvider router={router}></RouterProvider>
       

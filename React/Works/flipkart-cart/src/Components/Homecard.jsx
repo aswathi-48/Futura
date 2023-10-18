@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 const Homecard = ({ CartCount }) => {
 
@@ -23,6 +24,8 @@ const Homecard = ({ CartCount }) => {
 
     //   console.log('8888',a);
 
+    
+
     return (
         <div>
             <div className="card-container">
@@ -35,14 +38,17 @@ const Homecard = ({ CartCount }) => {
                             className="card-grocerygettyf1"
                         />
                         <span className="card-text1">{user.title}</span>
+                      {/* <Link to={'/cartpage'}> */}
                         <button
                             className="card-add-to-cart-button"
                             onClick={() => {
                                 CartCount(user);
                             }}
                         > 
+                        
                             <span className="card-text5">Add To Cart</span>
                         </button>
+                        {/* </Link> */}
                     </div>
                 ))}
             </div>

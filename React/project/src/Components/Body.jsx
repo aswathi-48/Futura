@@ -1,28 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { apiData } from './Api/MyApi';
+import React from 'react'
 import './Body.css'
 
-const Body = () => {
+const Body = ({values}) => {
 
-    const [state, setState] = useState([]);
-   const [filterdState,setFilteredState]=useState([])
-   const [activeFilter,setActiveFilter]=useState(All)
-    useEffect(() => {
-        async function api() {
-            try {
-                setState(apiData);
-            }
-            catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        }
-        api()
-    }, [])
+    
     return (
         <div>
+            <div>
+
+                
+            </div>
+
             <div >
                 <div className='b-card-container'>
-                    {state.map(item => (
+                    {values.map(item => (
                         <div key={item.id} className="card-items">
                             <img src={item.thumbnail} alt={item.name} className='card-image' />
                             <div className="card-item-details">

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 .b-card-container{
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    grid-template-columns: repeat(5, 1fr); /* 4 cards per row */
     gap: 20px; /* Adjust gap as needed */
     border: solid 1px #e0e0e0;
     justify-content: space-evenly;

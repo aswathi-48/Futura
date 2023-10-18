@@ -1,13 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from './Assets/Nav-Logo.png'
 import img from './Assets/body-image.jpg'
 import { BsSearch } from 'react-icons/bs';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { BsCart2 } from 'react-icons/bs';
+import { AiFillHome } from 'react-icons/ai';
+import { apiData } from './Api/MyApi';
+import img1 from './Assets/body-image.jpg';
+import Carousel from 'react-bootstrap/Carousel';
+import img2 from './Assets/slide2.jpg';
+import img3 from './Assets/slide3.jpg';
+
 import './Main.css'
 import Body from './Body';
 const Main = () => {
 
+
+    const [state, setState] = useState([]);
+    const [filterdState, setFilteredState] = useState([])
+    const [activeFilter, setActiveFilter] = useState('All')
+    useEffect(() => {
+        async function api() {
+            try {
+                setState(apiData);
+                setFilteredState(apiData)
+            }
+            catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+        api()
+    }, [])
+
+    const handleClick = (filter) => {
+        setActiveFilter(filter);
+        if (filter == 'All') {
+            setFilteredState(state);
+        } else {
+            const filtered = state.filter(item => item.type.toLowerCase() === filter.toLowerCase());
+            setFilteredState(filtered);
+        }
+
+    }
+
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex) => {
+        setIndex(selectedIndex);
+    };
 
     return (
         <div className='main-div'>
@@ -29,58 +69,87 @@ const Main = () => {
                             <BsSearch />
                         </div>
                     </div>
-                    <div className='nav-cart'>   
-                        <button className='nav-cart-btn1'><BsFillPersonFill />Profile</button>
-                        <button className='nav-cart-btn2'><BsCart2 /> Cart <span className='nav-span'>1</span></button>
+                    <div className='nav-cart'>
+                        <button className='home-btn'><AiFillHome className='hom-icon' /> </button>
+                        <div className='profile-btn'>
+                            <button className='nav-cart-btn1'><BsFillPersonFill className='profile-icon' /> MySpace</button>
+                            <div className='drop'>
+                                <a href="1">Personal</a>
+                                <a href="2">Order</a>
+                                <a href="3">Help Centre</a>
+                                <a href="4">Settings</a>
+                                <a href="5">Offers</a>
+                                <a href="6">LogOut</a>
+                            </div>
+                        </div>
+                        <button className='nav-cart-btn2'><BsCart2 className='cart-icon' /> Cart <span className='nav-span'>10</span></button>
                     </div>
                 </div>
             </header>
             <section>
-            <div class="dropdown">
-                    <button class="dropbtn">Our Collections</button>
-                    
+                <div className="dropdown">
+                    <button onClick={() => handleClick('All')} className={`dropbtn ${activeFilter === 'All' ? 'active' : ''}`}>Our Collections</button>
+
                 </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Dress</button>
-                    <div class="dropdown-content">
-                        <a href="#">Men</a>
-                        <a href="#">Women</a>
-                        <a href="#">Kids</a>
+                <div className="dropdown">
+                    <button className="dropbtn">Dress</button>
+                    <div className="dropdown-content">
+                        <a onClick={() => handleClick('Men')} className={`dropdown-menu1 ${activeFilter === 'Men' ? 'active' : ''}`}>Men</a>
+                        <a onClick={() => handleClick('Women')} className={`dropdown-menu2 ${activeFilter === 'Women' ? 'active' : ''}`} >Women</a>
+                        <a onClick={() => handleClick('Kids')} className={`dropdown-menu3 ${activeFilter === 'Kids' ? 'active' : ''}`}>Kids</a>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Electronics</button>
-                    <div class="dropdown-content">
-                        <a href="#">Mobile</a>
-                        <a href="#">Cameras</a>
-                        <a href="#">Laptop Accessories</a>
+                <div className="dropdown">
+                    <button className="dropbtn">Electronics</button>
+                    <div className="dropdown-content">
+                        <a onClick={() => handleClick('Mobile')} className={`dropdown-menu1 ${activeFilter === 'Mobile' ? 'active' : ''}`}>Mobile</a>
+                        <a onClick={() => handleClick('Cameras')} className={`dropdown-menu2 ${activeFilter === 'Cameras' ? 'active' : ''}`}>Cameras</a>
+                        <a onClick={() => handleClick('Laptop Accessories')} className={`dropdown-menu3 ${activeFilter === 'Laptop Accessories' ? 'active' : ''}`}>Laptop Accessories</a>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Beauty&Health</button>
-                    <div class="dropdown-content">
-                        <a href="#">Makeup</a>
-                        <a href="#">Wellness</a>
-                        <a href="#">Skincare    </a>
+                <div className="dropdown">
+                    <button className="dropbtn">Beauty&Health</button>
+                    <div className="dropdown-content">
+                        <a onClick={() => handleClick('Makeup')} className={`dropdown-menu1 ${activeFilter === 'Makeup' ? 'active' : ''}`}>Makeup</a>
+                        <a onClick={() => handleClick('Wellness')} className={`dropdown-menu2 ${activeFilter === 'Wellness' ? 'active' : ''}`}>Wellness</a>
+                        <a onClick={() => handleClick('Skincare')} className={`dropdown-menu3 ${activeFilter === 'Skincare' ? 'active' : ''}`}>Skincare </a>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Jewelleri</button>
-                    
+                <div className="dropdown">
+                <button className="dropbtn">Jewelleri</button>
+                    <div className="dropdown-content">
+                        <a onClick={() => handleClick('Chain')} className={`dropdown-menu1 ${activeFilter === 'Chain' ? 'active' : ''}`}>Chain</a>
+                        <a onClick={() => handleClick('Earrings')} className={`dropdown-menu2 ${activeFilter === 'Earrings' ? 'active' : ''}`}>Earrings</a>
+                        <a onClick={() => handleClick('Anklet')} className={`dropdown-menu3 ${activeFilter === 'Anklet' ? 'active' : ''}`}>Anklet </a>
+                    </div>
+
                 </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Top Sellers</button>
-                    
+               
+                <div className="dropdown">
+                    <button className="dropbtn">Top Sellers</button>
+
                 </div>
+                {/* <button onClick={() => handleClick('Jewelleri')} className={`dropbtn ${activeFilter === 'Jewelleri' ? 'active' : ''}`}>Jewelleri</button> */}
+
 
             </section>
 
             <body>
                 <div className='body-img'>
-                    <img src={img} alt="" />
+                    <Carousel >
+                        <Carousel.Item interval={1000}>
+                            <img src={img1} className='mains' alt="First slide" />
+                        </Carousel.Item>
+                        <Carousel.Item interval={1000}>
+                            <img src={img2} className='mains' alt="First slide" />
+                        </Carousel.Item>
+                        <Carousel.Item interval={1000}>
+                            <img src={img3} className='mains' alt="First slide" />
+                        </Carousel.Item>
+                    </Carousel>
                 </div>
             </body>
-        <Body/>
+            <Body values={filterdState} />
         </div>
     )
 }

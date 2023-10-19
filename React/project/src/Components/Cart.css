@@ -1,0 +1,48 @@
+.all{
+    border: 1px solid rgb(209, 209, 213);
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+.cart-main{
+
+}
+
+.cart-main h3{
+    color: rgb(72, 14, 246);
+    padding: 20px;
+    font-size: 40px;
+}
+.cart-content{
+    display: flex;
+}
+
+.img-kart{
+    height: 200px;
+}
+.cart-count{
+    /* margin-top: 70px; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.cart-details{
+   /* margin-top: 60px; */
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+.item-btn button{
+    border: none;
+}
+.qty-num{
+    color: rgb(55, 55, 253);
+}
+.del-btn{
+    margin-left: 4px;
+}
+.save-btn{
+    padding: 8px;
+}
+.btn-contents{
+}

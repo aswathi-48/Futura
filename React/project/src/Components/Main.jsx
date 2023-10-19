@@ -3,7 +3,7 @@ import logo from './Assets/Nav-Logo.png'
 import img from './Assets/body-image.jpg'
 import { BiSearch } from 'react-icons/bi';
 import { BsFillPersonFill } from 'react-icons/bs';
-import { BsCart2 } from 'react-icons/bs';
+import { BiSolidCart } from 'react-icons/bi';
 import { AiFillHome } from 'react-icons/ai';
 import { apiData } from './Api/MyApi';
 import img1 from './Assets/body-image.jpg';
@@ -13,6 +13,8 @@ import img3 from './Assets/slide3.jpg';
 
 import './Main.css'
 import Body from './Body';
+import Home from './Home';
+import Cart from './Cart';
 const Main = () => {
 
 
@@ -44,11 +46,11 @@ const Main = () => {
 
     }
 
-    const [index, setIndex] = useState(0);
+    // const [index, setIndex] = useState(0);
 
-    const handleSelect = (selectedIndex) => {
-        setIndex(selectedIndex);
-    };
+    // const handleSelect = (selectedIndex) => {
+    //     setIndex(selectedIndex);
+    // };
 
     const handleNavClick=(index)=>{
         setActiveNav(index)
@@ -76,7 +78,7 @@ const Main = () => {
                         </div> */}
                     </div>
                     <div className='nav-cart'>
-                        <button className='home-btn'><AiFillHome className='hom-icon' /> </button>
+                        <button className='home-btn' onClick={()=>handleNavClick(0)}><AiFillHome className='hom-icon' /> </button>
                         <div className='profile-btn'>
                             <button className='nav-cart-btn1'><BsFillPersonFill className='profile-icon' /> MySpace</button>
                             <div className='drop'>
@@ -88,7 +90,7 @@ const Main = () => {
                                 <a href="6">LogOut</a>
                             </div>
                         </div>
-                        <button className='nav-cart-btn2'><BsCart2 className='cart-icon' /> Cart <span className='nav-span'>10</span></button>
+                        <button className='nav-cart-btn2' onClick={()=>handleNavClick(1)}><BiSolidCart className='cart-icon' /> Cart <span className='nav-span'>10</span></button>
                     </div>
                 </div>
             </header>
@@ -109,7 +111,7 @@ const Main = () => {
                     <button className="dropbtn">Electronics</button>
                     <div className="dropdown-content">
                         <a onClick={() => handleClick('Mobile')} className={`dropdown-menu1 ${activeFilter === 'Mobile' ? 'active' : ''}`}>Mobile</a>
-                        <a onClick={() => handleClick('Cameras')} className={`dropdown-menu2 ${activeFilter === 'Cameras' ? 'active' : ''}`}>Cameras</a>
+                        <a onClick={() => handleClick('Camera')} className={`dropdown-menu1 ${activeFilter === 'Camera' ? 'active' : ''}`}>Camera</a>
                         <a onClick={() => handleClick('Laptop Accessories')} className={`dropdown-menu3 ${activeFilter === 'Laptop Accessories' ? 'active' : ''}`}>Laptop Accessories</a>
                     </div>
                 </div>
@@ -140,22 +142,11 @@ const Main = () => {
 
             </section>
 
-            <body>
-                <div className='body-img'>
-                    <Carousel >
-                        <Carousel.Item interval={1000}>
-                            <img src={img1} className='mains' alt="First slide" />
-                        </Carousel.Item>
-                        <Carousel.Item interval={1000}>
-                            <img src={img2} className='mains' alt="First slide" />
-                        </Carousel.Item>
-                        <Carousel.Item interval={1000}>
-                            <img src={img3} className='mains' alt="First slide" />
-                        </Carousel.Item>
-                    </Carousel>
-                </div>
-            </body>
-            <Body values={filterdState} />
+           <div>
+            
+            {activeNav===0 && <Home values={filterdState} />}
+            {activeNav===1 && <Cart values={filterdState} />}
+           </div>
         </div>
     )
 }

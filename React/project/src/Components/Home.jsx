@@ -6,8 +6,8 @@ import img3 from './Assets/slide3.jpg';
 import Body from './Body';
 
 
-const Home = (values) => {
-    console.log("gvbhsmvs"+values);
+const Home = ({values}) => {
+    console.log("gvbhsmvs",values);
   return (
     <div>
         <div>

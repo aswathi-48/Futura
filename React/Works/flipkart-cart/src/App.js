@@ -18,14 +18,7 @@ function App() {
       path:'cartpage',
       element:<CartDisplay/>
     },
-    {
-      path:'nav',
-      element:<Navbar/>
-    },
-    {
-      path:'slide',
-      element:<Carosaleg/>
-    }
+   
 
   ])
 

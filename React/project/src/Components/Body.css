@@ -41,3 +41,12 @@
     
 
   }
+
+  .cart-item-mrp{
+    font-size: 11px;
+    color: #bab7b7;
+
+  }
+  .cart-item-value{
+    text-decoration: line-through;
+  }

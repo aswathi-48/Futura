@@ -4,7 +4,7 @@ export const apiData = [
     id: 1,
     category: 'dress',
     type: 'men',
-    title: 'EYEBOGLER',
+    title: 'Eyebogler',
     description: 'Polo Neck Half Sleeve Striped Print Casual Men Tshirt',
     price: 664,
     thumbnail: 'https://m.media-amazon.com/images/I/51byp5tQ86L._UX569_.jpg'
@@ -36,7 +36,7 @@ export const apiData = [
     id: 5,
     category: 'dress',
     type: 'men',
-    title: 'PARK AVENUE',
+    title: 'Park Avenue',
     description: 'Men Solid Polo Neck Cotton Blend Light Blue T-Shirt',
     price: 824,
     thumbnail: 'https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/b/t/p/-original-imagu2cjzbkqgbgf.jpeg?q=70'
@@ -136,7 +136,7 @@ export const apiData = [
     id: 17,
     category: 'dress',
     type: 'kids',
-    title: 'FLORA',
+    title: 'Flora',
     description: 'Girls Midi/Knee Length Party Dress  (Pink, Full Sleeve)',
     price: 349,
     thumbnail: 'https://rukminim2.flixcart.com/image/612/612/xif0q/kids-dress/d/q/p/6-7-years-d-w-035-pamberston-original-imagk6nfv3xh3hee.jpeg?q=70'
@@ -145,7 +145,7 @@ export const apiData = [
     id: 18,
     category: 'dress',
     type: 'kids',
-    title: 'MUSKAN BEAUTY COLLECTION ',
+    title: 'Muskan Beauty',
     description: 'Baby Girls Midi/Knee Length Party Dress  (White, Sleeveless)',
     price: 999,
     thumbnail: 'https://rukminim2.flixcart.com/image/612/612/kxp0mfk0/kids-dress/z/n/q/1-2-years-princess-yellow-green-party-frocks-dresses-muskan-original-imaga2pyar8txzh4.jpeg?q=70'
@@ -161,7 +161,7 @@ export const apiData = [
     id: 20,
     category: 'dress',
     type: 'kids',
-    title: 'MUSKAN BEAUTY COLLECTION  ',
+    title: 'Muskan Beauty',
     description: 'Baby Girls Midi/Knee Length Party Dress  (Red, Fashion Sleeve)',
     price: 699,
     thumbnail: 'https://rukminim2.flixcart.com/image/612/612/kvy58y80/kids-dress/s/8/f/18-24-months-princess-classy-girls-frocks-dresses-muskan-beauty-original-imag8puhns8qgtnr.jpeg?q=70'
@@ -169,7 +169,7 @@ export const apiData = [
     id: 21,
     category: 'dress',
     type: 'kids',
-    title: 'OOKSGAL ',
+    title: 'Ooksgal ',
     description: 'Baby Boys Party(Festive) Jacket Pant  (Red) ',
     price: 489,
     thumbnail: 'https://rukminim2.flixcart.com/image/612/612/kwpam4w0/kids-apparel-combo/n/y/n/12-18-months-kids-baby-suit-panth-fashion-original-imag9bju3udrpdjy.jpeg?q=70'
@@ -178,7 +178,7 @@ export const apiData = [
     id: 22,
     category: 'dress',
     type: 'kids',
-    title: 'OOKSGAL ',
+    title: 'Ooksgal ',
     description: 'Baby Boys Party(Festive) Jacket Pant  (Grey)',
     price: 491,
     thumbnail: 'https://rukminim2.flixcart.com/image/612/612/xif0q/kids-apparel-combo/1/a/y/6-12-months-grey-455-6-12-m-8-ooksgal-original-imagqtmfkc6mc7d3.jpeg?q=70'
@@ -187,7 +187,7 @@ export const apiData = [
     id: 23,
     category: 'dress',
     type: 'kids',
-    title: 'KIKANI ENTERPRISE ',
+    title: 'Kikani Enterprise ',
     description: 'Baby Boys & Baby Girls Party(Festive) Shirt Shorts  (Multicolor)',
     price: 543,
     thumbnail: 'https://rukminim2.flixcart.com/image/832/832/xif0q/kids-apparel-combo/6/q/n/4-5-years-mor-pankh-fashionflicks-original-imagryg3bvyaw9hh.jpeg?q=70'

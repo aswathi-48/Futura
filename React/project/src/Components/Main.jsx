@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import logo from './Assets/Nav-Logo.png'
 import img from './Assets/body-image.jpg'
-import { BsSearch } from 'react-icons/bs';
+import { BiSearch } from 'react-icons/bi';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { BsCart2 } from 'react-icons/bs';
 import { AiFillHome } from 'react-icons/ai';
@@ -19,6 +19,7 @@ const Main = () => {
     const [state, setState] = useState([]);
     const [filterdState, setFilteredState] = useState([])
     const [activeFilter, setActiveFilter] = useState('All')
+    const [activeNav,setActiveNav]=useState(0)
     useEffect(() => {
         async function api() {
             try {
@@ -49,11 +50,15 @@ const Main = () => {
         setIndex(selectedIndex);
     };
 
+    const handleNavClick=(index)=>{
+        setActiveNav(index)
+    }
+
     return (
         <div className='main-div'>
             <link
                 rel="stylesheet"
-                href="https://fonts.googleapis.com/css2?family=Lobster:wght@400&amp;display=swap"
+                href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&amp;display=swap"
                 data-tag="font"
             />
             <header>
@@ -64,10 +69,11 @@ const Main = () => {
                     <div className='nav-search'>
                         <div className='nav-search-input'>
                             <input type="text" placeholder='search' />
+                            <BiSearch className='nav-search-icon'/>
                         </div>
-                        <div className='nav-search-icon'>
-                            <BsSearch />
-                        </div>
+                        {/* <div className='nav-search-icon'>
+                          
+                        </div> */}
                     </div>
                     <div className='nav-cart'>
                         <button className='home-btn'><AiFillHome className='hom-icon' /> </button>

@@ -6,10 +6,6 @@ const Body = ({values}) => {
     
     return (
         <div>
-            <div>
-
-                
-            </div>
 
             <div >
                 <div className='b-card-container'>

@@ -10,18 +10,25 @@ import img1 from './Assets/body-image.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import img2 from './Assets/slide2.jpg';
 import img3 from './Assets/slide3.jpg';
-
 import './Main.css'
 import Body from './Body';
 import Home from './Home';
 import Cart from './Cart';
+import CartDetails from './CartDetails';
+import { mycartPage } from '../Redux/heystore';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+
 const Main = () => {
 
 
     const [state, setState] = useState([]);
+
     const [filterdState, setFilteredState] = useState([])
     const [activeFilter, setActiveFilter] = useState('All')
     const [activeNav,setActiveNav]=useState(0)
+    const [productDetails,setProductDetails]=useState(null)
     useEffect(() => {
         async function api() {
             try {
@@ -56,6 +63,8 @@ const Main = () => {
         setActiveNav(index)
     }
 
+    const cartItem =useSelector((state)=> state.myApi.mycartInfo)
+
     return (
         <div className='main-div'>
             <link
@@ -82,15 +91,16 @@ const Main = () => {
                         <div className='profile-btn'>
                             <button className='nav-cart-btn1'><BsFillPersonFill className='profile-icon' /> MySpace</button>
                             <div className='drop'>
+                                <a href="">SignUp</a>
+                                <Link to={'/profile'}>
                                 <a href="1">Personal</a>
-                                <a href="2">Order</a>
+                                </Link>
                                 <a href="3">Help Centre</a>
                                 <a href="4">Settings</a>
-                                <a href="5">Offers</a>
                                 <a href="6">LogOut</a>
                             </div>
                         </div>
-                        <button className='nav-cart-btn2' onClick={()=>handleNavClick(1)}><BiSolidCart className='cart-icon' /> Cart <span className='nav-span'>10</span></button>
+                        <button className='nav-cart-btn2' onClick={()=>handleNavClick(1)}><BiSolidCart className='cart-icon' /> Cart <span className='nav-span'>{cartItem.length}</span></button>
                     </div>
                 </div>
             </header>
@@ -144,8 +154,9 @@ const Main = () => {
 
            <div>
             
-            {activeNav===0 && <Home values={filterdState} />}
+            {activeNav===0 && <Home values={filterdState} setActivenav={setActiveNav} setProductDetails={setProductDetails}/>}
             {activeNav===1 && <Cart values={filterdState} />}
+            {activeNav===2 && <CartDetails productDetails={productDetails}/>}
            </div>
         </div>
     )

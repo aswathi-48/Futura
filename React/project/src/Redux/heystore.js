@@ -7,8 +7,15 @@ const myApi=createSlice({
     },
     reducers:{
         mycartPage:(state,action)=>{
-            state.mycartPage.push(action.payload)
-            console.log(action.payload);
+            const {id} =action.payload;
+            const existingItem=state.mycartInfo.find(item=> item.id===id);
+            
+            if(existingItem){
+                existingItem.quantity +=1;
+
+            }else{
+                state.mycartInfo.push({...action.payload,quantity:1});
+            }
         },
     }
 })

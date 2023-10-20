@@ -4,17 +4,20 @@ import Carousel from 'react-bootstrap/Carousel';
 import img2 from './Assets/slide2.jpg';
 import img3 from './Assets/slide3.jpg';
 import Body from './Body';
+// import './Main.css'
+import './Home.css';
 
 
-const Home = ({values}) => {
+
+const Home = ({values,setActivenav,setProductDetails}) => {
     console.log("gvbhsmvs",values);
   return (
     <div>
         <div>
                 <div className='body-img'>
-                    <Carousel >
+                    <Carousel  >
                         <Carousel.Item interval={1000}>
-                            <img src={img1} className='mains' alt="First slide" />
+                            <img src={img1 } className='mains' alt="First slide" />
                         </Carousel.Item>
                         <Carousel.Item interval={1000}>
                             <img src={img2} className='mains' alt="First slide" />
@@ -26,7 +29,7 @@ const Home = ({values}) => {
                 </div>
             </div>
             <div>
-                <Body valuess={values}/>
+                <Body valuess={values} setActivenav={setActivenav} setProductDetails={setProductDetails}/>
                             
             </div>
     </div>

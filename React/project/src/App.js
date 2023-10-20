@@ -4,6 +4,8 @@ import './App.css';
 import Main from './Components/Main';
 import Loading from './Components/Loading';
 import Cart from './Components/Cart';
+import CartDetails from './Components/CartDetails';
+import Profile from './Components/Profile';
 
 function App() {
   const router=createBrowserRouter([
@@ -17,6 +19,13 @@ function App() {
     {
       path:'hi',
       element:<Cart/>
+    },
+    {
+      path:'details',
+      element:<CartDetails/>
+    },{
+      path:'/profile',
+      element:<Profile/>
     }
   ])
   return (

@@ -5,7 +5,14 @@
 .body-img{
     height: 100px;
 }
+.gappes{
+    margin-top: 400px;
 
+}
+.home-main{
+    display: flex;
+    flex-direction: column;
+}
 
 .mains {
     width: 100%;

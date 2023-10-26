@@ -1,13 +1,18 @@
 
 import React from 'react'
 import './Cart.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 // import imgz from './Assets/body-image.jpg'
+import {removeItem} from '../Redux/heystore'
 
-const Cart = () => {
+const Cart = ({}) => {
+    const dispatch=useDispatch()
 
     const cartItems = useSelector((state) => state.myApi.mycartInfo);
 
+    function removecart(ids){
+        dispatch(removeItem(ids))
+           }
     return (
         <div className='first'>
 <div className='cart-body'>
@@ -26,8 +31,7 @@ const Cart = () => {
                                     <div className='cart-item-utils'>
                                         <button className='cart-item-count'>Qty: {item.quantity}</button>
                                         <div className='cart-item-utils-a'>
-                                            <button className='cart-util-button'>Delete</button>
-                                            <button className='cart-util-button'>Save for Later</button>
+                                        <button className='cart-util-button' onClick={()=>removecart(item.id)}>Delete</button>                                            <button className='cart-util-button'>Save for Later</button>
                                             <button className='cart-util-button'>Share</button>
                                         </div>
                                     </div>

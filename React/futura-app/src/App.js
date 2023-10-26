@@ -18,6 +18,8 @@ import UsenavSettimeout from './Components/UsenavSettimeout';
 import { UseMemohook } from './Components/Useemohooks';
 import Dispatch1 from './Components/Dispatch1';
 import GetData from './Components/GetData';
+import Signinpage from './Components/Signinpage';
+import { Emoji } from './Components/Emoji';
 
 
 function App() {
@@ -56,6 +58,10 @@ function App() {
       element:<Redux/>
     },
     {
+      path:'sign',
+      element:<Signinpage/>
+    },
+    {
       path:'signup',
       element:<SignupPersist/>
     },
@@ -78,6 +84,9 @@ function App() {
     {
       path:'data',
       element:<GetData/>
+    },{
+      path:'emoji',
+      element:<Emoji/>
     }
     
 

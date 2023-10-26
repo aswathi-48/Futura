@@ -9,15 +9,15 @@ import './Home.css';
 
 
 
-const Home = ({values,setActivenav,setProductDetails}) => {
-    console.log("gvbhsmvs",values);
-  return (
-    <div>
-        <div>
+const Home = ({ values, setActivenav, setProductDetails }) => {
+    console.log("gvbhsmvs", values);
+    return (
+        <div className='home-main'>
+            <div>
                 <div className='body-img'>
                     <Carousel  >
                         <Carousel.Item interval={1000}>
-                            <img src={img1 } className='mains' alt="First slide" />
+                            <img src={img1} className='mains' alt="First slide" />
                         </Carousel.Item>
                         <Carousel.Item interval={1000}>
                             <img src={img2} className='mains' alt="First slide" />
@@ -28,12 +28,13 @@ const Home = ({values,setActivenav,setProductDetails}) => {
                     </Carousel>
                 </div>
             </div>
+            <div className='gappes'></div>
             <div>
-                <Body valuess={values} setActivenav={setActivenav} setProductDetails={setProductDetails}/>
-                            
+                <Body valuess={values} setActivenav={setActivenav} setProductDetails={setProductDetails} />
+
             </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Home

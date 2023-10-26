@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  sans-serif;
+    box-sizing: border-box;
+}
+.free{
+    padding: 10px 30px;
+    width: 100%;
+    background: #010f1c;
+    display: flex;
+}
+.free .icon
+{
+    color: #f3b123;
+    font-size: 22px;
+}
+.free p{
+    margin-left: 10px;
+    color: #f6f7f9;
+    margin-top: 2px;
+    font-size: 19px;
+    font-weight: 600;
+}
+.main-header{
+    padding: 30px 40px;
+    width: 100%;
+    border-bottom: 1px solid #010f1c;
+}
+.main-header .container{
+    display: flex;
+    justify-content: space-between;
+}
+.logo img{
+    width: 120px;   
+}
+.search_box{
+    margin-right: 30px;
+}
+.search_box input{
+    outline: none;
+    padding: 5px 30px;
+    border: 3px solid #53abfc;
+    width: 250px;
+    color: #ecf2f7;
+}
+.search-btn{
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    background: #53abfc;
+    color: #ecf2f7;
+}
+.main-header .container .icon{
+    display: flex;
+}
+.account{
+    display: flex;
+    margin-right: 30px;
+} 
+.user-icon{
+    margin-right: 10px;
+    font-size: 22px;
+    cursor: pointer;
+} 
+ p{
+    margin-top: 3px;
+}
+.second-icon{
+    display: flex;
+
+}
+.second-icon .link{
+margin-left: 6px;
+cursor: pointer;
+font-size: 20px;
+color: #53abfc;
+
+}
+.header{
+    padding: 20px 30px;
+    width: 100%;
+    box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.containerr{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+.nav ul{
+    display: flex;
+   
+}
+.nav li{
+    margin-left: 20px;
+    list-style: none;
+}
+.nav ul .link2{
+    text-decoration: none;
+    color: #010f1c;
+    transition: 0.5s;
+}
+.nav .link2:hover{
+    color: #53abfc;
+}
+.in-out{
+    margin-right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}

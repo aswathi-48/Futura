@@ -6,10 +6,6 @@ import { BsFillPersonFill } from 'react-icons/bs';
 import { BiSolidCart } from 'react-icons/bi';
 import { AiFillHome } from 'react-icons/ai';
 import { apiData } from './Api/MyApi';
-import img1 from './Assets/body-image.jpg';
-import Carousel from 'react-bootstrap/Carousel';
-import img2 from './Assets/slide2.jpg';
-import img3 from './Assets/slide3.jpg';
 import './Main.css'
 import Body from './Body';
 import Home from './Home';
@@ -18,6 +14,8 @@ import CartDetails from './CartDetails';
 import { mycartPage } from '../Redux/heystore';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import SeachResult from './SeachResult';
+import TopSellers from './TopSellers';
 
 
 const Main = () => {
@@ -27,8 +25,10 @@ const Main = () => {
 
     const [filterdState, setFilteredState] = useState([])
     const [activeFilter, setActiveFilter] = useState('All')
-    const [activeNav,setActiveNav]=useState(0)
-    const [productDetails,setProductDetails]=useState(null)
+    const [activeNav, setActiveNav] = useState(0)
+    const [productDetails, setProductDetails] = useState(null)
+    const[searchQuery,setSearchQuery] =useState('')
+    const [seachResult,setSearchResults]=useState([])
     useEffect(() => {
         async function api() {
             try {
@@ -59,11 +59,35 @@ const Main = () => {
     //     setIndex(selectedIndex);
     // };
 
-    const handleNavClick=(index)=>{
+    const handleNavClick = (index) => {
         setActiveNav(index)
     }
 
-    const cartItem =useSelector((state)=> state.myApi.mycartInfo)
+    const cartItem = useSelector((state) => state.myApi.mycartInfo)
+
+
+    const handleSearch = () => {
+        // Ensure that the search query is not empty or consists only of spaces
+        if (searchQuery.trim() !== '') {
+          // Convert the search query to lowercase for case-insensitive search
+          const lowerCaseQuery = searchQuery.toLowerCase();
+      
+          // Use filter to find items that match the search query
+          const results = apiData.filter((item) => {
+            const itemTitle = item.title.toLowerCase();
+            const itemCategory = item.category.toLowerCase();
+            const itemType = item.type.toLowerCase();
+      
+            return itemTitle.includes(lowerCaseQuery) || itemCategory.includes(lowerCaseQuery) || itemType.includes(lowerCaseQuery);
+          });
+      
+          // Update the UI with the search results
+          setSearchResults(results);
+      
+          // Set the active navigation to the search results page (assuming 7 represents it)
+          setActiveNav(3);
+        }
+      };
 
     return (
         <div className='main-div'>
@@ -79,28 +103,32 @@ const Main = () => {
                     </div>
                     <div className='nav-search'>
                         <div className='nav-search-input'>
-                            <input type="text" placeholder='search' />
-                            <BiSearch className='nav-search-icon'/>
+                            <input value={searchQuery} type="text" placeholder='search' onChange={(e)=>setSearchQuery(e.target.value)}/>
+                            <BiSearch className='nav-search-icon' onClick={handleSearch}/>
                         </div>
-                        {/* <div className='nav-search-icon'>
-                          
-                        </div> */}
                     </div>
                     <div className='nav-cart'>
-                        <button className='home-btn' onClick={()=>handleNavClick(0)}><AiFillHome className='hom-icon' /> </button>
+                        <button className='home-btn' onClick={() => handleNavClick(0)}><AiFillHome className='hom-icon' /> </button>
                         <div className='profile-btn'>
                             <button className='nav-cart-btn1'><BsFillPersonFill className='profile-icon' /> MySpace</button>
                             <div className='drop'>
-                                <a href="">SignUp</a>
+                                <div className='drop-bar'>
+                                    <div>
+                                        <a href="">New Coustomer?</a>
+                                    </div>
+                                    <div>
+                                        <a href="">SignUp</a>
+                                    </div>
+                                </div>
                                 <Link to={'/profile'}>
-                                <a href="1">Personal</a>
+                                    <a href="1">Personal</a>
                                 </Link>
-                                <a href="3">Help Centre</a>
-                                <a href="4">Settings</a>
+                                {/* <a href="3">Help Centre</a>
+                                <a href="4">Settings</a> */}
                                 <a href="6">LogOut</a>
                             </div>
                         </div>
-                        <button className='nav-cart-btn2' onClick={()=>handleNavClick(1)}><BiSolidCart className='cart-icon' /> Cart <span className='nav-span'>{cartItem.length}</span></button>
+                        <button className='nav-cart-btn2' onClick={() => handleNavClick(1)}><BiSolidCart className='cart-icon' /> Cart <span className='nav-span'>{cartItem.length}</span></button>
                     </div>
                 </div>
             </header>
@@ -134,7 +162,7 @@ const Main = () => {
                     </div>
                 </div>
                 <div className="dropdown">
-                <button className="dropbtn">Jewelleri</button>
+                    <button className="dropbtn">Jewelleri</button>
                     <div className="dropdown-content">
                         <a onClick={() => handleClick('Chain')} className={`dropdown-menu1 ${activeFilter === 'Chain' ? 'active' : ''}`}>Chain</a>
                         <a onClick={() => handleClick('Earrings')} className={`dropdown-menu2 ${activeFilter === 'Earrings' ? 'active' : ''}`}>Earrings</a>
@@ -142,9 +170,9 @@ const Main = () => {
                     </div>
 
                 </div>
-               
+
                 <div className="dropdown">
-                    <button className="dropbtn">Top Sellers</button>
+                    <button className="dropbtn" onClick={() => handleNavClick(4)}>Top Sellers</button>
 
                 </div>
                 {/* <button onClick={() => handleClick('Jewelleri')} className={`dropbtn ${activeFilter === 'Jewelleri' ? 'active' : ''}`}>Jewelleri</button> */}
@@ -152,12 +180,14 @@ const Main = () => {
 
             </section>
 
-           <div>
-            
-            {activeNav===0 && <Home values={filterdState} setActivenav={setActiveNav} setProductDetails={setProductDetails}/>}
-            {activeNav===1 && <Cart values={filterdState} />}
-            {activeNav===2 && <CartDetails productDetails={productDetails}/>}
-           </div>
+            <div>
+
+                {activeNav === 0 && <Home values={filterdState} setActivenav={setActiveNav} setProductDetails={setProductDetails} />}
+                {activeNav === 1 && <Cart values={filterdState} />}
+                {activeNav === 2 && <CartDetails productDetails={productDetails} />}
+                {activeNav === 3 && <SeachResult searchQuery={searchQuery} seachResult={seachResult} setProductDetails={setProductDetails} setActivenav={setActiveNav}/> }
+                {activeNav === 4 && <TopSellers itemss={state}/>}
+            </div>
         </div>
     )
 }

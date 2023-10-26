@@ -94,7 +94,9 @@
     background: #7575e2;
 
 }
-
+.drop-bar{
+    display: flex;
+}
 .drop a {
     display: block;
     text-decoration: none;

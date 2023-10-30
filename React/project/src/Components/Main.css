@@ -83,7 +83,7 @@
     position: absolute;
     background-color: #bbbbfa;
     min-width: 160px;
-    padding: 13px;
+    padding: 18px 10px ;
     border-radius: 8px;
     margin-top: 4px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -96,11 +96,14 @@
 }
 .drop-bar{
     display: flex;
+    /* padding: 10px; */
+
 }
 .drop a {
     display: block;
     text-decoration: none;
     color: black;
+    /* padding: 10px; */
 }
 
 .drop a:hover {
@@ -145,7 +148,7 @@
 }
 
 .nav-span {
-    color: #1818ff;
+    color: #3131fe;
 }
 
 .dropbtn {
@@ -303,4 +306,31 @@ h6 {
 p {
     margin-top: 0;
     margin-bottom: 1rem
+}
+
+
+/* ************************ BuyNow ************************************ */
+
+
+.main-buy{
+    /* background: #9a8eec; */
+    background: #d0d0d3;
+    /* background: black; */
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.buy-now{
+    height: 300px;
+    width: 900px;
+    /* background-color: #6f6f79; */
+    display: flex;
+    /* border: 3px solid #1818ff; */
+    justify-content: center;
+    align-items: center;
+}
+.buy-now h1{
+    color: #1818ff;
 }

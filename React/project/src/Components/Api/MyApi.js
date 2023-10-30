@@ -263,7 +263,7 @@ export const apiData = [
     description: 'Maybelline New York Matte Lipstick, Intense Colour, Moisturised Lips, Color Sensational Creamy Matte, 507 Almond Pink, 3.9g',
     mrp:399,
     price: 200,
-    thumbnail: 'https://m.media-amazon.com/images/I/51jD170ZkGL.AC_UL480_FMwebp_QL65.jpg'
+    thumbnail: 'https://m.media-amazon.com/images/I/616n9xx9fOL._AC_UL480_FMwebp_QL65_.jpg'
 
   }, {
     id: 29,

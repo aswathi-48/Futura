@@ -109,3 +109,11 @@ color: #53abfc;
     font-size: 22px;
     cursor: pointer;
 }
+.in-out button{
+    margin-right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+}

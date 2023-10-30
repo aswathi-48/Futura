@@ -63,8 +63,8 @@ const Nav = () => {
                 </ul>
                 </div>
                     <div className='in-out'>
-                <CiLogin/>
-                <CiLogout/>
+                <button> <CiLogin/> </button>
+                <button> <CiLogout/> </button>
                     </div>
                 </div>
 

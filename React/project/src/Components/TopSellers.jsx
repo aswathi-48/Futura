@@ -1,11 +1,15 @@
 import React from 'react'
 
 const TopSellers = ({itemss}) => {
+
+    const filteredItems = itemss.filter(item => item.price > 2000);
+
+    
   return (
     <div>
         <div>
         <div className='b-card-container'>
-                    {itemss.map(item => (
+                    {filteredItems.map(item => (
                         <div key={item.id} className="card-items">
                             <img src={item.thumbnail} alt={item.name} className='card-image' />
                             <div className="card-item-details">
@@ -16,7 +20,6 @@ const TopSellers = ({itemss}) => {
                             </div>
                         </div>
                     ))}
-
                 </div>
         </div>
     </div>

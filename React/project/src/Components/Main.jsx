@@ -21,8 +21,7 @@ import TopSellers from './TopSellers';
 const Main = () => {
 
 
-    const [state, setState] = useState([]);
-
+    const [state, setState] = useState([])
     const [filterdState, setFilteredState] = useState([])
     const [activeFilter, setActiveFilter] = useState('All')
     const [activeNav, setActiveNav] = useState(0)
@@ -91,11 +90,7 @@ const Main = () => {
 
     return (
         <div className='main-div'>
-            <link
-                rel="stylesheet"
-                href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&amp;display=swap"
-                data-tag="font"
-            />
+            <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&amp;display=swap"  data-tag="font"/>
             <header>
                 <div className='nav-bar'>
                     <div className='nav-logo'>
@@ -113,11 +108,11 @@ const Main = () => {
                             <button className='nav-cart-btn1'><BsFillPersonFill className='profile-icon' /> MySpace</button>
                             <div className='drop'>
                                 <div className='drop-bar'>
-                                    <div>
+                                    {/* <div>
                                         <a href="">New Coustomer?</a>
-                                    </div>
+                                    </div> */}
                                     <div>
-                                        <a href="">SignUp</a>
+                                        <a href="/signin">SignIn</a>
                                     </div>
                                 </div>
                                 <Link to={'/profile'}>
@@ -141,7 +136,7 @@ const Main = () => {
                     <button className="dropbtn">Dress</button>
                     <div className="dropdown-content">
                         <a onClick={() => handleClick('Men')} className={`dropdown-menu1 ${activeFilter === 'Men' ? 'active' : ''}`}>Men</a>
-                        <a onClick={() => handleClick('Women')} className={`dropdown-menu2 ${activeFilter === 'Women' ? 'active' : ''}`} >Women</a>
+                        <a onClick={() => handleClick('Ladies')} className={`dropdown-menu2 ${activeFilter === 'Ladies' ? 'active' : ''}`} >Ladies</a>
                         <a onClick={() => handleClick('Kids')} className={`dropdown-menu3 ${activeFilter === 'Kids' ? 'active' : ''}`}>Kids</a>
                     </div>
                 </div>
@@ -149,7 +144,7 @@ const Main = () => {
                     <button className="dropbtn">Electronics</button>
                     <div className="dropdown-content">
                         <a onClick={() => handleClick('Mobile')} className={`dropdown-menu1 ${activeFilter === 'Mobile' ? 'active' : ''}`}>Mobile</a>
-                        <a onClick={() => handleClick('Camera')} className={`dropdown-menu1 ${activeFilter === 'Camera' ? 'active' : ''}`}>Camera</a>
+                        <a onClick={() => handleClick('Camera')} className={`dropdown-menu2 ${activeFilter === 'Camera' ? 'active' : ''}`}>Camera</a>
                         <a onClick={() => handleClick('Laptop Accessories')} className={`dropdown-menu3 ${activeFilter === 'Laptop Accessories' ? 'active' : ''}`}>Laptop Accessories</a>
                     </div>
                 </div>

@@ -12,6 +12,7 @@
 .home-main{
     display: flex;
     flex-direction: column;
+    /* margin-top: 50px; */
 }
 
 .mains {
@@ -20,3 +21,7 @@
     object-fit: fill;
     margin-top: 20px;
 }
+.carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }

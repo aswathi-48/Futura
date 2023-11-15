@@ -5,6 +5,7 @@ import Home from './Components/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Project/Navbar';
 import Carosaleg from './Project/Carosaleg';
+import LoginSignUp from './Login-Signup/LoginSignUp';
 
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
       path:'cartpage',
       element:<CartDisplay/>
     },
+    // {
+    //   path:'loginsignup',
+    //   element:<LoginSignUp/>
+    // }
    
 
   ])

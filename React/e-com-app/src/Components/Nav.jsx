@@ -6,7 +6,7 @@ import { BsBagCheck } from 'react-icons/bs';
 import { CiLogin } from 'react-icons/ci';
 import { CiLogout } from 'react-icons/ci';
 import './Nav.css'
-import logo from './Assets/logo (2).jpg'
+import logo from './Assets/logo.png'
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
@@ -58,7 +58,7 @@ const Nav = () => {
                         <Link to='/about' className='link2'>About</Link>
                     </li>
                     <li>
-                        <Link to='/contact'className='link2'>About</Link>
+                        <Link to='/contact'className='link2'>Contact</Link>
                     </li>
                 </ul>
                 </div>

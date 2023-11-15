@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            border-radius: 20px;
+            border: 1px solid rgb(252, 248, 248);
+            border: none;
+            padding: 2px 10px;
+            margin-left: 500px;
+            margin-top: 100px;
+            width: 100px;
+            height: 40px;
+            /* background-color: rgb(187, 143, 229); */
+            background: linear-gradient(to right, rgb(187, 143, 229), rgb(128, 19, 230));
+            transition:background 0.5s;
+        }
+        .btn:hover{
+            background: linear-gradient(to right, rgb(242, 38, 167), rgb(172, 3, 144));
+            animation: animate 8s linear infinite;
+
+        }
+        a:hover{
+            animation: animate 8s linear infinite;
+        }
+        @keyframes animate {
+            0%{
+                background-position: 0%;
+            }
+            50%{
+                background-position: 200%;
+                background-color: rgb(249, 70, 35);
+                
+            }
+            100%{
+                background-position: 400%;
+                background-color: rgb(249, 70, 35);
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <button class="btn"> <a href="">Like</a>
+    </button>
+</div>
+</body>
+</html>
+

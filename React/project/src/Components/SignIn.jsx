@@ -14,7 +14,6 @@ const SignIn = () => {
             <input type="text" placeholder='Email'/>
             <input type="password" placeholder='Password'/>
             <p>Forgot Password?</p>
-
         </div>
         <div>
             <button className='login-button' >LOGIN</button>
@@ -24,7 +23,6 @@ const SignIn = () => {
             <i className="fa-brands fa-twitter fa-beat"></i>
             <i className="fa-brands fa-instagram fa-beat"></i>
             <i className="fa-brands fa-google fa-beat"></i>
-
         </div>
         <div>
             <span>Dont have an account? <span>Sign Up</span></span>

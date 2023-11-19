@@ -19,8 +19,8 @@ const Display = () => {
          <p>
             {printData.map((li)=>(
                 <>
-           <li>{li.username}</li>
-           {/* <li>{li.email}</li> */}
+           <li>{li.FirstName}</li>
+           <li>{li.Email}</li>
                 </>
             ))}
         </p>

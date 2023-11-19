@@ -5,7 +5,7 @@
         FirstName:{type:String},
         SecondName:{type:String},
         Age:{type:String},
-        Email:{type:String},
+        Email:{type:String,unique:true},
         Password:{type:String}, 
         Address:{type:String}
 

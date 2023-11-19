@@ -19,7 +19,7 @@ app.use(express.json())
 app.use('/',userRoute)
 app.use('/',CrudRoute)
 
-app.listen(3000,()=>{                          // .listen(3000, ...) is a method used to start a web server and make it listen for incoming connections on a specific port. In this case, it's listening on port 3000.
+app.listen(7000,()=>{                          // .listen(3000, ...) is a method used to start a web server and make it listen for incoming connections on a specific port. In this case, it's listening on port 3000.
     console.log('server is connected');
 })
 

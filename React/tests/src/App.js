@@ -2,6 +2,9 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import LoginSignUpP from './Components/LoginSignUpP';
 import Signup from './Components/Signup';
 import Display from './Components/Display';
+import SingleData from './Components/SingleData';
+import Login from './Components/Login';
+// import Updatedata from './Components/Updatedata';
 
 function App() {
 
@@ -20,7 +23,17 @@ function App() {
     },{
       path:'display',
       element:<Display/>
+    },
+    {
+      path:'idselect',
+      element:<SingleData/>
+    },
+    {
+      path:"login",
+      element:<Login/>
     }
+
+   
   ])
   return (
     <RouterProvider router={router}></RouterProvider>

@@ -1,9 +1,12 @@
 import axios from "axios"
+import { userDetails } from "../Redux/Userredux";
+import { publicRequest } from "./RequestMethod";
 
 
 export const signupdata=async(datas)=>{
     try{
-        const res=await axios.post('http://localhost:7000/postmethod',datas)
+        // const res=await axios.post('http://localhost:7000/postmethod',datas)
+        const res=await publicRequest.post('/postmethod',datas)
         console.log('final data',res);
     }catch(err){
         console.log('error');
@@ -36,7 +39,7 @@ export const signupdata=async(datas)=>{
 export const GetIdData=async(id)=>{
     console.log('id?',id);
     try{
-        const res=await axios.get(`http://localhost:7000/api/data/getidmethod/${id}`)
+        const res=await axios.get(`http://localhost:7000/getidmethod/${id}`)
         console.log('8888888',res);
         return res.data
     }catch(err){
@@ -48,7 +51,7 @@ export const GetIdData=async(id)=>{
 export const DeleteIdData=async(id)=>{
     console.log('id ?',id);
     try{
-        const res=await axios.delete(`http://localhost:7000/api/data/delete/${id}`)
+        const res=await axios.delete(`http://localhost:7000/delete/${id}`)
         console.log(res.data);
     }catch(err){
         console.log(err);
@@ -58,9 +61,21 @@ export const DeleteIdData=async(id)=>{
 export const UpdateIdData=async(id,datas)=>{
     console.log('id?',id);
     try{
-        const res=await axios.put(`http://localhost:7000/api/data/updatedata/${id}`,datas)
+        const res=await axios.put(`http://localhost:7000/updatedata/${id}`,datas)
         console.log(res.data);
         return res.data
+    }catch(err){
+        console.log(err);
+    }
+}
+
+export const LoginData=async(LoginValue,dispatch)=>{
+    console.log(LoginValue);
+
+    try{
+        const res=await axios.post('http://localhost:7000/login',LoginValue)
+        console.log('Response Status:',res.data);
+        dispatch(userDetails(res.data))
     }catch(err){
         console.log(err);
     }

@@ -4,15 +4,24 @@ import Signup from './Components/Signup';
 import Display from './Components/Display';
 import SingleData from './Components/SingleData';
 import Login from './Components/Login';
+import { useSelector } from 'react-redux';
+import Homeone from './Components/Homeone';
 // import Updatedata from './Components/Updatedata';
 
 function App() {
+  const data=useSelector((state)=>state.users.userInfo[0 ])
+  console.log('**',data&&data);
+  if(data){
+    var Token=data && data.accesstoken
+
+    console.log("token ?",Token);
+  }
 
   const router=createBrowserRouter([
-    // {
-    //   path:'/',
-    //   element:
-    // },
+    {
+      path:'/',
+      element:Token ? <Homeone/> : <Login/>
+    },
     {
       path:'loginsignup',
       element:<LoginSignUpP/>
@@ -28,10 +37,10 @@ function App() {
       path:'idselect',
       element:<SingleData/>
     },
-    {
-      path:"login",
-      element:<Login/>
-    }
+    // {
+    //   path:"login",
+    //   element:<Login/>
+    // }
 
    
   ])

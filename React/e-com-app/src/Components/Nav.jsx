@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaTruckMoving } from 'react-icons/fa';
 import { AiOutlineUser } from 'react-icons/ai';
 import { AiOutlineHeart } from 'react-icons/ai';
@@ -9,7 +9,8 @@ import './Nav.css'
 import logo from './Assets/logo.png'
 import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = ({searchbtn}) => {
+    const [Search,setSearch]=useState()
     return (
         <div>
 
@@ -27,8 +28,8 @@ const Nav = () => {
                         <img src={logo} alt="logo" />
                     </div>
                     <div className='search_box'>
-                        <input type="text" name="" id="" placeholder='search...' />
-                        <button className='search-btn'>search</button>
+                        <input type="text" name="" value={Search} placeholder='search your product...' autoComplete='off' onChange={(e)=>setSearch(e.target.value)}/>
+                        <button className='search-btn' onClick={()=>searchbtn ((Search))}>search</button>
                     </div>
                     <div className='icon'>
                         <div className='account'>

@@ -3,6 +3,7 @@ const router = require('express').Router()   //create a variable and import expr
 const { response } = require('express');
 const users = require('../Models/Userschema')   //import users from Userschema
 const Crypto = require('crypto-js')
+const jwt=require('jsonwebtoken')
 
 // req.body.password=Crypto.AES.encrypt(req.body.Password,process.env.Crypto_js).toString()  **engane cheythal direct req.body kodukkam 
 
@@ -72,20 +73,32 @@ router.post('/login', async (req, res) => {
 
         console.log('Backend data!', DatabaseData);
 
-        const hashedpassword = Crypto.AES.decrypt(DatabaseData.Password, process.env.Crypto_js);
+        const hashedpassword = Crypto.AES.decrypt(DatabaseData.Password, process.env.Crypto_js); //encript cheytha seacret key use cheythanu decript cheyyunnath..
         console.log("hashedpassword is?", hashedpassword);
 
-        const originalpass = hashedpassword.toString(Crypto.enc.Utf8);
+        const originalpass = hashedpassword.toString(Crypto.enc.Utf8);   //.enc.utf8 use cheyyunnath buffercodene mattan aanu..
         console.log('original pass is?', originalpass);
 
 
         originalpass != req.body.Password && res.status(401).json({response:'password and email do not match'});
-        res.status(200).json('success');
+        // res.status(200).json('success');
+        const accesstoken=jwt.sign({
+            id:DatabaseData._id
+        },process.env.jwt_sec,
+        {expiresIn:'5d'})
+
+        const {Password,...others}=DatabaseData._doc
+
+        console.log('*************',others);
+
+        res.status(200).json({...others,accesstoken})
+
         
     } catch (err) {
         console.error(err);
         return res.status(400)
     }
+    
 });
 
 module.exports = router

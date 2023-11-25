@@ -8,6 +8,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BsEye } from 'react-icons/bs';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { Link } from 'react-router-dom'
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import './Home.css'
 import mob from './Assets/mob.jpg.jpeg'
 import cam from './Assets/cam.jpg'
@@ -18,10 +19,40 @@ import HomeProduct from './HomeProduct';
 import ipad from './Assets/ipads.png'
 
 
-const Home = () => {
+const Home = ({detail, view, close, setClose}) => {
   // const [HomeProducts,setHomeProducts]=useState(HomeProduct)
   return (
     <div>
+
+{ close ?
+          <div className='product_details'>
+            <div className='p_container'>
+              <button onClick={() => setClose(false)} className='close-btn'> <IoIosCloseCircleOutline /></button>
+              
+              {
+                detail.map((curElm) => {
+                  return (
+
+                    <div className='productbox'>
+                      <div className='img_boxx'>
+                        <img src={curElm.Img} alt={curElm.Titie} />
+                      </div>
+                      <div className='p_detail'>
+                        <h4>{curElm.Cat}</h4>
+                        <h2>{curElm.Titie}</h2>
+                        <p>A Screen Everyone Will Love:Whether your family is streaming or video chatting with friends tablet A8...</p>
+                        <h3>{curElm.Price}</h3>
+                        <button className='cart-btn'>Add To Cart</button>
+                      </div>
+                    </div>
+                  )
+                })
+              }
+              <div className='productbox'></div>
+            </div>
+          </div> : null
+      }
+
       <div className='top_banner'>
         <div className='container'>
           <div className='detail'>
@@ -129,7 +160,7 @@ const Home = () => {
                     <img src={curElm.Img} alt="" />
                     <div className='icon3'>
                      <li> <AiOutlineShoppingCart className='one'/></li>
-                    <li>  <BsEye className='two'/></li>
+                    <li onClick={() => view (curElm)}>  <BsEye className='two'/></li>
                      <li> <AiOutlineHeart className='three' /></li>
                     </div>
                   </div>

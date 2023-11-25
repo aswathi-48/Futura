@@ -164,24 +164,31 @@
 .img_box3 .icon3{
    z-index: 1;
    position: relative;
-   right: 0;
+   left: 50px;
+   /* right: 100; */
    display: flex;
    flex-direction: column;
    transition: 0.5s;
+   margin-top: 20px;
+   font-size: 20px;
 }
 .img_box3:hover .icon3{
-    transform: rotateX(-130px);
+    transform: translateX(-50px);
 }
 .icon3 li{
     list-style: none;
     padding: 3px 3px;
     cursor: pointer;
     transition: 0.5s;
-
+    /* border-bottom: 1px solid#9a9a9a; */
+    color: #010f1c;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    background: #fff;
 
 }
 .icon3 li:hover{
     background-color: #53abfc;
+    color: #fff;
 }
 .detail3{
     margin-top: 10px;
@@ -253,4 +260,48 @@
 .detail4 .arrow {
     margin-top: 9px;
     margin-left: 3px;
+}
+
+.p_detail{
+    margin-top: 50px;
+    margin-left: 15px;
+}
+.p_detail h4{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 200;
+    color: #9a9a9a;
+    letter-spacing: 1px;
+}
+.p_detail h2{
+    margin-top: 20px;
+    font-size: 30px;
+    color: #010f1c;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+.p_detail p{
+    margin-top: 10px;
+    color: #4a4a4a;
+}
+.p_detail h3{
+    margin-top: 10px;
+    color: #010f1c;
+    font-size: 29px;
+    letter-spacing: 1px;
+}
+.p_detail .cart-btn{
+    margin-top: 30px;
+    padding: 15px 50px;
+    font-size: 16;
+    color: #fff;
+    background: #010f1c;
+    transition: 0.5s;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.p_detail .cart-btn:hover{
+    background: #53abfc;
 }

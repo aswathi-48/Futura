@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.products{
+    padding: 30px 40px;
+    width: 100%;
+
+}
+.products h2{
+    font-size: 42px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #010f1c;
+}
+.products p{
+    margin-top: 10px;
+    color: #9a9a9a;
+
+}
+.products .containerss{
+    margin-top: 20px;
+    max-width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+.filter{
+    padding: 20px 30px;
+}
+.categories h3{
+    color: #010f1c;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.categories ul{
+    margin-top: 10px;
+}
+.categories ul li{
+    list-style: none;
+    margin-top: 20px;
+    color: #010f1c;
+    cursor: pointer;
+}
+.productbox{
+    margin-right: 10%;
+    /* margin-left: 10%; */
+}
+.container2{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.container2 .boxs1{
+    padding: 10px 20px;
+    overflow: hidden;
+    width: 330px;
+    height: 380px;
+    border: 1px solid #e2e0e0;
+    margin-bottom: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 23px;
+}
+.container2 .boxs1:hover{
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+}
+.container2 .boxs1 .img_boxs1{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e0e0;
+}
+.img_boxs1 img{
+    height: 200px;
+    width: 220px; 
+    margin-left: 40px;
+    margin-top: 70px;
+
+}
+.img_boxs1{
+    display: flex;
+    justify-content: space-between;
+}
+.img_boxs1 .icons1{
+    z-index: 1;
+    position: relative;
+    left: 60px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.boxs1:hover .icons1{
+    transform: translateX(-50px);
+}
+
+.icons1 li{
+    list-style: none;
+    padding: 3px 3px;
+    cursor: pointer;
+    transition: 0.5s;
+    /* border-bottom: 1px solid#9a9a9a; */
+    color: #010f1c;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    background: #fff;
+
+}
+.icons1 li:hover{
+    background-color: #53abfc;
+    color: #fff;
+}
+.details1{
+    margin-top: 10px;
+}
+.details1 p{
+    color: #9a9a9a;
+    font-size: 14px;
+}
+.details1 h3 {
+    font-size: 18px;
+    margin-top: 5px;
+    transition: 0.5s;
+}
+.boxs1:hover .details1 h3{
+    color: #53abfc;
+}
+.details1 h4{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #53abfc;
+    letter-spacing: 1p;
+}
+
+.product_details{
+    margin-top: 30px;
+    padding: 30px 40px;
+    width: 100%;
+    height: 120%;
+    position: fixed;
+    z-index: 1;
+    margin-top: -20%;
+    background: rgba(0,0,0,0.25);
+}
+.p_container{
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 1000px;
+    height: 550px;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.25) opx 3px 8px;
+}
+.p_container .close-btn {
+    margin-left: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+.productbox{
+    max-width: 100%;
+    display: flex;
+    padding: 20px 30px;
+    margin-top: 20px;
+}
+.img_boxx{
+    padding: 20px 30px;
+    width: 400px;
+    height: 360px;
+    background: #f1f1f1;
+}
+.img_boxx img{
+    width: 300px;
+    height: 310px;
+}
+.p_detail{
+    margin-top: 50px;
+    margin-left: 15px;
+}
+.p_detail h4{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 200;
+    color: #9a9a9a;
+    letter-spacing: 1px;
+}
+.p_detail h2{
+    margin-top: 20px;
+    font-size: 30px;
+    color: #010f1c;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+.p_detail p{
+    margin-top: 10px;
+    color: #4a4a4a;
+}
+.p_detail h3{
+    margin-top: 10px;
+    color: #010f1c;
+    font-size: 29px;
+    letter-spacing: 1px;
+}
+.p_detail .cart-btn{
+    margin-top: 30px;
+    padding: 15px 50px;
+    font-size: 16;
+    color: #fff;
+    background: #010f1c;
+    transition: 0.5s;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.p_detail .cart-btn:hover{
+    background: #53abfc;
+}

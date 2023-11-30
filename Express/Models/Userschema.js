@@ -7,7 +7,8 @@
         Age:{type:String},
         Email:{type:String,unique:true},
         Password:{type:String}, 
-        Address:{type:String}
+        Address:{type:String},
+        Phone:{type:String},
 
     },{timestamps:true})  //to add the date and time the value is added to DB or edited
 

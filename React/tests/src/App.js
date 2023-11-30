@@ -9,8 +9,8 @@ import Homeone from './Components/Homeone';
 // import Updatedata from './Components/Updatedata';
 
 function App() {
-  const data=useSelector((state)=>state.users.userInfo[0 ])
-  console.log('**',data&&data);
+  const data=useSelector((state)=>state.users.userInfo[0])
+  console.log('**',data);
   if(data){
     var Token=data && data.accesstoken
 

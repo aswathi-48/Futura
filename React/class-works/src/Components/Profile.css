@@ -1,0 +1,36 @@
+.P-container{
+    
+}
+.p-contents
+ {
+    margin-left: 30%;
+    margin-top: 10%;
+    height: 400px;
+    width: 600px;
+    background-color: rgb(141, 81, 197);
+   box-shadow: rgb(220, 88, 196) 2px 2px 1px 3px;
+
+
+}
+.p-contents  h1{
+    padding: 20px 190px;
+    /* color: rgb(241, 65, 203); */
+    box-shadow: rgba(0,0,0,0.25) 0px 3px 8px;
+    
+}
+.p-items{
+
+}
+.valuess{
+    color: rgb(201, 191, 191);
+    margin-left: 90px;
+    box-shadow: rgba(0,0,0,0.25) 0px 3px 8px;
+    width: 400px;
+    padding: 10px 30px;
+    margin-top: 50px;
+
+}
+.valuess:hover{
+    background: rgb(94, 94, 234);
+    color: black;
+}

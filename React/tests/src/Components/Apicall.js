@@ -5,8 +5,8 @@ import { publicRequest } from "./RequestMethod";
 
 export const signupdata=async(datas)=>{
     try{
-        // const res=await axios.post('http://localhost:7000/postmethod',datas)
-        const res=await publicRequest.post('/postmethod',datas)
+        const res=await axios.post('http://localhost:7000/postmethod',datas)
+        // const res=await publicRequest.post('/postmethod',datas)
         console.log('final data',res);
     }catch(err){
         console.log('error');

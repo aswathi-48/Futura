@@ -7,7 +7,7 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import './Product.css'
 import Home from './Home';
 
-const Product = ({ product, setProduct, detail, view, close, setClose ,addtocart}) => {
+const Product = ({ product, setProduct, detail, view, close, setClose ,addtocart,}) => {
 
 
 
@@ -41,7 +41,8 @@ const Product = ({ product, setProduct, detail, view, close, setClose ,addtocart
                         <h2>{curElm.Titie}</h2>
                         <p>A Screen Everyone Will Love:Whether your family is streaming or video chatting with friends tablet A8...</p>
                         <h3>{curElm.Price}</h3>
-                        <button className='cart-btn'>Add To Cart</button>
+                        <button className='cart-btn' onClick={()=> addtocart (curElm)} >Add To Cart</button>
+                        <button className='buy-btn' >Buy Now</button>
                       </div>
                     </div>
                   )
@@ -88,7 +89,7 @@ const Product = ({ product, setProduct, detail, view, close, setClose ,addtocart
                         <div className='details1'>
                           <p>{curElm.Cat}</p>
                           <h3>{curElm.Titie}</h3>
-                          <h4>{curElm.Price}</h4>
+                          <h4>${curElm.Price}</h4>
                         </div>
                       </div>
                     </>

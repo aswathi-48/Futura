@@ -19,7 +19,7 @@ import HomeProduct from './HomeProduct';
 import ipad from './Assets/ipads.png'
 
 
-const Home = ({detail, view, close, setClose}) => {
+const Home = ({detail, view, close, setClose,addtocart}) => {
   // const [HomeProducts,setHomeProducts]=useState(HomeProduct)
   return (
     <div>
@@ -159,7 +159,7 @@ const Home = ({detail, view, close, setClose}) => {
                   <div className='img_box3'>
                     <img src={curElm.Img} alt="" />
                     <div className='icon3'>
-                     <li> <AiOutlineShoppingCart className='one'/></li>
+                     <li onClick={()=> addtocart (curElm)}> <AiOutlineShoppingCart className='one'/></li>
                     <li onClick={() => view (curElm)}>  <BsEye className='two'/></li>
                      <li> <AiOutlineHeart className='three' /></li>
                     </div>
@@ -167,7 +167,7 @@ const Home = ({detail, view, close, setClose}) => {
                   <div className='detail3'>
                     <p>{curElm.Cat}</p>
                     <h3>{curElm.Titie}</h3>
-                    <h4>{curElm.Price}</h4>
+                    <h4>${curElm.Price}</h4>
                   </div>
                 </div>
 

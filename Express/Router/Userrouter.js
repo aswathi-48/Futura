@@ -3,20 +3,25 @@ const router = require('express').Router()   //create a variable and import expr
 const { response } = require('express');
 const users = require('../Models/Userschema')   //import users from Userschema
 const Crypto = require('crypto-js')
-const jwt=require('jsonwebtoken')
+const jwt=require('jsonwebtoken');
+const { verifyToken, verifyTokenAndauthorization } = require('../VerifyToken');
 
-// req.body.password=Crypto.AES.encrypt(req.body.Password,process.env.Crypto_js).toString()  **engane cheythal direct req.body kodukkam 
+//   req.body.Password=Crypto.AES.encrypt(req.body.Password, process.env.Crypto_js).toString() // **engane cheythal direct req.body kodukkam 
 
 router.post('/postmethod', async (req, res) => {   //router.post -value can be take frontend to backend  /postmethod-just a name for api, its userdefind
     console.log('postman data ?', req.body);  // req.body-data can be taken to frontend  ,it contains the data send in the post request by clients
     // const newUser=new users(req.body)
+    //    Password: Crypto.AES.encrypt(req.body.Password, process.env.Crypto_js).toString()
+
     const newUser = new users({
         FirstName: req.body.FirstName,
         SecondName: req.body.SecondName,
         Age: req.body.Age,
         Email: req.body.Email,
+        Phone:req.body.Phone,
         Password: Crypto.AES.encrypt(req.body.Password, process.env.Crypto_js).toString(),
         Address: req.body.Address,
+  
 
     })
 
@@ -65,7 +70,7 @@ router.put('/updatedata/:id', async (req, res) => {
 })
 
 // login verification
-router.post('/login', async (req, res) => {
+    router.post('/login', async (req, res) => {
     console.log('backend login', req.body);
     try {
         const DatabaseData = await users.findOne({ Email: req.body.Email });
@@ -79,10 +84,9 @@ router.post('/login', async (req, res) => {
         const originalpass = hashedpassword.toString(Crypto.enc.Utf8);   //.enc.utf8 use cheyyunnath buffercodene mattan aanu..
         console.log('original pass is?', originalpass);
 
-
         originalpass != req.body.Password && res.status(401).json({response:'password and email do not match'});
         // res.status(200).json('success');
-        const accesstoken=jwt.sign({
+        const accesstoken= jwt.sign({
             id:DatabaseData._id
         },process.env.jwt_sec,
         {expiresIn:'5d'})
@@ -100,5 +104,15 @@ router.post('/login', async (req, res) => {
     }
     
 });
+
+router.get('/getdata/:id' ,verifyToken,verifyTokenAndauthorization,async(req,res)=>{
+    
+    try{
+        const res1 = await users.findById(req.params.id)
+        res.status(200).json(res1)
+    }catch(err){
+        res.status(500).json(err)
+    }
+})
 
 module.exports = router

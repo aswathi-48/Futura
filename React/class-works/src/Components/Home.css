@@ -1,0 +1,104 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    /* margin: 10px; */
+    /* box-shadow: rgb(244, 92, 92) 1px 2px 0px 0px; */
+    /* border-bottom: 2px solid rgb(235, 74, 74); */
+    box-shadow: rgba(0,0,0,0.25) 0px 3px 8px;
+
+}
+.logo img{
+    width: 140px;
+    height: 100px;
+    margin-left: 6px;
+    margin-bottom: 10px;
+}
+.nav-elements ul{
+    display: flex;
+    list-style: none;
+    margin-left: 3px;
+    cursor: pointer;
+}
+.nav-elements li{
+    /* margin-left: 4px; */
+    margin-right: 20px;
+    display: flex;
+    margin-top: 12px;
+    font-size: 19px;
+}
+.logout-icon{
+    margin-top: 4px;
+    margin-right: 2px;
+}
+.p-icon{
+    margin-top: 4px;
+    margin-right: 2px;
+}
+.h-icons{
+    margin-top: 4px;
+    margin-right: 2px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 2x;
+    height: 35px;
+    margin-left: 5px;
+    outline: none;
+    /* border: none; */
+    background-color: whitesmoke;
+    cursor: pointer;
+
+  }
+  
+  .search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 2px;
+    font-size: 16px;
+    background-color: whitesmoke;
+
+  }
+  
+  .search-icon {
+    margin-right: 8px;
+    margin-left: 4px;
+    font-size: 20px;
+    color: #333; /* Adjust the color as needed */
+  }
+.search-btn{
+    height: 35px;
+    width: 80px;
+    margin-right: 720px;
+    border: none;
+    /* outline: none; */
+    border-radius: 2px;
+    cursor: pointer;
+
+}
+.search-one{
+    display: flex;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+.body img{
+   /* width: 100%; */
+   width: 70%;
+   height: 700px;
+   margin-left: 190px;
+   margin-top: 20px;
+}
+.p-link{
+    text-decoration: none;
+    color: black;
+}
+.imgs1 img{
+    width: 100px;
+    height: 100px;
+}

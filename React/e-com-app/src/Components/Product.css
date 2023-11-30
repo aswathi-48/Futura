@@ -221,6 +221,22 @@
     border-radius: 10px;
     cursor: pointer;
 }
+.p_detail .buy-btn{
+    margin-top: 30px;
+    padding: 15px 50px;
+    font-size: 16;
+    color: #fff;
+    background: #010f1c;
+    transition: 0.5s;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.p_detail .buy-btn:hover{
+    background: #53abfc;
+}
 .p_detail .cart-btn:hover{
     background: #53abfc;
 }

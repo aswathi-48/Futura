@@ -37,10 +37,10 @@ function App() {
       path:'idselect',
       element:<SingleData/>
     },
-    // {
-    //   path:"login",
-    //   element:<Login/>
-    // }
+    {
+      path:"login",
+      element:<Login/>
+    }
 
    
   ])

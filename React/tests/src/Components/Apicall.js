@@ -1,6 +1,6 @@
 import axios from "axios"
 import { userDetails } from "../Redux/Userredux";
-import { publicRequest } from "./RequestMethod";
+import { publicRequest, userRequest } from "./RequestMethod";
 
 
 export const signupdata=async(datas)=>{
@@ -78,5 +78,23 @@ export const LoginData=async(LoginValue,dispatch)=>{
         dispatch(userDetails(res.data))
     }catch(err){
         console.log(err);
+    }
+}
+
+export const getProfile=async(id)=>{
+    console.log("where is id",id);
+    try{
+        const res1= await userRequest.get(`/getdata/${id}`)
+        console.log("final result",res1);
+        return res1
+    }catch(err){
+        console.log(err);
+    }
+}
+
+
+export const updateProfile =async()=>{
+    try{
+        const res= await
     }
 }

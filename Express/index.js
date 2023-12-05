@@ -3,8 +3,14 @@ const app=express()                   //This line creates an instance of the Exp
 const dotenv=require('dotenv')      //This line imports the dotenv library, which is used for loading environment variables 
 const mongoose=require('mongoose')
 const cors=require('cors')
+
+// app.use(()=>{
+//     console.log('first work');
+// })
+
 app.use(cors())
 dotenv.config()                   //This line invokes the config() method provided by the dotenv library, which loads the environment variables defined in a .env file into process.env
+
 
 const userRoute=require('./Router/Userrouter')   //This line imports a user-defined module named Userrouter from the Router directory. This is presumably a custom route module that defines and handles routes related to user management.
 

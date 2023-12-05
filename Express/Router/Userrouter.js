@@ -94,8 +94,8 @@ router.put('/updatedata/:id', async (req, res) => {
         const {Password,...others}=DatabaseData._doc
 
         console.log('*************',others);
-
-        res.status(200).json({...others,accesstoken})
+var Id=DatabaseData._id
+        res.status(200).json({Id,accesstoken})
 
         
     } catch (err) {

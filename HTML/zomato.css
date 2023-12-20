@@ -81,7 +81,7 @@ header{
 }
 
 .text{
-    margin-left: 413px;
+    margin-left: 210px;
     margin-top: 30px;
 }
 .text2{
@@ -97,7 +97,7 @@ span b{
 }
 .images{
     display: flex;
-    margin-left: 410px;
+    margin-left: 190px;
     padding-left: 10px;
 }
 .pic1 {
@@ -156,13 +156,13 @@ span b{
 .div3 h4{
     font-weight: normal;
     font-size: 27px;
-    margin-left: 420px;
+    margin-left: 220px;
     margin-top: 50px;
     letter-spacing: 2px;
 }
 .div4{
     display: flex;
-    margin-left: 410px;
+    margin-left: 210px;
 }
 .sub1{
     width: 330px;
@@ -192,7 +192,7 @@ span b{
 }
 .div5{
     display: flex;
-    margin-left: 410px;
+    margin-left: 210px;
 }
 .sub2{
     width: 330px;
@@ -236,7 +236,7 @@ span b{
 }
 .div6{
     display: flex;
-    margin-left: 403px;
+    margin-left: 213px;
     padding: 10px;
 }
 .sub3{

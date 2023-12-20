@@ -1,6 +1,38 @@
 .in-puts{
+    width: 500px;
+    border: 1px solid rgb(224, 220, 220) ;
+    margin-left: 30%;
+    margin-top: 10%;
+    height: 340px;  
+    
+}
+.s-head{
+    box-shadow: rgba(0,0,0,0.25) 0px 3px 8px;
+}
+.in-puts h1{
+    margin-left: 31%;
+    margin-bottom: 40px;
+}
+.input-details{
     display: block;
-    align-items: center;
-    flex-direction: column;
-    /* background-color: aqua; */
+}
+.input-details .inp1{
+    display: block;
+    margin-left: 30%;
+    margin-top: 4px;
+    width: 200px;
+    outline: none;
+    /* border: none; */
+}
+.img-file{
+    margin-left: 30%;
+    margin-top: 4px;
+}
+.sign-btn{
+    margin-left: 41%;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    background: none;
+    
 }

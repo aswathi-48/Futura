@@ -4,9 +4,23 @@
     padding: 15px 15px;
     width: 90px;
     border-radius: 5px;
-    margin-left: 49%;
+    margin-left: 469%;
     margin-top: 10px;
     color: rgb(50, 49, 49);
     background: rgb(20, 153, 225)
     
+}
+.update-btn button{
+    border: none;
+    outline: none;
+    padding: 15px 15px;
+    width: 90px;
+    border-radius: 5px;
+    margin-left: 490%;
+    margin-top: 10px;
+    color: rgb(50, 49, 49);
+    background: rgb(20, 153, 225)
+}
+.main-buttons{
+    display: flex;
 }

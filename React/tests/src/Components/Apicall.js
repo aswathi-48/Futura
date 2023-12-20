@@ -4,14 +4,16 @@ import { publicRequest, userRequest } from "./RequestMethod";
 
 
 export const signupdata=async(datas)=>{
+    console.log('form dataaa' ,datas);
     try{
-        const res=await axios.post('http://localhost:7000/postmethod',datas)
-        // const res=await publicRequest.post('/postmethod',datas)
+        // const res=await axios.post('http://localhost:7000/postmethod',datas)
+        const res=await publicRequest.post('/postmethod',datas)
         console.log('final data',res);
     }catch(err){
         console.log('error');
     }
 }
+
 
 // export const getIdData=async(id)=>{
 //     console.log('id ?',id);
@@ -69,6 +71,8 @@ export const UpdateIdData=async(id,datas)=>{
     }
 }
 
+
+//login dataa
 export const LoginData=async(LoginValue,dispatch)=>{
     console.log(LoginValue);
 
@@ -81,10 +85,13 @@ export const LoginData=async(LoginValue,dispatch)=>{
     }
 }
 
-export const getProfile=async(id)=>{
+
+
+//getprofile
+export const getProfile =async(id)=>{ 
     console.log("where is id",id);
     try{
-        const res1= await userRequest.get(`/getdata/${id}`)
+        const res1=await userRequest.get(`/getdata/${id}`)
         console.log("final result",res1);
         return res1
     }catch(err){
@@ -92,9 +99,23 @@ export const getProfile=async(id)=>{
     }
 }
 
+//update data from the signup page
 
-export const updateProfile =async()=>{
+export const updateProfile= async(val)=>{
+    // console.log('idddddddd in apicall',id);
+    console.log('updateeee',val);
     try{
-        const res= await
+        const res2=await axios .put(`http://localhost:7000/updateValue/${val._id}`,{
+            FirstName:val.FirstName,
+            SecondName:val.SecondName,
+            Age:val.Age,
+            Address:val.Address,
+            Email:val.Email,
+        })
+        console.log('res222',res2);
+        return res2
+    }catch(err){
+        console.log(err);
     }
 }
+

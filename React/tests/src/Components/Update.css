@@ -1,0 +1,29 @@
+.main{
+    width: 200px;
+    height: 400px;
+    border: 1px solid rgb(222, 220, 220);
+    margin-top: 100px;
+    margin-left: 30%;
+    padding: 10px 70px;
+
+}
+.update-head h2{
+    margin-left: 65px;
+}
+.update-details{
+    display: block;
+    padding: 10px;
+        
+}
+
+.inp2,.inp3,.inp4,.inp5{
+    margin-top: 6px;
+    /* width: 200px; */
+}
+.U-btn{
+    outline: none;
+    border: none;
+    margin-left: 25%;
+    margin-top: 10px;
+
+}

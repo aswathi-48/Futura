@@ -5,6 +5,7 @@ import Product from './Product';
 import Cart from './Cart';
 import Contact from './Contact';
 import About from './About';
+import BuyNow from './BuyNow';
 
 
 const Rout = ({product,setProduct,detail,view, close, setClose,cart,setCart,addtocart}) => {
@@ -18,7 +19,7 @@ const Rout = ({product,setProduct,detail,view, close, setClose,cart,setCart,addt
         <Route path='/cart' element={<Cart cart={cart} setCart={setCart}/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/about' element={<About/>}/>
-        {/* <Route path='/buynow' element={<BuyPage/>}/> */}
+        <Route path='/buynow' element={<BuyNow/>}/>
       </Routes>
     </div>
   );

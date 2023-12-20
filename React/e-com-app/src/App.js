@@ -7,6 +7,7 @@ import Footer from "./Components/Footer";
 import Product from "./Components/Product";
 import ProductDetails from "./Components/ProductDetails";
 import { useState } from "react";
+import BuyNow from "./Components/BuyNow";
 
 
 
@@ -84,6 +85,7 @@ console.log(cart);
         <Rout product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addtocart={addtocart} />
         {/* <Home/> */}
         <Footer />
+        <BuyNow/>
       </BrowserRouter>
 
       {/* <RouterProvider router={router}></RouterProvider> */}

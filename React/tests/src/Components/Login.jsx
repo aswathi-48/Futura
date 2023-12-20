@@ -25,10 +25,18 @@ const Login = () => {
 
   return (
     <div>
-        <input type="text" placeholder='email' value={Email} onChange={(e)=>setEmail(e.target.value)} />
-        <input type="text" placeholder='password' value={Password} onChange={(e)=>setPassword(e.target.value)} />
+      <div className='log-in1'>
+        <div className='log-head'>
+          <h2>LogIn</h2>
+        </div>
+        <div className='log-details'>
+        <input type="text" placeholder='email' value={Email} onChange={(e)=>setEmail(e.target.value)} className='inpt-one'/>
+        <input type="text" placeholder='password' value={Password} onChange={(e)=>setPassword(e.target.value)} className='inpt-two'/>
         <button onClick={display}>Login</button>
 
+        </div>
+      </div>
+       
     </div>
   )
 }

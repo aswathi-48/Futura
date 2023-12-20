@@ -4,12 +4,15 @@ const dotenv=require('dotenv')      //This line imports the dotenv library, whic
 const mongoose=require('mongoose')
 const cors=require('cors')
 
-// app.use(()=>{
-//     console.log('first work');
-// })
-
 app.use(cors())
 dotenv.config()                   //This line invokes the config() method provided by the dotenv library, which loads the environment variables defined in a .env file into process.env
+
+//Application level middleware
+
+// app.use(function(req,res,next){
+//     console.log("all time first check");
+//     next()
+// })
 
 
 const userRoute=require('./Router/Userrouter')   //This line imports a user-defined module named Userrouter from the Router directory. This is presumably a custom route module that defines and handles routes related to user management.
@@ -21,7 +24,6 @@ mongoose.connect(process.env.Mongo_Url).then(()=>{    //mongoose is the Mongoose
 })
 
 app.use(express.json())    
- 
 app.use('/',userRoute)
 app.use('/',CrudRoute)
 

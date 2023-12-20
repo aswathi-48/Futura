@@ -25,7 +25,7 @@ const verifyToken =(req,res,next) =>{
 
 const verifyTokenAndauthorization =(req,res,next)=>{
     verifyToken(req,res,(data)=>{
-        console.log(data);
+        console.log(data); 
         console.log('req.user.id',req.user.id);
         console.log("req.param.id",req.params.id);
         if(req.user.id===req.params.id){

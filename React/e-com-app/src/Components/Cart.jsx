@@ -90,7 +90,7 @@ const Cart = ({cart,setCart}) => {
                     </div>
                     <div className='btnn'>
                     
-                    <button className='buy-btn' >Buy Now</button>
+                    <Link to='../Components/BuyNow.jsx'> <button className='buy-btn' >Buy Now</button></Link>
                     
                     </div>
                    

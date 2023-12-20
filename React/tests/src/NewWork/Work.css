@@ -1,0 +1,35 @@
+.main-one{
+    display: block;
+    height: 250px;
+    border: 1px solid black;
+    width: 400px;
+    margin-left: 24%;
+    margin-top: 100px;
+    border: 1px solid rgb(222, 220, 220);
+
+
+}
+.main-head{
+    border: 1px solid rgb(222, 220, 220);
+}
+.main-head h3{
+    margin-left: 29%;
+}
+.inp-detail{
+    margin-top: 50px;
+}
+.inp-detail input{
+    display: block;
+    margin-top: 4px;
+    margin-left: 25%;
+    outline: none;
+
+}
+.add-btn{
+    margin-left: 35%;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    width: 88px;
+}
+

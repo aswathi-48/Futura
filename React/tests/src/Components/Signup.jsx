@@ -13,31 +13,57 @@ const Signup = () => {
     const [Email,setEmail]=useState('')
     const [Password,setPassword]=useState('')
     const[id,setId]=useState("")
-    const [printSingleData,setPrintSingleData]=useState({})
+    const [Images,setImages]=useState({})
+    // const [printSingleData,setPrintSingleData]=useState({}),
+
+    let formData=new FormData()
+    formData.append("FirstName",FirstName)
+    formData.append('SecondName',SecondName)
+    formData.append("Age",Age)
+    formData.append("Address",Address)
+    formData.append("Email",Email)
+    formData.append("Images",Images)
+    formData.append("Password",Password)
+
+    const display=(e)=>{
+      e.preventDefault();
+      console.log('form data1 ***',formData);
+      signupdata(formData)
+    }
+
     
 
-    const display= async()=>{
-        signupdata({FirstName,SecondName,Age,Address,Email,Password})
-        // const res =await axios.get(`http://localhost:3000/singledata/${id}`)
-        // console.log(res.data);
-        // setPrintSingleData(res.data)
-        
-    }
+    // const display=async ()=>{
+    //     signupdata({FirstName,SecondName,Age,Address,Email,Password})
+    //     // const res =await axios.get(`http://localhost:7000/singledata/${id}`)
+    //     // console.log(res.data);
+    //     // setPrintSingleData(res.data)  
+    // }
+
+
   return (
     <div >
+      <form  onSubmit={display} encType='multipart/form-data' >
         <div className='in-puts'>
+          <div className='s-head'>
+          <h1>SignUp Page</h1>
+          </div>
+          <div className='input-details'>
+          <input type="text" placeholder='firstName' value={FirstName} onChange={(e)=>setFirstName(e.target.value)} className='inp1' />
+        <input type="text" placeholder='SecondName' value={SecondName} onChange={(e)=>setSecondName(e.target.value)} className='inp1'/>
+        <input type="text" placeholder='age' value={Age} onChange={(e)=>setAge(e.target.value)}  className='inp1'/>
+        <input type="text" placeholder='address' value={Address} onChange={(e)=>setAddress(e.target.value)} className='inp1'/>
+        <input type="text" placeholder='email' value={Email} onChange={(e)=>setEmail(e.target.value)} className='inp1'/>
+        <input type="file"  filename="Images" onChange={(e)=>setImages(e.target.files[0])} className='img-file'/>
+        <input type="text" placeholder='password' value={Password} onChange={(e)=>setPassword(e.target.value)} className='inp1'/>
+        
+          </div>
            {/* id <input type="text" value={id} onChange={(e)=>setId(e.target.value)} /> */}
-        <input type="text" placeholder='firstName' value={FirstName} onChange={(e)=>setFirstName(e.target.value)} />
-        <input type="text" placeholder='SecondName' value={SecondName} onChange={(e)=>setSecondName(e.target.value)} />
-        <input type="text" placeholder='age' value={Age} onChange={(e)=>setAge(e.target.value)} />
-        <input type="text" placeholder='address' value={Address} onChange={(e)=>setAddress(e.target.value)} />
-        <input type="text" placeholder='email' value={Email} onChange={(e)=>setEmail(e.target.value)} />
-        <input type="text" placeholder='password' value={Password} onChange={(e)=>setPassword(e.target.value)} />
-        
-        
-        <button onClick={display}>Submit</button>
-      
+        <div className='sign-btn'>
+        <button type='submit'>SignUp</button>
         </div>
+        </div>
+        </form>
     </div>
   )
 }

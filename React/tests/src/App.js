@@ -6,6 +6,8 @@ import SingleData from './Components/SingleData';
 import Login from './Components/Login';
 import { useSelector } from 'react-redux';
 import Homeone from './Components/Homeone';
+import Update from './Components/Update';
+import Work from './NewWork/Work';
 // import Updatedata from './Components/Updatedata';
 
 function App() {
@@ -40,6 +42,14 @@ function App() {
     {
       path:"login",
       element:<Login/>
+    },
+    {
+      path:'update',
+      element:<Update/>
+    },
+    {
+      path:'work',
+      element:<Work/>
     }
 
    
@@ -51,6 +61,7 @@ function App() {
     //   <LoginSignUpP/>
     //   <Signup/>
     // </div>
+
   );
 }
 

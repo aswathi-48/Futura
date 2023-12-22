@@ -19,10 +19,10 @@ function App() {
       path:'cartpage',
       element:<CartDisplay/>
     },
-    // {
-    //   path:'loginsignup',
-    //   element:<LoginSignUp/>
-    // }
+    {
+      path:'loginsignup',
+      element:<LoginSignUp/>
+    }
    
 
   ])

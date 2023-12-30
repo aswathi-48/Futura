@@ -12,5 +12,18 @@ const UserSchema=new mongoose.Schema({
         type:Date,
         required:true,
     },
+
+
+    // password:{
+    //     type:String,
+    //     required:true,
+    // },
+    // varified:{
+    //     type:Boolean,
+    //     default:false,
+    // }  
+    
+    
+
 })
 module.exports=mongoose.model('NodeMailer',UserSchema)

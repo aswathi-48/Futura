@@ -1,0 +1,57 @@
+.Nav{
+    height: 70px;
+    /* border: 1px solid black; */
+    box-shadow: 0px 5px 18px #0000000d
+
+}
+.Nav-main{
+    display: flex;
+    justify-content: space-between;
+}
+.Nav-cat{
+    padding: 10px;
+    margin-top: 10px;
+}
+.Nav-cat button{
+    padding: 5px ;
+    margin-left: 13px;
+    border: none;
+    font-size: 20px;
+    /* outline: none; */
+    background-color: white;
+}
+.Nav-search{
+    margin-top: 22px;
+    border-radius: 10px;
+}
+.Nav-search input{
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+}
+.Nav-search button{
+    border-radius: 10px;
+    border:1px solid rgb(161, 159, 159);
+    background: none;
+
+}
+.icons-one{
+    display: inline;
+}
+.search-icon{
+    /* margin-top: 5px; */
+    height: 10px;
+}
+.Nav-cart{
+    /* margin-top: 23px; */
+    /* margin-right: 33px; */
+    /* width: 50px; */
+    display: flex;
+}
+.Nav-cart .icons{
+    margin-right: 23px;
+   
+    /* height: 30px; */
+    
+}

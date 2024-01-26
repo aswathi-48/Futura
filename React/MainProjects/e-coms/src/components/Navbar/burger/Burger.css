@@ -1,0 +1,16 @@
+.container{
+    padding: 20px;
+}
+.burger-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.burger-item{
+    width: 18%; /* Set the width to a percentage to ensure 5 items per row */
+    margin-bottom: 20px;
+}
+.burger-img{
+    width: 100px;
+    height: auto;
+}

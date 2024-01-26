@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MdOutlineLockOpen } from "react-icons/md";
 import { HiOutlineMail } from "react-icons/hi";
 import './Login.css'
+import { LoginValue } from '../ApiCallll/ApiCall';
+import { useDispatch } from 'react-redux';
+
+
 const Login = () => {
+    const dispatch = useDispatch();
+    const [Email,setEmail] =useState('')
+    const [Password,setPassword] = useState('')
+
+
+
+    const display = () => {
+        try{
+            LoginValue(dispatch,{Email,Password})
+        }catch(err){
+            console.log(err);
+        }
+    }
     return (
         <div className='login'>
             <div className='log-main'>
@@ -15,17 +32,17 @@ const Login = () => {
                         <div className='log-body-one'>
                             <div className='log-body-cntnt'>
                                 <HiOutlineMail className='log-icon' />
-                                <input type="email" placeholder='Email' />
+                                <input type="email" placeholder='Email' onChange={(e)=>setEmail(e.target.value)} />
                             </div>
                             <div className='log-body-cntnt'>
                                 <MdOutlineLockOpen className='log-icon' />
-                                <input type="password" placeholder='Passoword' />
+                                <input type="password" placeholder='Passoword' onChange={(e)=>setPassword(e.target.value)} />
                             </div>
                             <div className='log-frgt'> 
                                 <p>Forget Password?</p>
                             </div>
                             <div className='log-btn'>
-                                <button>Login</button>
+                                <button onClick={display}>Login</button>
                             </div>
                             <div className='log-para'>
                             <p>Don't have an account?<Link to='/register' className='log-link'>Register</Link></p>

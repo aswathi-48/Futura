@@ -8,9 +8,16 @@ import { useSelector } from 'react-redux';
 import Homeone from './Components/Homeone';
 import Update from './Components/Update';
 import Work from './NewWork/Work';
+import { Product } from './Extra/Product';
+import { useState } from 'react';
+
+
 // import Updatedata from './Components/Updatedata';
 
 function App() {
+
+  
+
   const data=useSelector((state)=>state.users.userInfo[0])
   console.log('**',data);
   if(data){
@@ -50,6 +57,10 @@ function App() {
     {
       path:'work',
       element:<Work/>
+    },
+    {
+      path:"product",
+      element:<Product/>
     }
 
    
@@ -57,12 +68,15 @@ function App() {
   return (
     <RouterProvider router={router}></RouterProvider>
 
+  )
+
     // <div className="App">
     //   <LoginSignUpP/>
     //   <Signup/>
     // </div>
+    
 
-  );
+  
 }
 
 export default App;

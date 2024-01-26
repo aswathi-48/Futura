@@ -1,0 +1,132 @@
+.additem{
+ margin-left: 270px;
+ width: 1200px;
+ height: 600px;
+ border: 1px solid whitesmoke;
+ padding: 33px 70px;
+ margin-top: 22px;
+ background: rgb(242, 237, 237);
+ 
+}
+
+.cat-inpt{
+  margin-left: 40px;
+  border: none;
+  /* background-color: aquamarine; */
+  /* border-radius: 20px; */
+  padding: 20px;
+  width: 1029px;
+  outline: none;
+}
+.cat input::placeholder{
+  background-color: rgb(238, 235, 240);
+  padding: 8px;
+}
+.type-inpt{
+    margin-left: 71px;
+  border: none;
+  padding: 20px;
+  width: 1029px;
+  outline: none;
+ 
+
+}
+.title-inpt{
+  margin-left: 74px;
+  border: none;
+  padding: 20px;
+  width: 1029px;
+  outline: none;
+
+
+}
+.des-inpt{
+    margin-left: 23px;
+  border: none;
+  padding: 20px;
+  width: 1029px;
+  outline: none;
+
+
+}
+.mrp-inpt{
+    margin-left: 73px;
+  border: none;
+  padding: 20px;
+  width: 1029px;
+  outline: none;
+
+
+}
+.price-inpt{
+    margin-left: 68px;
+  border: none;
+  padding: 20px;
+  width: 1029px;
+  outline: none;
+
+}
+.img-file{
+    border: none;
+  padding: 20px;
+  width: 1029px;
+  margin-left: 59px;
+  background-color: white;
+}
+.cat{
+    padding: 10px;
+    /* background: rgb(242, 237, 237); */
+    background: whitesmoke;
+}
+.sub-btn{
+  border: none;
+  /* width: 200px; */
+  /* width: 1029px; */
+  padding: 10px;
+  /* background-color: rgb(238, 235, 240); */
+  /* background-color:blue; */
+  /* margin-left: 90px; */
+  margin-left: 500px;
+  border-radius: 10px;
+  width: 200px;
+  margin-top: 20px;
+  font-size: 18px;
+
+}
+.sub-btn:hover{
+  background: green;
+}
+.head h3{
+  color: blue;
+  font-size: 22px;
+  margin-left: 10px;
+}
+.head p{
+  margin-left: 5px;
+}
+
+
+
+
+
+
+/* .type{
+    padding: 10px;
+
+}
+.titile{
+    padding: 10px;
+
+}
+.des{
+    padding: 10px;
+
+}
+.mrp{
+    padding: 10px;
+
+}
+.price{
+    padding: 10px;
+
+} */

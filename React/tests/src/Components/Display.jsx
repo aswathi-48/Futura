@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const Display = () => {
 
     const [printData,setPrintData]=useState([])
     const[data,setData]=useState([])
+
 
     // useEffect(()=>{
     //     const resData= async()=>{
@@ -14,10 +16,11 @@ const Display = () => {
     //     }
     //     resData()
     // },[])
-const displayHandler=async()=>{
+
+    const displayHandler=async()=>{
     const res=await axios.get("http://localhost:7000/getmethod")
     setPrintData(res.data)
-}
+    }
     
 
   return (

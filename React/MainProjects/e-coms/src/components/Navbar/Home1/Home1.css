@@ -1,0 +1,189 @@
+.imge img{
+    margin-top: 20px;
+    width: 1359px;
+    height: 350px;
+    margin-left: 140px;
+}
+
+.imge {
+    position: relative;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* or your desired text color */
+    font-size: 18px; /* or your desired font size */
+    font-weight: bold; /* or your desired font weight */
+    text-align: center;
+    /* Add any other styling you want for the text */
+}
+.image-text p{
+    margin-left: 100px;
+}
+.image-text img{
+    width: 590px;
+    height: 180px;
+    color: white;
+    margin-left: 490px;
+    /* background: white; */
+}
+
+
+/* -----------------------********************------------------------- */
+
+
+/* 
+  .box1{
+   
+    width: 330px;
+    height: 200;
+  }
+  .img_box1{
+    display: flex;
+    flex-direction: column;
+    padding: 26px 140px; 
+    width: 400px;
+    height: 400px;
+    background: #f1f1f1;
+  }
+  
+
+.full-data{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.img_box1 {
+  width: calc(20% - 20px);
+  margin: 10px;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img_box1 img{
+  width: 100px;
+  height: 100px;
+
+}
+
+.box1 div {
+  text-align: center;
+}
+.details1{
+  margin-top: 50px;
+  margin-left: 15px;
+
+}
+.details1 h4{
+  text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 200;
+    color: #9a9a9a;
+    letter-spacing: 1px;
+}
+.details1 h2{
+  margin-top: 20px;
+  font-size: 30px;
+  color: #010f1c;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+.details1  p{
+  margin-top: 10px;
+  color: #4a4a4a;
+  
+}
+.details1 h3{
+  margin-top: 10px;
+  color: #010f1c;
+  font-size: 29px;
+  letter-spacing: 1px;
+} */
+
+
+.item-container {
+  padding: 20px;
+}
+
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: 18%; /* Set the width to a percentage to ensure 5 items per row */
+  margin-bottom: 20px;
+  border: 1px solid #ccc; /* Add borders or other styling as needed */
+  height: 380px;
+  cursor: pointer;
+
+}
+.item:hover {
+  box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+  /* color: rgb(69, 221, 244); */
+  
+
+}.item:hover .icons{
+  /* transform: translateX(-50px); */
+
+}
+.item img {
+  width: 130px;
+  /* height: auto; */
+  margin-left: 70px;
+  /* margin-top: 10px; */
+
+}
+.item h3{
+  margin-left: 10px;
+  
+}
+.item p{
+  margin-left: 10px;
+}
+.icons{
+  /* z-index: 1; */
+  position: relative;
+  left: 250px;
+  /* right: 100px; */
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  margin-top: 20px;
+  font-size: 20px;
+  color: whitesmoke;
+}
+.icons:hover{
+
+}
+.icn{
+  color: whitesmoke;
+
+}
+.item:hover .icn{
+  color: #444444;
+}
+.icons li{
+  list-style: none;
+  padding: 3px 3px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: whitesmoke;
+
+  /* border-bottom: 1px solid#9a9a9a; */
+  color: #010f1c;
+  /* box-shadow: rgba(0,0,0,0.35) 0px 5px 15px; */
+  /* background: #fff; */
+}
+

@@ -1,0 +1,48 @@
+.Nav{
+    /* background-color: rgb(212, 249, 249); */
+    height: 100px;
+    width: 1420px;
+    margin-top: 5px;
+    margin-left: 230px;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+.search{
+   border: 1px solid whitesmoke;
+   margin-left: 100px;
+   background: white;
+   width: 350px;
+   border-radius: 50px;
+   margin-top: 20px;
+   padding: 5px;
+  
+}
+.icon{
+    margin-top: 5px;
+    margin-left: 6px;
+}
+.search input{
+    border: none;
+    outline: none;
+    padding: 6px;   
+}
+.search input::placeholder{
+    /* color: blue; */
+    font-size: 18px;
+   padding: 4px;
+}
+.user-icon{
+   margin-top: 20px;
+   color: white;
+   width: 20px;
+   margin-right: 200px;
+   font-size: 25px;
+   height: 40px;
+   /* background-color: whitesmoke; */
+}
+.ic{
+    color: blue;
+
+}

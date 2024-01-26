@@ -3,6 +3,7 @@ import { userDetails } from "../Redux/Userredux";
 import { publicRequest, userRequest } from "./RequestMethod";
 
 
+
 export const signupdata=async(datas)=>{
     console.log('form dataaa' ,datas);
     try{
@@ -91,7 +92,7 @@ export const LoginData=async(LoginValue,dispatch)=>{
 export const getProfile =async(id)=>{ 
     console.log("where is id",id);
     try{
-        const res1=await userRequest.get(`/getdata/${id}`)
+        const res1 = await userRequest.get(`/getdata/${id}`)
         console.log("final result",res1);
         return res1
     }catch(err){
@@ -119,3 +120,16 @@ export const updateProfile= async(val)=>{
     }
 }
 
+
+
+export const productss =async(pro) => {
+    console.log("dattttaaaa",pro);
+    try{
+        const productData= await axios.post('http://192.168.43.71:3000/api4/addproduct',pro)
+        console.log("****",productData);
+    }catch(err){
+        console.log(err);
+    }
+}
+
+// http://192.168.1.100:5000/api/data

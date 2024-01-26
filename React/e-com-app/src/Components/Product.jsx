@@ -82,7 +82,6 @@ const Product = ({ product, setProduct, detail, view, close, setClose ,addtocart
                           <div className='icons1'>
                             <li onClick={()=> addtocart (curElm)}> <AiOutlineShoppingCart /></li>
                             <li onClick={() => view (curElm)}> <BsEye /></li>
-                            {/* <li onClick={onTestClick()}> <BsEye /></li> */}
                             <li> <AiOutlineHeart /></li>
                           </div>
                         </div>

@@ -4,10 +4,10 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Register from './components/Reg-form/Register';
 import Login from './components/Login-Form/Login';
 import Root from './components/Root/Root';
-import Men from './components/Navbar/men/Men';
-import Women from './components/Navbar/Women/Women';
+import Men from './components/Navbar/pizza/Pizza';
+import Women from './components/Navbar/burger/Burger';
 import Home1 from './components/Navbar/Home1/Home1';
-import Kids from './components/Navbar/Kids/Kids';
+import Kids from './components/Navbar/Vegitem/VegItem';
 import { Cart } from './components/Navbar/CartPage/Cart';
 import Profile from './components/Navbar/ProfilePage/Profile';
 
@@ -27,15 +27,15 @@ function App() {
           element:<Home1/>
         },
         {
-          path:'/men',
+          path:'/pizza',
           element:<Men/>
         },
         {
-          path:'/women',
+          path:'/Burger',
           element:<Women/>
         },
         {
-          path:'/kids',
+          path:'/VegItem',
           element:<Kids/>
         },
         {

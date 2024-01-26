@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import './Profile.css'
 
 export const Profile = () => {
+
+
     const data=useSelector((state)=>state.userss.userValue)
     console.log('***',data);
+
+ 
   
   return (
     <>

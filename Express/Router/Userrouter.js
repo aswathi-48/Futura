@@ -41,7 +41,7 @@ router.post('/postmethod', upload.single('Images'), (req, res) => {   //router.p
         Password: Crypto.AES.encrypt(req.body.Password, process.env.Crypto_js).toString(),
         Address: req.body.Address,
     })
-
+ 
     try {
         const savedUser =  newUser.save()  //savedUser must be used ..before save the new user documents to database
         res.status(200).json(savedUser)

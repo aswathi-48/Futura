@@ -1,0 +1,79 @@
+.usermain{
+    margin-left: 650px;
+    margin-top: 200px;
+    border: 1px solid silver;
+    width: 320px;
+    height: 350px;
+    padding: 20px 40px;
+    border-radius: 30px;
+    margin-top: 120px;
+    background-color: rgba(60, 162, 117, 0.654);
+    box-shadow: 10px 10px 10px 4px rgba(147, 145, 145, 0.5);
+
+}
+.usermain h3{
+    margin-left: 100px;
+    color: rgb(31, 123, 38);
+    margin-top: 40px;
+    letter-spacing: 2px;
+
+}
+.user-secMain{
+    margin-top: 20px;
+    margin-left: 10px;
+    /* border: 1px solid silver; */
+    padding: 20px 75px;
+}
+.userimge img{
+    border-radius: 10px;
+    margin-left: 26px;
+    width: 100px;
+}
+.username{
+    color: white;
+    margin-left: 36px;
+    font-size: 22px;
+}
+.useremail{
+    color: white;
+    margin-left: 8px;
+    margin-top: 5px;
+}
+.updateBtn{
+    border: none;
+    outline: none;
+    margin-top: 18px;
+    padding: 10px;
+    width: 110px;
+    margin-left: 20px;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+}
+.updateBtn:hover{
+    background-color:rgb(6, 112, 6) ;
+}
+
+@media only screen and (min-width: 768px) {
+    .usermain {
+        margin-top: 5%;
+        /* align-items: start; */
+        /* margin-right: 1000px; */
+    }
+
+    .usermain h3 {
+        margin-top: 5%;
+    }
+
+    .user-secMain {
+        /* padding: 5%; */
+    }
+
+    .userimge img {
+        max-width: 150px;
+    }
+
+    .updateBtn {
+        /* width: 20%; */
+    }
+}

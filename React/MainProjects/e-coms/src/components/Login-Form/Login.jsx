@@ -16,7 +16,7 @@ const Login = () => {
 
     const display = () => {
         try{
-            LoginValue(dispatch,{Email,Password})
+            LoginValue({Email,Password},dispatch)
         }catch(err){
             console.log(err);
         }

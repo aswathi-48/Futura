@@ -1,0 +1,136 @@
+.contain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 23%;
+    border: 1px solid silver;
+    margin-top: 20px;
+    height: 380px;
+  }
+  
+/*  .list-item {
+   
+    border: 1px solid #ccc;
+    height: 380px;
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .itemm {
+    width: 100%;
+    width: 23%;
+    
+  }
+  
+  .itemm img {
+    width: 100%;
+    height: auto;
+    margin-left: 100px;
+    margin-top: 40px;
+  }
+  
+  .itemm h3,
+  .itemm p {
+    margin-left: 30px;
+    
+  
+  }
+  
+  .icons1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    font-size: 20px;
+    color: whitesmoke;
+    margin-top: 20px;
+    margin-left: 70px; 
+  }
+  
+  .icn {
+    color: whitesmoke;
+    margin-left: 180px;
+  }
+  
+  .itemm:hover .icn {
+    color: #444444;
+  }
+  
+  .icons1 li {
+    list-style: none;
+    padding: 3px 3px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: whitesmoke;
+    color: #010f1c;
+  }
+  
+
+   */
+.item__top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__bottom{
+  display: flex;
+  flex-direction: column;
+}
+.item__image img{
+  width: 130px;
+  margin-left: 95px;
+  margin-top: 90px;
+}
+.item_details{
+  margin-left: 20px;
+}
+/* .item__icons{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-top: 20px;
+  margin-left: 270px;
+} */
+.item__icons li{
+  list-style: none;
+    padding: 3px 3px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: whitesmoke;
+    color: #010f1c;
+    margin-right: 10px;
+}
+.icn{
+  color: white;
+}
+.contain:hover .icn{
+  color: #444444;
+
+}
+.contain:hover{
+  box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+
+}
+
+@media only screen and (max-width: 768px) {
+  .contain {
+    width: 48%;
+  }
+  .item__image img{
+    width: 100%; /* Adjust image width to fit smaller screens */
+    margin-top: 10px; /* Reduce margin-top for smaller screens */
+    margin-left: 0;
+  }
+  .item_details{
+    margin-left: 10px; /* Adjust margin for smaller screens */
+  }
+}

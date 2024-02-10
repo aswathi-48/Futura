@@ -4,6 +4,7 @@ import { HiOutlineMail } from 'react-icons/hi'
 import { MdOutlineLockOpen } from 'react-icons/md'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import './UpdateProfile.css'
 import { getadminprofile,  updateProfiles } from './ApiCallll/Apicall'
 
 const UpdateProfile = () => {
@@ -63,29 +64,29 @@ const UpdateProfile = () => {
 
 
   return (
-    <div>
-         <div className='register'>
+    <div className='maindiv-'>
+         <div className='update'>
             <form action="" onSubmit={updateDatas} encType='multipart/form-data'>
-            <div className='reg-main'>
-                <div className='reg-main-one'>
-                <div className='reg-head'>
+            <div className='upd-main'>
+                <div className='upd-main-one'>
+                <div className='upd-head'>
                     <h4>Update</h4>
                 </div>
-                <div className='reg-body'>
-                    <div  className='reg-body-one'>
-                    <div className='reg-body-cntnt'>
-                    <CgGirl className='reg-icon'/>
+                <div className='upd-body'>
+                    <div  className='upd-body-one'>
+                    <div className='upd-body-cntnt'>
+                    <CgGirl className='upd-icon'/>
                         <input type="text" value={Name} placeholder='name' onChange={(e) => setName(e.target.value)}/>
                     </div>
-                    <div className='reg-body-cntnt'>
-                    <HiOutlineMail className='reg-icon'/>
+                    <div className='upd-body-cntnt'>
+                    <HiOutlineMail className='upd-icon'/>
                         <input type="email" value={Email} placeholder='email' onChange={(e) => setEmail(e.target.value)} />
                     </div>
-                    {/* <div className='reg-body-cntnt'>
-                    <MdOutlineLockOpen className='reg-icon'/>
+                    {/* <div className='upd-body-cntnt'>
+                    <MdOutlineLockOpen className='upd-icon'/>
                         <input type="password" placeholder='Passoword'onChange={(e) => setPassword(e.target.value)} />
                     </div> */}
-                    <div className='reg-body-cntnts'>
+                    <div className='upd-body-cntnts'>
                     <input type="file"  filename="Images"   onChange={(e)=>setImages(e.target.files[0])} className='img-file'/>
                     </div>
                     <div className='up-btn'>

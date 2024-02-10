@@ -1,4 +1,69 @@
-.user{
+.user {
     margin-top: 100px;
     margin-left: 300px;
-}
+    border: 1px solid rgb(255, 255, 255);
+    width: 1300px;
+    /* height: 400px; */
+    height: auto;
+
+  }
+  
+  .main-div {
+    padding: 50px 160px;
+    background: rgb(242, 237, 237);
+    width: 900px;
+    
+  }
+  
+  .main-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .main-head {
+    font-size: 19px;
+    font-weight: bold;
+  }
+  
+  .first-tr th {
+    padding: 10px;
+    text-align: left;
+    /* border-bottom: 1px solid #ddd; */
+  }
+  
+  .name-th {
+    width: 30%;
+  }
+  
+  .email-th {
+    width: 30%;
+   margin-left: 100px
+  }
+  
+  .remove-th th{
+    width: 40%;
+    
+  }
+  
+  .name-item,
+  .email-item,
+  .rmv-btn
+   {
+    padding: 10px;
+    /* border-bottom: 1px solid #ddd; */
+    /* background-color: rgb(238, 235, 240); */
+
+    /* color: white;     */
+
+  }
+  
+  .rmv-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    /* margin-left: 100px; */
+    background-color: rgb(255, 17, 17);
+    color: white;
+  }
+ 

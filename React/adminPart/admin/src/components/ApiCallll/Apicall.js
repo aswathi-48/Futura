@@ -54,8 +54,8 @@ export const userss = async(id)=>{
 export const getadminprofile = async(id) => {
     console.log("id....??",id);
     try{
-        const response = await userRequest.get(`/getadmindetails/${id}`)
-        console.log("dataaaa getadmin update ",response);
+        const response = await userRequest.get(`/data1/getadmindetails/${id}`)
+        console.log("dataaaa getadmin update ",response.data);
         return response.data
        }catch(err){
         console.log(err);
@@ -79,6 +79,53 @@ export const updateProfiles = async (upval) =>{
     }
 }
 
+// update items
+
+export const updateItemDetails = async(updatevalue) =>{
+    console.log("updateevalueess",updatevalue);
+    try{
+        const updateRes = await axios.put(`http://localhost:5000/data2/updateItems/${updatevalue._id}`,{
+            category:updatevalue.category,
+            type:updatevalue.type,
+            title:updatevalue.title,
+            description:updatevalue.description,
+            price:updatevalue.price,
+            Images:updatevalue.Images
+        })
+        console.log("updateResss",updateRes);
+        return updateRes
+    }catch(err){
+        console.log(err);
+    }
+}
+
+
+//itemsget
+
+
+export const getitemDetails =async(id) => {
+    try{
+        const resp = await axios.get(`http://localhost:5000/data2/getItemDetails/${id}`)
+        console.log("data getitem",resp.data);
+        return resp.data
+    }catch(err){
+        console.log(err);
+    }
+}
+
+//items delete 
+
+export const DeleteItems = async(id) =>{
+    console.log('idd',id);
+    try{
+        const deleteItems = await axios.delete(`http://localhost:5000/data2/itemsDelete/${id}`)
+        console.log('deleteee',deleteItems);
+    }catch(err){
+        console.log(err);
+
+    }
+}
+
 //user details delete 
 
 export const DeleteUserData = async (id) => {
@@ -92,3 +139,28 @@ export const DeleteUserData = async (id) => {
 }
 
 
+//itemsget
+
+export const itemview = async (id) => {
+    console.log("product-data",id);
+    try {
+        const res = await axios.get('http://localhost:5000/data2/ViewItems',id)
+        console.log('getproduct',res.data);
+        return res
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const viewDetails = async (id) => {
+    console.log('idddd00000',id);
+    try {
+        const ress = await userRequest.get(`/data2/getItemDetails/${id}`);
+        console.log('detailsss', ress.data);
+        return ress.data;
+
+
+    } catch (err) {
+        console.log(err);
+    }
+};

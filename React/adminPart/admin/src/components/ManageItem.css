@@ -1,0 +1,108 @@
+.maindiv{
+    margin-left: 270px;
+}
+/* .manage-body-one{
+    display: flex;
+}
+.tab-hed2{
+    margin-left: 190px;
+}
+.tab-hed3{
+    margin-left: 190px;
+}
+.tab-hed4{
+    margin-left: 190px;
+}
+
+.tab-body2{
+    margin-left: 100px;
+
+}
+.tab-body3{
+    margin-left: 190px;
+
+}
+
+
+.manage-body-two{
+    display: flex;
+} */
+
+/* Your existing styles for 'manage' and 'manage-head' go here */
+.manage{
+    margin-right: 50px;
+}
+.manage-body-one {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-weight: bold; /* Make the header row bold */
+  }
+  
+  .manage-body-two {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tab-hed1,
+  .tab-body-img,
+  .tab-hed2,
+  .tab-body1,
+  .tab-hed3,
+  .tab-body2,
+  .tab-hed4,
+  .tab-body3 {
+    flex: 1;
+    text-align: center;
+  }
+  .tab-body3{
+    margin-right: 15px;
+  }
+  .tab-hed4{
+    margin-right: 15px;
+  }
+  /* If you want alternating row colors */
+  .manage-body-two:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Your existing styles for 'tab-hed5', 'tab-hed', 'tab-body', etc. go here */
+  .update-btn,
+.delete-btn {
+  /* flex: 0; */
+  margin-left: 10px;
+  /* text-align: center; */
+}
+.update-btn{
+    margin-right: 23px;
+}
+.upd-hed {
+    /* margin-left: 10px; */
+  margin-right: 37px;
+}
+.del-hed{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.update-btn button{
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.update-btn button:hover{
+    background-color: #45a049;
+}
+.delete-btn button{
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: red;
+}

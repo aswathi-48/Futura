@@ -12,20 +12,21 @@ const Register = () => {
     const [Name ,setName] = useState('')
     const [Email,setEmail]= useState('')
     const [Password,setPassword] = useState('')
+    const [Images,setImages] = useState({})
 
 
      let formData = new FormData()
      formData.append ('Name', Name)
      formData.append ('Email', Email)
      formData.append ('Password', Password)
-
+     formData.append ("Images",Images)
 
     const display = (e) =>{
       e.preventDefault();
         // registerValue({Name,Email,Password})
 
         console.log("form dtaaaaaa",formData);
-        registerValue({Name,Email,Password})
+        registerValue(formData)
     }
 
     return (
@@ -49,6 +50,9 @@ const Register = () => {
                     <div className='reg-body-cntnt'>
                     <MdOutlineLockOpen className='reg-icon'/>
                         <input type="password" placeholder='Passoword' value={Password} onChange={(e) => setPassword(e.target.value)} />
+                    </div>
+                    <div className='reg-body-cntnts'>
+                    <input type="file"  filename="Images" onChange={(e)=>setImages(e.target.files[0])} className='img-file'/>
                     </div>
                     <div className='reg-btn'>
                         <button type='submit'>Create Account</button>

@@ -10,16 +10,16 @@ import Home from './Home';
 const Product = ({ product, setProduct, detail, view, close, setClose ,addtocart,}) => {
 
 
-
   const filtterproduct = (product) => {
     const update = ProductDetails.filter((x) => {
       return x.Cat === product;
     })      
     setProduct(update);
-  }
+  }    
   const Allproducts = () => {
     setProduct(ProductDetails)
   }
+  
   return (
     <>
 

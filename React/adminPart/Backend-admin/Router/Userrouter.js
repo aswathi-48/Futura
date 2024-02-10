@@ -89,28 +89,33 @@ router.get('/getMethod',async (req,res) => {
 })
 
 
-router.get ('/getadmindetails/:id',verifyTokenn,verifyTokenAndAuthorization,async(req,res) => {
-    console.log('req in getadmin',req.body);
-    try{
-        const getres = await adminUser.findById(req.params.id)
-        console.log("ressvalue",getres);
-        res.status(200).json(getres)
-    }catch(err){
-        res.status(500).json(err)
-    }
-})
+    router.get ('/getadmindetails/:id',verifyTokenn,verifyTokenAndAuthorization,async(req,res) => {
+        console.log('req in getadmin',req.body);
+        try{
+            const getres = await adminUser.findById(req.params.id)
+            console.log("ressvalue",getres);
+            res.status(200).json(getres)
+        }catch(err){
+            res.status(500).json(err)
+        }
+    })
 
 
-router.put('/updateAdminProfile/:id', async (req,res) => {
-    try{
-        const updateValue = await adminUser.findByIdAndUpdate(req.params.id, {
-            $set: req.body
-        }, { new: true })
-        res.status(200).json(updateValue)
-    }catch(err){
-        res.status(500).json(err)
-    }
-})
+    router.put('/updateAdminProfile/:id', async (req, res) => {
+        console.log('^^^^',req.params.id);
+        try{
+            const updateValue = await adminUser.findByIdAndUpdate(req.params.id, 
+                {
+                $set: req.body
+            }, { new: true });
+            res.status(200).json(updateValue)
+    console.log('mmmm',updateValue);
+
+        }catch(err){
+            res.status(500).json(err)
+        }
+    })
+
 
 
 

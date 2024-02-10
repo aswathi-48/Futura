@@ -1,0 +1,133 @@
+.cart__container{
+    /* padding: 40px 50px; */
+    width: 100%;
+    background: #f1f1f1;
+    border-bottom: 1px solid #9a9a9a;
+}
+.cart__container h1{
+    margin-left: 100px;
+}
+.cart__top{
+    max-width: 100%;
+    padding: 20px 30px;
+
+}
+.cart__items{
+    padding: 20px 30px;
+    display: flex;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.cart__image{
+    padding: 20px 20px;
+    background: #f1f1f1;
+}
+.cart__image img{
+    width: 220px;
+    height: 220px;
+    margin-top: 20px;
+
+}
+.cart__details{
+    margin-left: 60px;
+    display: flex;
+    margin-top: 30px;
+    padding: 20px 30px;
+}
+.cart__info h3{
+    margin-top: 20px;
+    color: #010f1c;
+    font-size: 22px;
+    /* font-weight: 200; */
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.cart__info p{
+    margin-top: 10px;
+    color: #010f1c;
+    /* font-weight: 500px; */
+    letter-spacing: 1px;
+}
+.item__qnty{
+    margin-top: 10px;
+    display: flex;
+}
+.incqnty{
+    padding: 10px 10px;
+    background: none;
+    outline: none;
+    border: none;
+    color: #0078f9;
+    font-size: 28px;
+    cursor: pointer;
+}
+.decqnty{
+    padding: 10px 10px;
+    background: none;
+    outline: none;
+    border: none;
+    color: #0078f9;
+    font-size: 29px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.item__qnty input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 22px;
+    color: #010f1c;
+    width: 50px;
+    margin-left: 20px;
+}
+.item__qnty h3{
+    font-size: 22px;
+
+}
+.subtotal{
+    color: #010f1c;
+    font-size: 22px;
+    margin-top: 10px;
+}
+.cart__remove{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.close__button{
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #db0045;
+    background: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.Totalprice{
+    margin-left: 40%;
+    letter-spacing: 1px;
+    font-size: 22px;
+    color: rgb(57, 57, 57);
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+.Totalprice span{
+    color: #8f8d8d;
+}
+.buy__btn {
+    height: 50px;
+    width: 200px;
+    margin-top: 250px;
+    border: none;
+    padding: 10px;
+border-radius: 6px;
+background-color: rgb(79, 79, 79);
+    /* margin-left: px; */
+    color: white;
+}
+.buy__btn:hover{
+    background-color: green;
+
+}

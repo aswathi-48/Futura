@@ -6,7 +6,7 @@
 }
 .main-dash{
     margin-left: 290px;
-    border: 1px solid silver;
+    border: 2px solid rgb(228, 220, 220);
     width: 76%;
     height: 650px;
     padding: 10px 15px;
@@ -203,3 +203,4 @@ details h1{
     margin-left: 10px;
 
 }
+

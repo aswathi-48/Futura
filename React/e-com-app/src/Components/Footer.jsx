@@ -39,7 +39,7 @@ const Footer = () => {
                 <h3>Pages</h3>
                 <ul>
                     <li>Home</li>
-                    <li>About</li>
+                    <li>About</li>  
                     <li>Contact</li>
                     <li>Term & Conditions</li>
                 </ul>

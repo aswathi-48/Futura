@@ -46,3 +46,20 @@
     color: blue;
 
 }
+
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search {
+        margin-left: 10;
+        margin-bottom: 20px;
+    }
+
+    .user-icon {
+        margin-right: 0;
+    }
+}

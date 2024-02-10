@@ -1,3 +1,38 @@
+import pizza1 from '../../public/Assets/pizza/cheese-tomato-pizza.png'
+import pizza2 from '../../public/Assets/pizza/CHEESE-MUSHROOM-PIZZA.jpg'
+import pizza3 from '../../public/Assets/pizza/cheese-tomato-pizza.png'
+import pizza4 from '../../public/Assets/pizza/BBQ-chicken-pizza-.jpg'
+import pizza5 from '../../public/Assets/pizza/cheese.jpg'
+import pizza6 from '../../public/Assets/pizza/classic-cheese-pizza-.jpg'
+import pizza7 from '../../public/Assets/pizza/double_cheese_margherita_pizza_.png'
+import pizza8 from '../../public/Assets/pizza/Masala-Pizzas-1024x428.png'
+import pizza9 from '../../public/Assets/pizza/pizza1.webp'
+import pizza10 from '../../public/Assets/pizza/pizza2.jpg'
+import pizza11 from '../../public/Assets/pizza/pizza3.jpg'
+import pizza12 from '../../public/Assets/pizza/pizza4.jpg'
+import pizza13 from '../../public/Assets/pizza/prawn-pizza.jpg'
+import pizza14 from '../../public/Assets/pizza/spicy-chichen.jpg'
+import pizza15 from '../../public/Assets/pizza/spicy.jpg'
+
+
+import burger1 from '../../public/Assets/burger/beef-burger3.jpg'
+import burger2 from '../../public/Assets/burger/beef-cheese.jpg'
+import burger3 from '../../public/Assets/burger/big-double.jpg'
+import burger4 from '../../public/Assets/burger/grilled-beef.jpg'
+import burger5 from '../../public/Assets/burger/burger1.jpg'
+import burger6 from '../../public/Assets/burger/burger5.jpg'
+import burger7 from '../../public/Assets/burger/burger6.jpg'
+import burger8 from '../../public/Assets/burger/burger7.jpg'
+import burger9 from '../../public/Assets/burger/cheeseburger.jpg'
+import burger10 from '../../public/Assets/burger/craft-beef-burger-french-fries.jpg'
+import burger11 from '../../public/Assets/burger/grilled-beef.jpg'
+import burger12 from '../../public/Assets/burger/grilled-burger-f.jpg'
+import burger13 from '../../public/Assets/burger/hamburger-.jpg'
+import burger14 from '../../public/Assets/burger/hamburger.jpg'
+import burger15 from '../../public/Assets/burger/grilled-cheeseburger.jpg'
+import burger16 from '../../public/Assets/burger/cheeseburger.jpg'
+
+import veg1 from '../../public/Assets/veg/1.jpg'
 
 
 
@@ -7,11 +42,11 @@ export const apiValue = [
         id: 1,
         category: 'pizza',
         type: 'pizza',
-        title: 'BBQ Chicken',
+        title: 'Tomoto filled',
         description: 'Chicken filled pizzaaaa',
         mrp: 630,
-        // img:"../../../public/Assets/pizza/bbq chicken.jpg"
-        img:'https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?w=740&t=st=1706108227~exp=1706108827~hmac=be8d7ab066f511456d4626bfd2711344c9c3d59c696479fd14330b573fc1e2ff'
+        img:pizza1
+        // img:'https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?w=740&t=st=1706108227~exp=1706108827~hmac=be8d7ab066f511456d4626bfd2711344c9c3d59c696479fd14330b573fc1e2ff'
     },
     {
         id: 2,
@@ -20,7 +55,7 @@ export const apiValue = [
         title: 'cheesee',
         description: 'cheese mushroom pizzaa',
         mrp: 780,
-        img:'../../../public/Assets/pizza//CHEESE-MUSHROOM-PIZZA.jpg'
+        img:pizza2
         
     },
     {
@@ -30,7 +65,7 @@ export const apiValue = [
         title: 'Tomato cheese',
         description: 'cheesee tomoto pizzaa',
         mrp: 400,
-        img:'../../../public/Assets/pizza/cheese-tomato-pizza.png'
+        img:pizza3
     },
     {
         id: 4,
@@ -39,7 +74,7 @@ export const apiValue = [
         title: 'BBQ chichen',
         description: 'Barbeque chicken',
         mrp: 460,
-        img: '../../../public/Assets/pizza/BBQ-chicken-pizza-.jpg'
+        img:pizza4
     },
     {
         id: 5,
@@ -48,7 +83,7 @@ export const apiValue = [
         title: 'cheesee',
         description: 'cheesee pizzaaa',
         mrp: 560,
-        img: '../../../public/Assets/pizza/cheese.jpg'
+        img: pizza5
     },
     {
         id: 6,
@@ -57,7 +92,7 @@ export const apiValue = [
         title: 'classic',
         description: 'classic pizzaa',
         mrp: 80,
-        img: '../../../public/Assets/pizza/classic-cheese-pizza-.jpg'
+        img: pizza6
     },
     {
         id: 7,
@@ -66,16 +101,16 @@ export const apiValue = [
         title: 'margherita',
         description: 'double_cheese_margherita',
         mrp: 700,
-        img: '../../../public/Assets/pizza/double_cheese_margherita_pizza_.png'
+        img: pizza7
     },
     {
         id: 8,
         category: 'pizza',
         type: 'pizza',
         title: 'pizza',
-        description: 'Masala pizzaa',
+        description:'Masala pizzaa',
         mrp: 568,
-        img: '../../../public/Assets/pizza/Masala-Pizzas-1024x428.png'
+        img: pizza8
     },
     {
         id: 9,
@@ -85,7 +120,7 @@ export const apiValue = [
         description: 'tomato filled pizza',
         mrp: 129,
 
-        img: '../../../public/Assets/pizza/pizza1.webp'
+        img:pizza9
     },
     {
         id: 10,
@@ -95,7 +130,7 @@ export const apiValue = [
         description: 'cheese loaded pizza',
         mrp: 420,
 
-        img: '../../../public/Assets/pizza/pizza2.jpg'
+        img:pizza10
     },
     {
         id: 11,
@@ -104,7 +139,7 @@ export const apiValue = [
         title: 'pizza',
         description: 'cheeseee pizza',
         mrp:234,
-        img: '../../../public/Assets/pizza/pizza3.jpg'
+        img: pizza11
     },
     {
         id: 12,
@@ -113,7 +148,7 @@ export const apiValue = [
         title: 'pizza',
         description: 'pizzaa',
         mrp:134 ,
-        img: '../../../public/Assets/pizza/pizza4.jpg'
+        img: pizza12
     },
     {
         id: 13,
@@ -122,7 +157,7 @@ export const apiValue = [
         title: 'prawn pizza',
         description: 'Prawn pizzaa',
         mrp: 280,
-        img: '../../../public/Assets/pizza/prawn-pizza.jpg'
+        img: pizza13
     },
     
         {
@@ -132,7 +167,7 @@ export const apiValue = [
             title: 'spicy pizza',
             description: 'spicy chichen pizzaa',
             mrp: 380,
-            img: '../../../public/Assets/pizza/spicy-chichen.jpg'
+            img: pizza14
         },
     
         {
@@ -142,7 +177,7 @@ export const apiValue = [
             title: 'tandoori pizza',
             description: 'tandoori chichen pizzaa',
             mrp: 490,
-            img: '../../../public/Assets/pizza/tandoori.jpg'
+            img: pizza15
         },
 
 
@@ -153,7 +188,8 @@ export const apiValue = [
             title:'Burger',
             description:"Tastyy beef burger" ,
             mrp:399,
-            img:'../../../public/Assets/burger/beef-burger3.jpg'
+            img:burger1
+            // img:"https://img.freepik.com/free-photo/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce_90220-1266.jpg?size=626&ext=jpg&ga=GA1.1.2036638249.1701017343&semt=sph"
         },
         {
             id:17,
@@ -162,7 +198,7 @@ export const apiValue = [
             title:'Burger',
             description:"Cheesee Beef burger",
             mrp:439,
-            img:"../../../public/Assets/burger/beef-cheese.jpg"
+            img:burger2
         },
         {
             id:18,
@@ -171,7 +207,7 @@ export const apiValue = [
             title:'Burger',
             description:"Big double burger",
             mrp:699,
-            img:"../../../public/Assets/burger/big-double.jpg"
+            img:burger3
         },
         {
             id:19,
@@ -180,7 +216,7 @@ export const apiValue = [
             title:'Burger',
             description:"Tasty spicy burger",
             mrp: 599,
-            img:"../../../public/Assets/burger/buger2.jpg"
+            img:burger4
         },
         {
             id:20,
@@ -189,7 +225,7 @@ export const apiValue = [
             title:'Burger',
             description:"Tasty burger",
             mrp:390,
-            img:'../../../public/Assets/burger/burger1.jpg'
+            img:burger5
         },
         {
             id:21,
@@ -198,7 +234,7 @@ export const apiValue = [
             title:'Burger',
             description:"Beef burger",
             mrp:200,
-            img:"../../../public/Assets/burger/burger5.jpg"
+            img:burger6
         },
         {
             id:22,
@@ -207,7 +243,7 @@ export const apiValue = [
             title:'Burger',
             description:'Tomoto quoted beef buregr',
             mrp:390,
-            img:"../../../public/Assets/burger/burger6.jpg"
+            img:burger7
         },
         {
             id:23,
@@ -216,7 +252,7 @@ export const apiValue = [
             title:'Burger',
             description:"Cheese Beef burger",
             mrp:390,
-            img:"../../../public/Assets/burger/burger7.jpg"
+            img:burger8
         },
         {
             id:24,
@@ -225,7 +261,7 @@ export const apiValue = [
             title:'Burger',
             description:"Cheese double layer burger",
             mrp:430,
-            img:"../../../public/Assets/burger/cheeseburger.jpg"
+            img:burger9
         },
         {
             id:25,
@@ -234,7 +270,7 @@ export const apiValue = [
             title:'Burger',
             description:"Cheese Beef burger",
             mrp:590,
-            img:"../../../public/Assets/burger/craft-beef-burger-french-fries.jpg"
+            img:burger10
         },
         {
             id:26,
@@ -243,7 +279,7 @@ export const apiValue = [
             title:'Burger',
             description:"craft-beef-burger-french-fries",
             mrp:560,
-            img:"../../../public/Assets/burger/grilled-beef.jpg"
+            img:burger11
         },
         {
             id:27,
@@ -252,7 +288,7 @@ export const apiValue = [
             title:'Burger',
             description:"Grilled Beef Burger with french fries",
             mrp:580,
-            img:"../../../public/Assets/burger/grilled-burger-f.jpg"
+            img:burger12
         },
         {
             id:28,
@@ -261,7 +297,7 @@ export const apiValue = [
             title:'Burger',
             description:"grilled-cheeseburger",
             mrp:490,
-            img:"../../../public/Assets/burger/grilled-cheeseburger.jpg"
+            img:burger13
         },
         {
             id:29,
@@ -270,7 +306,7 @@ export const apiValue = [
             title:'Burger',
             description:"Tasty hambburger",
             mrp:690,
-            img:"../../../public/Assets/burger/hamburger-.jpg"
+            img:burger14
         },
         {
             id:30,
@@ -279,7 +315,7 @@ export const apiValue = [
             title:'Burger',
             description:"Tasty hambburger",
             mrp:590,
-            img:"../../../public/Assets/burger/hamburger.jpg"
+            img:burger15
         },
         {
             id:29,
@@ -288,7 +324,7 @@ export const apiValue = [
             title:'Burger',
             description:"Double layer hamburger cheese",
             mrp:490,
-            img:"../../../public/Assets/burger/hamburger-.jpg"
+            img:burger16
         },
         {
             id:30,
@@ -297,7 +333,8 @@ export const apiValue = [
             title:'vegItem',
             description:"yummy chappathi",
             mrp:15,
-            img:"../../../public/Assets/veg/chappathi.jpg"
+            img:veg1
+            // img:"https://media-cdn.tripadvisor.com/media/photo-s/11/b2/88/27/thick-gravy-veg-item.jpg"
         },
 
 ];

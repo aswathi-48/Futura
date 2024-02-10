@@ -11,6 +11,8 @@ import Displayy from './components/Displayy';
 import { useSelector } from 'react-redux';
 import UpdateProfile from './components/UpdateProfile';
 import DashContent from './components/Dashborad/DashContent';
+import ManageItem from './components/ManageItem';
+import UpdateItems from './components/UpdateItems';
 
 
 function App() {
@@ -50,6 +52,10 @@ function App() {
       // element:<Main/>,
       children:[
         {
+          path:'/',
+          element:<DashContent/>
+        },
+        {
           path:"/user",
           element:<User/>
         },
@@ -68,6 +74,12 @@ function App() {
         {
           path:'/updateProfile',
           element:<UpdateProfile/>
+        },{
+          path:'/manageitem',
+          element:<ManageItem/>
+        },{
+          path:'updateitems/:id',
+          element:<UpdateItems/>
         }
        
       ]

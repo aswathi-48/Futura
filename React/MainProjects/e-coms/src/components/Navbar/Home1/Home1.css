@@ -1,5 +1,19 @@
+.main-container{
+  width: 100%;
+}
+.main-container h1 {
+  font-family: 'Your Desired Font', sans-serif; /* Replace 'Your Desired Font' with your preferred font family */
+  font-size: 36px; /* Adjust the font size as needed */
+  color: #333; /* Set your desired text color */
+  text-align: center; /* Adjust text alignment as needed */
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+.main-container b{
+  color: #0a01f3;
+}
+
 .imge img{
-    margin-top: 20px;
+    margin-top: 130px;
     width: 1359px;
     height: 350px;
     margin-left: 140px;
@@ -121,50 +135,51 @@
   justify-content: space-between;
 }
 
-.item {
-  width: 18%; /* Set the width to a percentage to ensure 5 items per row */
+/* .item {
+  width: 20%;
   margin-bottom: 20px;
-  border: 1px solid #ccc; /* Add borders or other styling as needed */
+  border: 1px solid #ccc; 
   height: 380px;
   cursor: pointer;
+  position: relative;
 
 }
 .item:hover {
   box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
-  /* color: rgb(69, 221, 244); */
+
   
 
 }.item:hover .icons{
-  /* transform: translateX(-50px); */
+
 
 }
 .item img {
   width: 130px;
-  /* height: auto; */
+
   margin-left: 70px;
-  /* margin-top: 10px; */
+  margin-top: 90px;
 
 }
 .item h3{
-  margin-left: 10px;
+  margin-left: 20px;
   
 }
 .item p{
-  margin-left: 10px;
+  margin-left: 20px;
 }
-.icons{
-  /* z-index: 1; */
-  position: relative;
-  left: 250px;
-  /* right: 100px; */
+.icons1 {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   transition: 0.5s;
-  margin-top: 20px;
   font-size: 20px;
   color: whitesmoke;
+  margin-top: 20px;
+  margin-left: 270px;
 }
-.icons:hover{
+.icons1:hover{
 
 }
 .icn{
@@ -174,16 +189,31 @@
 .item:hover .icn{
   color: #444444;
 }
-.icons li{
+.icons1 li{
   list-style: none;
   padding: 3px 3px;
   cursor: pointer;
   transition: 0.5s;
   color: whitesmoke;
 
-  /* border-bottom: 1px solid#9a9a9a; */
-  color: #010f1c;
-  /* box-shadow: rgba(0,0,0,0.35) 0px 5px 15px; */
-  /* background: #fff; */
-}
 
+  color: #010f1c;
+
+} */
+
+@media (max-width: 768px) {
+  .imge img {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .item {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .image-text img {
+    width: 100%;
+    margin-left: 0;
+  }
+}

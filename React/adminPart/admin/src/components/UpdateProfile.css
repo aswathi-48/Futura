@@ -1,0 +1,107 @@
+.maindiv-{
+    /* margin-left: 300px; */
+}
+.update{
+    /* background-color: #98e5dd; */
+    width: 100%;
+    height: 150vh;
+
+}
+.upd-main{
+    display: flex;
+    justify-content: center;
+    /* padding: 3px; */
+   
+
+}
+.upd-main-one{
+    background-color: white;
+   margin-top: 100px;
+   border: 6px solid rgb(243, 236, 224);
+   height: 450px;
+   margin-right: 40px;
+   width: 350px;
+
+
+}
+.upd-head{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    height: auto;
+   
+}
+.upd-head h4{
+    border-bottom: 1px solid rgb(243, 236, 224);
+    font-size: 24px;
+    font-family: inherit;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.upd-body{
+    display: flex;
+    justify-content: center;
+}
+
+.upd-body-cntnt{
+    padding: 6px;
+    margin-top: 10px;
+    height: 25px;
+    width: 250px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(236, 234, 234);
+}
+.upd-body-cntnts{
+    width: 250px;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 25px;
+    padding: 6px;
+    margin-left: 20px;
+    border: 1px solid rgb(236, 234, 234);
+}
+.upd-body-cntnts input{
+    width: 200px;
+    /* margin-left: 13px; */
+    /* margin-right: 20px; */
+
+    /* margin-right: 100px */
+
+}
+.upd-icon{
+   height: 12px;
+}
+.upd-body-cntnt input{
+    border: none;
+    margin-left: 3px;
+
+}
+.upd-btn{
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 35px;
+    width: 260px;
+    margin-left: 45px;
+
+    border: 1px solid rgb(236, 234, 234);
+    background-color: rgb(241, 55, 55);
+}
+.upd-btn button{
+    border: none;
+    background: none;
+    margin-left: 70px;
+    margin-top: 8px;
+    color: white;
+}
+.upd-para{
+    /* margin-top: 70px; */
+    margin-left: 60px;
+}
+.upd-link{
+    text-decoration: none;
+}
+.img-file{
+    margin-right: 100px;
+    margin-top: 10px;
+}

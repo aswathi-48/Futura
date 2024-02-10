@@ -7,6 +7,7 @@ const ItemSchema = new mongoose.Schema({
     description:{type:String},
     price:{type:String},
     Images:{type:String},
+    quantity:{type:String}
      
 },{timelaps:true})
 

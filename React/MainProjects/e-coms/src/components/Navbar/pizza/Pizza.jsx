@@ -1,22 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { apiValue } from '../../Api/ApiFood';
 import './Pizza.css';
+import { BsEye } from 'react-icons/bs';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { ItemView, postCart } from '../../ApiCallll/ApiCall';
+import { Link } from 'react-router-dom';
+import PizzaContainer from './PizzaContainer';
+
 
 const Pizza = () => {
+ 
+
+
   // Filter only pizza items
-  const pizzaItems = apiValue.filter(item => item.category === 'pizza');
+  const [items,setItems] =useState([])
+  const pizzaItems = items.filter(item => item.category === 'pizza');
+  const title=pizzaItems.map((li)=>li.title)
+
+  useEffect(()=> {
+    const viewItemss = async(id) =>{
+      console.log('dataaa',id);
+      try{
+        const datas =await ItemView();
+            setItems(datas.data)
+            console.log("dataaa",datas);
+      }catch(err){
+
+      }
+    }
+    viewItemss()
+  })
 
   return (
     <div className="pizza-container">
-      <h1>Pizza Page</h1>
+      <h1>Taste the Art of Perfectly Crafted Pizzas</h1>
       <div className="pizza-list">
         {pizzaItems.map(item => (
-          <div key={item.id} className="pizza-item">
-            <img src={item.img} alt={item.title} className="pizza-image" width={100}/>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <p>MRP: {item.mrp}</p>
-          </div>
+          <PizzaContainer title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity}  />
+          // <div key={data.id} className="pizza-item">
+          //    <div className='icon-list'>
+          //      <li> <AiOutlineShoppingCart  className='icns'/></li>
+          //    <Link to={`/pizzaview/${data._id}`}> <li > <BsEye className='icns' /></li> </Link>
+          //     </div>
+          //   {data && <img src={`${process.env.PUBLIC_URL}/Images/${data.Images}`} width={50} />}
+          //   <h3>{data.title}</h3>
+          //   <p>{data.description}</p>
+          //   <p>MRP: {data.price}</p>
+          // </div>
         ))}
       </div>
     </div>
@@ -33,6 +63,62 @@ export default Pizza;
 
 
 
+
+
+// import React, { useEffect, useState } from 'react';
+// import { apiValue } from '../../Api/ApiFood';
+// import './Pizza.css';
+// import { BsEye } from 'react-icons/bs';
+// import { AiOutlineShoppingCart } from 'react-icons/ai';
+// import { ItemView, postCart } from '../../ApiCallll/ApiCall';
+// import { Link } from 'react-router-dom';
+
+
+// const Pizza = () => {
+ 
+
+
+//   // Filter only pizza items
+//   const [items,setItems] =useState([])
+//   const pizzaItems = items.filter(item => item.category === 'pizza');
+//   const title=pizzaItems.map((li)=>li.title)
+
+//   useEffect(()=> {
+//     const viewItemss = async(id) =>{
+//       console.log('dataaa',id);
+//       try{
+//         const datas =await ItemView();
+//             setItems(datas.data)
+//             console.log("dataaa",datas);
+//       }catch(err){
+
+//       }
+//     }
+//     viewItemss()
+//   })
+
+//   return (
+//     <div className="pizza-container">
+//       <h1>Taste the Art of Perfectly Crafted Pizzas</h1>
+//       <div className="pizza-list">
+//         {pizzaItems.map(data => (
+//           <div key={data.id} className="pizza-item">
+//              <div className='icon-list'>
+//                <li> <AiOutlineShoppingCart  className='icns'/></li>
+//              <Link to={`/pizzaview/${data._id}`}> <li > <BsEye className='icns' /></li> </Link>
+//               </div>
+//             {data && <img src={`${process.env.PUBLIC_URL}/Images/${data.Images}`} width={50} />}
+//             <h3>{data.title}</h3>
+//             <p>{data.description}</p>
+//             <p>MRP: {data.price}</p>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Pizza;
 
 
 

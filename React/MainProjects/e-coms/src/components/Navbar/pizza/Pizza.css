@@ -1,76 +1,89 @@
-/* .main-pizza {
-    display: flex;
- 
-    padding: 10px;
-  }
-  .pizza-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1200px; 
-    margin: 0 auto;
-  }
-  
-  
-  .pizza-item {
-    width: calc(16.% - 20px); 
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid;
-  }
-  
-  .pizza-item img {
-    width: 100px;
-    height: auto; 
-  }
-  
-  .item-details {
-    text-align: center;
-  }
-   */
-
-   /* .pizza-container {
-    text-align: center;
-  }
-  
-  .pizza-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .pizza-item {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  .pizza-image {
-    max-width: 200px;
-    height: auto;
-  } */
-
 
 
   .pizza-container {
     padding: 20px;
+   
   }
-  
+  .pizza-container h1{
+    color: rgb(220, 220, 220);
+    margin-left: 31%;
+  }
+  .pizza-container h1:hover{
+  }
   .pizza-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   
-  .pizza-item {
-    width: 18%; /* Set the width to a percentage to ensure 5 items per row */
+  /* .pizza-item {
+    width: 20%; 
     margin-bottom: 20px;
+    border: 1px solid #ccc; 
+    height: 380px;
+    cursor: pointer;
+  position: relative;
+
   }
   
-  .pizza-image {
-    width: 100px;
-    height: auto;
+  .pizza-item img {
+    width: 130px;
+    margin-left: 79px;
+    margin-top: 90px;
   }
+  .pizza-item:hover{
+  box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+
+  }
+  .pizza-item h3{
+  margin-left: 20px;
+    
+  }
+.pizza-item p{
+  margin-left: 20px;
+
+}
+.icon-list{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-top: 20px;
+  margin-left: 270px;
+}
+.icns{
+  color: whitesmoke;
+
+}
+
+.pizza-item:hover .icns{
+  color: #444444;
+}
+.icon-list li{
+  list-style: none;
+  padding: 3px 3px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: whitesmoke;
+
+  color: #010f1c;
+}
+
+ */
+
+@media (max-width: 768px) {
+  .pizza-container{
+    margin-top: 90px;
+  }
+  .pizza-item {
+    width: 100%;
+    margin-right: 0;
+  }
+  .pizza-item img{
+    /* margin-right: 20px; */
+  }
+}

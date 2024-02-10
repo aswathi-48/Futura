@@ -1,0 +1,83 @@
+.dessert-container{
+    padding: 20px;
+
+}
+.dessert-container h1{
+  font-weight: bolder;
+  color: rgb(220, 220, 220);
+
+  margin-left: 30%;
+
+}
+.dessert-container h1:hover{
+  /* color: rgb(5, 103, 5); */
+
+}
+.dessert-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.dessert-item{
+    width: 20%; /* Set the width to a percentage to ensure 5 items per row */
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Add borders or other styling as needed */
+    height: 380px;
+    cursor: pointer;
+  position: relative;
+}
+.dessert-item img{
+    width: 130px;
+    /* height: auto; */
+    margin-left: 79px;
+    margin-top: 60px;
+}
+.dessert-item:hover{
+  box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+}
+.dessert-item h3{
+    margin-left: 20px;
+}
+.dessert-item p{
+    margin-left: 20px;
+}
+.icn-list{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    font-size: 20px;
+    color: whitesmoke;
+    margin-top: 20px;
+    margin-left: 270px;
+}
+.icn1{
+  color: whitesmoke;
+
+}
+.dessert-item:hover .icn1{
+  color: #444444;
+
+}
+.icn-list li{
+    list-style: none;
+    padding: 3px 3px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: whitesmoke;
+  
+    /* border-bottom: 1px solid#9a9a9a; */
+    color: #010f1c;
+}
+
+@media (max-width: 768px) {
+  .dessert-container{
+    margin-top: 90px;
+  }
+  .dessert-item {
+    width: 100%;
+    margin-right: 0;
+  }
+}

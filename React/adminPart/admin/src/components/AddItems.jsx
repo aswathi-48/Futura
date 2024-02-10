@@ -66,6 +66,7 @@ let formData = new FormData()
             <label htmlFor="">Price:</label>
             <input type="text" placeholder='price' onChange={(e) => setPrice(e.target.value)} className='price-inpt'/>
            </div>
+           
            <div className='cat'>
             <label htmlFor="">Image:</label>
             <input type="file"  filename="Images" onChange={(e)=>setImages(e.target.files[0])} className='img-file'/>

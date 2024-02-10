@@ -46,3 +46,26 @@
     border-radius: 6px;  
     cursor: pointer;
 }
+
+
+
+/* Responsive styles for even smaller screens */
+@media (max-width: 480px) {
+    .mainx {
+        width: 90%;
+        margin-left: 40px;
+    }
+
+    .mainx h3 {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    .sec-main {
+        padding: 15px;
+    }
+
+    .up-btn button {
+        margin-top: 10px;
+    }
+}

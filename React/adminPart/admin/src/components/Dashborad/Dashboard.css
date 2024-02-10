@@ -1,6 +1,7 @@
 .dashboard{
     width: 100%;
     height: 100%;
+    /* display: flex; */
 }
 
 .dashboard-main{
@@ -55,10 +56,40 @@
 .logout-btn{
     
 }
+.dashboard-links1 p{
+    font-size: 18px;
+    margin-left: 4px;
+}
+.dashboard-linkordr p{
+    font-size: 18px;
 
+}
+.dashboard-linkordr .dash-link{
+    margin-right: 4px;
+}
 .logout-btn button{
    border: none;
    outline: none;
+   margin-left: 10px;
+   font-size: 15px;
+   background: white;
+
+}
+.logout-btn button:hover{
+    color: red;
+}
+.dashboard-links{
+    display: flex;
+    /* margin-top: 30px; */
+}
+.dashboard-links p{
+    margin-top: 2px;
+    margin-left: 6px;
+}
+.lg-btn{
+    margin-left: 5px;
+}
+.iconn1{
 
 }
 /* .dash-link:hover{ */
@@ -82,4 +113,37 @@
 
   .dashboard{
     display: flex;
+
   }
+
+.dash-content{
+    margin-top: 100px;
+    margin-left: 500px;
+}
+
+
+  @media (max-width: 1200px) {
+    .main-dash {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Add more responsive styles as needed */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .main-dash {
+        /* Modify styles for smaller screens */
+    }
+
+    .dashboard {
+        /* Add or modify styles for the overall dashboard container */
+    }
+
+    .dashboard-main {
+        /* Add or modify styles for the main dashboard content */
+    }
+
+    /* Add more responsive styles as needed */
+}

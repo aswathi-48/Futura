@@ -53,3 +53,15 @@ background-color: rgb(79, 79, 79);
     text-decoration: none;
     color: white;
 }
+.link-buy button{
+    background-color: rgb(79, 79, 79);
+    text-decoration: none;
+    color: white;
+    border: none;
+    outline: none;
+
+}
+.link-buy button:hover{
+    background-color: green;
+
+}

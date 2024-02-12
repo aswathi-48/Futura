@@ -105,20 +105,6 @@ return {cartData:res.data}
     }
 }
 
-//post order details
-
-
-export const postOrder = async(vals) => {
-    console.log('orderdata',vals);
-    try{
-        const resVaal = axios.post("http://localhost:5000/value1/postorder",vals)
-        console.log('resvaal',resVaal.data);
-        return{orderData:resVaal.data}
-    }catch(err)
-  {  
-    console.log(err);
-}
-}
 
 //delete cart 
 
@@ -150,3 +136,49 @@ export const UpdateQuantity = async(data) => {
         console.log(err);
     }
 };
+
+
+
+//post order details
+
+
+export const postOrder = async(vals) => {
+    console.log('orderdata',vals);
+    try{
+        const resVaal = await axios.post("http://localhost:5000/value1/postorder",vals)
+        console.log('resvaal',resVaal.data);
+        return{orderData:resVaal.data}
+    }catch(err)
+  {  
+    console.log(err);
+}
+}
+
+
+//get order details
+
+export const getOrder =async(id)=>{
+console.log("idddd",id);
+
+try{
+    const getData = await axios.get(`http://localhost:5000/value1/getorder/${id}`);
+    console.log('detass',getData);
+    return getData.data
+}catch(err){
+    console.log(err);
+}
+}
+
+
+//post orderuser
+
+export const postUserOrder = async(val) =>{
+    console.log('orderuserdataaaa',val);
+    try{
+         const postdata = await axios.post("http://localhost:5000/value1/postOrderUserDetails",val)
+         console.log("postdataa",postdata);
+        //  return{orderUserdata:postdata.data}
+    }catch(err){
+
+    }
+}

@@ -44,7 +44,7 @@ router.get('/ViewItems', async (req, res) => {
     // console.log("reqqq", req.body);
     try {
         const itemss = await itemDetails.find()
-        console.log(itemss);
+        // console.log(itemss);
         res.status(200).json(itemss)
     } catch (err) {
         console.log(err);
@@ -66,11 +66,11 @@ router.delete('/itemsDelete/:id', async (req, res) => {
 
 
     router.get('/getItemDetails/:id',async (req,res)=>{
-        console.log('req in items',req);
-        console.log('req.params.id',req.params.id);
+        // console.log('req in items',req);
+        // console.log('req.params.id',req.params.id);
         try{
     const getItemres= await itemDetails.findById(req.params.id)
-    console.log("dtataaaa",getItemres);
+    // console.log("dtataaaa",getItemres);
     res.status(200).json(getItemres)
         }catch(err){
             res.status(500).json(err)
@@ -79,7 +79,7 @@ router.delete('/itemsDelete/:id', async (req, res) => {
 
 
 
-router.put('/updateItems/:id', async (req,res) => {
+router.put('/updateItems/:id', upload.single('Images'), async (req,res) => {
     console.log("req.params.idd", req.params.id);
     try {
         const updateDatas = await itemDetails.findByIdAndUpdate(req.params.id,

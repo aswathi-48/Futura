@@ -16,6 +16,7 @@ import { useState } from 'react';
 // import PizzaView from './components/Navbar/pizza/PizzaView';
 import Dataproviders from './Store/Dataproviders';
 import BuyNowHome from './components/Navbar/Home1/BuyNowHome';
+import BuyHomDetails from './components/Navbar/Home1/BuyHomDetails';
 
 function App() {
   
@@ -66,8 +67,12 @@ const router = createBrowserRouter
     //   element:<PizzaView/>
     //  }
     {
-      path:"/homeBuyNow",
+      path:"/homeBuyNow/:id",
       element:<BuyNowHome/>
+    },
+    {
+      path:'/buyhomedetails/:id',
+      element:<BuyHomDetails/>
     }
      
 ]

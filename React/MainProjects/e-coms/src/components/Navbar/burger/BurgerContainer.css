@@ -60,3 +60,17 @@
     box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
   
   }
+
+  @media (max-width: 768px) {
+    .containss {
+      width: 45%; /* Adjust width for smaller screens */
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .containss {
+      width: 90%; /* Adjust width for even smaller screens */
+    }
+  }

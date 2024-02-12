@@ -16,7 +16,7 @@ const ItemContainer = (props) => {
         itemName:props.title,
         itemPrice:props.price,
         itemImage:props.image,
-       itemDes:props.des
+      //  itemDes:props.des
 
     }
     const cartHandler=async()=>{
@@ -60,7 +60,7 @@ return await postCart(data)
 
            </div>
            {viewState &&
-           <ItemContainerModal image={props.image} des={props.des} title={props.title} price={props.price} description={props.description} hideHandler={hideModalHandler} />}
+           <ItemContainerModal image={props.image}  title={props.title} price={props.price} description={props.description} hideHandler={hideModalHandler} />}
          </div>
         //  </Model>
  

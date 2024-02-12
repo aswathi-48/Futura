@@ -6,6 +6,8 @@ const { verifyTokenn, verifyTokenAndAuthorization } = require('../VerifyToken');
 const multer = require('multer')
 const Cart = require("../Models/cartSchema")
 const Order = require('../Models/orderSchema')
+// const OrderUser =reqiure('../Models/orderUserSchema.js')
+const OrderUser= require('../Models/orderUserSchema')
 
 
 const storage = multer.diskStorage({
@@ -145,11 +147,11 @@ router.put('/updateUserProfile/:id', async (req, res) => {
 router.post("/postcartData", async (req, res) => {
 
     try {
-        console.log("data", req.body);
+        // console.log("data", req.body);
         const dbDta = new Cart({
 
 
-            itemName: req.body.itemName,
+            itemName: req.body.itemName, 
             itemPrice: req.body.itemPrice,
             itemQuantity: req.body.quantity,
             itemImage: req.body.itemImage,
@@ -168,10 +170,10 @@ router.post("/postcartData", async (req, res) => {
 
 
 router.get('/getcartData', async (req, res) => {
-    console.log('*****', req.body);
+    // console.log('*****', req.body);
     try {
         getcartvalue = await Cart.find()
-        console.log(getcartvalue);
+        // console.log(getcartvalue);
         res.status(200).json(getcartvalue)
     } catch (err) {
         console.log(err);
@@ -192,6 +194,8 @@ router.delete('/deleteCarts/:id', async (req,res) => {
 
 
 
+
+
 router.put('/updatequanity/:id', async (req, res) => {
     console.log("req.body.quan",req.params.id);
     console.log("quantity",req.body);
@@ -208,12 +212,14 @@ router.put('/updatequanity/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
+ 
 
 
 
+// ***************** buynow clicking
 
-
-router.post('/postorder/', async(req,res) => {
+router.post('/postorder', async(req,res) => {
+    console.log('buy now posting',req.body);
     try {
         const DataRes = await Order({
             title: req.body.title,
@@ -224,6 +230,53 @@ router.post('/postorder/', async(req,res) => {
         res.status(200).json(saveData)
     } catch (err) {
         res.status(500).json(err)
+    }
+})
+
+
+
+
+router.get('/getorder/:id', async(req,res)=>{
+    // console.log('dataaaa'.req.body);
+    console.log('req.params.id in getorder',req.params.id);
+    try{
+        const getData = await Order.findOne({title:req.params.id})
+        console.log('data',getData);
+        res.status(200).json(getData)
+    }catch(err){
+        res.status(500).json(err)
+    }
+})
+
+
+
+
+router.post('/postOrderUserDetails/',async(req,res) =>{
+    try{
+        const User = await OrderUser({
+            HouseName: req.body.HouseName,
+            HouseNo:req.body.HouseNo,
+            Pincode:req.body.Pincode,
+            Landmark:req.body.Landmark,
+            city:req.body.city
+        })
+        const saveData =await User.save()
+        res.status(200).json(saveData)
+    }catch(err)
+    {
+        res.status(500).json(err)
+    }
+})
+
+
+router.get('/getorderUser/:id',async(req,res)=>{
+    try{
+        const getuserorder= await OrderUser.findById(req.params.id)
+        console.log("valueeeeee",getuserorder);
+        res.status(200).json(getuserorder)
+
+    }catch(err){
+
     }
 })
 

@@ -19,7 +19,7 @@ const Profile = () => {
   useEffect(() => {
     const profileData = async () => {
       const dataa = await getUserProfile(id)
-      console.log('valuesss', dataa);
+      console.log('valuesss',dataa);
       setData1(dataa)
     };
     profileData();

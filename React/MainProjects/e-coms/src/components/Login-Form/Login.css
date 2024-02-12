@@ -9,7 +9,7 @@
 }
 .log-main-one{
     background-color: white;
-   margin-top: 150px;
+   margin-top: 170px;
    border: 6px solid rgb(243, 236, 224);
    height: 400px;
    margin-right: 40px;
@@ -20,7 +20,7 @@
 .log-head{
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 15px;
     height: auto;
    
 }

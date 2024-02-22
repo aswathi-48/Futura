@@ -28,6 +28,7 @@ const Burger = () => {
   return (
     <div className='burger-container'>
       <h1>Explore Our Delectable Burger Selection</h1>
+      
       <div className='burger-list'>
         {burgerItems.map(data => (
           <BurgerContainer title={data.title} description={data.description} price={data.price} image={data.Images} quantity={data.quantity}/>

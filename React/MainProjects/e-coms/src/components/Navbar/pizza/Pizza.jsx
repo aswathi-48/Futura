@@ -10,12 +10,17 @@ import PizzaContainer from './PizzaContainer';
 
 const Pizza = () => {
  
+  
 
 
   // Filter only pizza items
   const [items,setItems] =useState([])
   const pizzaItems = items.filter(item => item.category === 'pizza');
   const title=pizzaItems.map((li)=>li.title)
+
+
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [selectedPriceRange, setSelectedPriceRange] = useState('');
 
   useEffect(()=> {
     const viewItemss = async(id) =>{
@@ -31,11 +36,47 @@ const Pizza = () => {
     viewItemss()
   })
 
+
+
+  useEffect(() => {
+    filterItems();
+  }, [selectedPriceRange]);
+
+  const filterItems = () => {
+    let filtered = items;
+    switch (selectedPriceRange) {
+      case 'below200':
+        filtered = items.filter(item => item.price < 200);
+        break;
+      case '200to350':
+        filtered = items.filter(item => item.price >= 200 && item.price <= 350);
+        break;
+      case '350to450':
+        filtered = items.filter(item => item.price > 350 && item.price <= 450);
+        break;
+      case 'above450':
+        filtered = items.filter(item => item.price > 450);
+        break;
+      default:
+        break;
+    }
+    setFilteredItems(filtered);
+  };
+
+
+
   return (
     <div className="pizza-container">
       <h1>Taste the Art of Perfectly Crafted Pizzas</h1>
+      {/* <div className="price-filter">
+        <button onClick={() => setSelectedPriceRange('below200')}>Below 200</button>
+        <button onClick={() => setSelectedPriceRange('200to350')}>200 - 350</button>
+        <button onClick={() => setSelectedPriceRange('350to450')}>350 - 450</button>
+        <button onClick={() => setSelectedPriceRange('above450')}>Above 450</button>
+        <button onClick={() => setSelectedPriceRange('all')}>All</button>
+      </div> */}
       <div className="pizza-list">
-        {pizzaItems.map(item => (
+        {/* {pizzaItems.map(item => (
           <PizzaContainer title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity}  />
           // <div key={data.id} className="pizza-item">
           //    <div className='icon-list'>
@@ -47,7 +88,22 @@ const Pizza = () => {
           //   <p>{data.description}</p>
           //   <p>MRP: {data.price}</p>
           // </div>
-        ))}
+        ))} */}
+        
+{filterItems. length > 0 ?(
+  filterItems.map(item => (
+    <PizzaContainer title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity}  />
+
+  ))
+):(
+  pizzaItems.map(item => (
+    <PizzaContainer title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity}  />
+   
+  ))
+)}
+
+
+
       </div>
     </div>
   );
@@ -56,7 +112,17 @@ const Pizza = () => {
 export default Pizza;
 
 
+// {filterItems. length > 0 ?(
+//   filterItems.map(item => (
+//     <PizzaContainer title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity}  />
 
+//   ))
+// ):(
+//   pizzaItems.map(item => (
+//     <PizzaContainer title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity}  />
+   
+//   ))
+// )}
 
 
 

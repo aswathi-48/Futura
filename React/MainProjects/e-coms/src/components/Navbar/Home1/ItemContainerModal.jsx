@@ -62,7 +62,7 @@ return await postCart(data)
     <p>{props.description}</p>
     <p>MRP: {props.price}</p>
     <button className='addtocart' onClick={cartHandler}>AddToCart</button>
-    <button className='buynow'> <Link to={`/homeBuyNow/${props.title}`} className='link-buy'><button onClick={orerHandler}>BuyNow</button></Link></button>
+    <button className='buynow' onClick={orerHandler}> <Link to={`/homeBuyNow/${props.title}`} className='link-buy'>BuyNow</Link></button>
     </div>
 
     </div>

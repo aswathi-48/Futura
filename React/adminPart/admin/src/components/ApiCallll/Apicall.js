@@ -54,8 +54,8 @@ export const userss = async(id)=>{
 export const getadminprofile = async(id) => {
     console.log("id....??",id);
     try{
-        const response = await userRequest.get(`/data1/getadmindetails/${id}`)
-        console.log("dataaaa getadmin update ",response.data);
+        const response = await axios.get(`http://localhost:5000/data1/getadmindetails/${id}`)
+        console.log("dataaaa getadmin update ",response);
         return response.data
        }catch(err){
         console.log(err);
@@ -84,14 +84,16 @@ export const updateProfiles = async (upval) =>{
 export const updateItemDetails = async(updatevalue) =>{
     console.log("updateevalueess",updatevalue);
     try{
-        const updateRes = await axios.put(`http://localhost:5000/data2/updateItems/${updatevalue._id}`,{
-            category:updatevalue.category,
-            type:updatevalue.type,
-            title:updatevalue.title,
-            description:updatevalue.description,
-            price:updatevalue.price,
-            Images:updatevalue.Images
-        })
+        const updateRes = await axios.put(`http://localhost:5000/data2/updateItems/${updatevalue._id}`,
+        // {
+        //     category:updatevalue.category,
+        //     type:updatevalue.type,
+        //     title:updatevalue.title,
+        //     description:updatevalue.description,
+        //     price:updatevalue.price,
+        //     Images:updatevalue.Images
+        // }
+      updatevalue.formData  )
         console.log("updateResss",updateRes);
         return updateRes
     }catch(err){
@@ -113,7 +115,10 @@ export const getitemDetails =async(id) => {
     }
 }
 
+
+
 //items delete 
+
 
 export const DeleteItems = async(id) =>{
     console.log('idd',id);
@@ -152,6 +157,9 @@ export const itemview = async (id) => {
     }
 }
 
+
+
+
 export const viewDetails = async (id) => {
     console.log('idddd00000',id);
     try {
@@ -164,3 +172,19 @@ export const viewDetails = async (id) => {
         console.log(err);
     }
 };
+
+
+//orderdataasget
+
+export const getOredetails = async(data) =>{
+    console.log("111",data);
+    try{
+        const value = await userRequest.get(`http://localhost:5000/value1/getuserdata`,data)
+        console.log("dataget",value.data);
+        const itemData= value.data.map((li)=>li.Details.itemData)
+        console.log("++++++++++",itemData);
+        return {Details:value.data}
+    }catch(err){
+        console.log(err);
+    }
+}

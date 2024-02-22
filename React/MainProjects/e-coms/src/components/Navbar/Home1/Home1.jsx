@@ -13,7 +13,8 @@ import { ItemView } from '../../ApiCallll/ApiCall';
 
 
 
-const Home1 = () => {
+const Home1 = ({ searchQuery }) => {
+
 
   const[item,setItem]=useState([])
 useEffect(()=>{
@@ -27,6 +28,27 @@ showHandler()
 },[])
 
 
+//filter data using price
+
+
+const [filteredItems, setFilteredItems] = useState([]);
+const [priceRange, setPriceRange] = useState('');
+
+const filterItemsByPrice = (minPrice, maxPrice) => {
+  const filtered = item.filter(item => item.price >= minPrice && item.price < maxPrice);
+  setFilteredItems(filtered);
+  setPriceRange(`$${minPrice} - $${maxPrice - 1}`);
+};
+
+const resetFilter = () => {
+  setFilteredItems([]);
+  setPriceRange('');
+};
+
+// // Filter items based on search query
+// const filteredItemss = item.filter(item =>
+//   item.title && item.title.toLowerCase().includes(searchQuery.toLowerCase())
+// );
 
 
   console.log(item);
@@ -48,8 +70,16 @@ showHandler()
 
       <div className='item-container'>
         <h1>Unleash the Flavorful World of <b>Tasteee</b></h1>
+        <div className='filter-buttons'>
+          <button onClick={() => filterItemsByPrice(0, 200)} className='fil_btn1'>200 Below</button>
+          <button onClick={() => filterItemsByPrice(200, 350)} className='fil_btn2'>200 to 350</button>
+          <button onClick={() => filterItemsByPrice(350, 450)}className='fil_btn3'>350 to 450</button>
+          <button onClick={() => filterItemsByPrice(450, Infinity)}className='fil_btn4'>450 or More</button>
+          <button onClick={resetFilter} className='fil_btn5'>All Items</button>
+          {priceRange && <p className='percent'>Price Range: {priceRange}</p>}
+        </div>
         <ul className='item-list'>
-          {item.map(item => (
+          {/* {item.map(item => (
             <ItemContainer title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity}   />
             
 
@@ -64,7 +94,16 @@ showHandler()
             //   <p>{item.description}</p>
             //   <p>MRP: {item.mrp}</p>
             // </p>
-          ))}
+          ))} */}
+           {filteredItems.length > 0 ? (
+            filteredItems.map(item => (
+              <ItemContainer key={item.id} title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity} />
+            ))
+          ) : (
+            item.map(item => (
+              <ItemContainer key={item.id} title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity} />
+            ))
+          )}
         </ul>
        
       </div>

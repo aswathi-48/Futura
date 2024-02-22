@@ -5,7 +5,9 @@ const OrederUserSchema = new mongoose.Schema({
     HouseNo:{type:String},
     Pincode:{type:String},
     Landmark:{type:String},
-    city:{type:String}
+    city:{type:String},
+    phone:{type:String},
+    ProfileId:{type:String}
 },{timelaps:true})
 
 module.exports = new mongoose.model("OrderUser",OrederUserSchema)

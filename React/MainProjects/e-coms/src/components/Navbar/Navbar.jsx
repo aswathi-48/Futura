@@ -12,17 +12,27 @@ import { useDispatch } from 'react-redux';
 import { removeUserData } from '../../Redux/Userredux';
 
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
    
 
     const [searchQuery,setSearchQuery] = useState('')
+    // const [seachResult,setSearchResults]=useState([])
+
+    console.log("*3838333333",searchQuery);
 
     const dispatch = useDispatch()
 
    const loginout = () =>{
     dispatch(removeUserData())
-   }
     
+   }
+
+//    const handleChange = (e) => {
+//     const query = e.target.value;
+//     setSearchQuery(query);
+//     onSearch(query); // Notify the parent component about the search query
+//   };
+
 
     return (
         <div className='Nav'>
@@ -41,8 +51,14 @@ const Navbar = () => {
                     <div className='icons-one'>
                         <FiSearch className='search-icon' />
                     </div>
-                    <input type="text" value={searchQuery} name="" id="" placeholder='search'  onChange={(e)=>setSearchQuery(e.target.value)} />
+                    <input type="text" placeholder="Search items..." value={searchQuery}  onChange={(e) => setSearchQuery(e.target.value)}  />
                     {/* <button>search</button> */}
+                    {/* <input
+            type='text'
+            placeholder='Search items...'
+            value={searchQuery}
+            onChange={handleChange}
+          />     */}
                 </div>
                 <div className='Nav-cart'>
                     {/* <button>profile</button> */}

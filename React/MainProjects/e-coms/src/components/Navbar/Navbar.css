@@ -47,7 +47,7 @@
     height: 10px;
 }
 .Nav-cart{
-    /* margin-top: 23px; */
+    /* margin-top: 20px; */
     /* margin-right: 33px; */
     /* width: 50px; */
     display: flex;
@@ -56,6 +56,7 @@
 .Nav-cart .icons{
     margin-right: 23px;
     cursor: pointer;
+    margin-top: 20px;
     /* height: 30px; */
     
 }
@@ -64,6 +65,7 @@
     border-radius: 10px;
     height: 40px;
     width: 50px;
+    margin-top: 20px;
     /* color: rgb(210, 195, 195);/ */
     color: rgb(69, 221, 244);
     text-decoration: none;

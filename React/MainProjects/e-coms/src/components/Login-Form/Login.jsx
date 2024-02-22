@@ -39,7 +39,7 @@ const Login = () => {
                                 <input type="password" placeholder='Passoword' onChange={(e)=>setPassword(e.target.value)} />
                             </div>
                             <div className='log-frgt'> 
-                                <p>Forget Password?</p>
+                              <Link to={'/forgotpass'}> <p>Forget Password?</p></Link> 
                             </div>
                             <div className='log-btn'>
                                 <button onClick={display}>Login</button>

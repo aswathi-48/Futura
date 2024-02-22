@@ -106,3 +106,68 @@
     border-radius: 5px;
     background-color: red;
 }
+
+
+@media only screen and (max-width: 768px) {
+  .manage {
+    margin-right: 0; /* Remove right margin */
+  }
+  
+  .manage-body-one,
+  .manage-body-two {
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .tab-hed1,
+  .tab-body-img,
+  .tab-hed2,
+  .tab-body1,
+  .tab-hed3,
+  .tab-body2,
+  .tab-hed4,
+  .tab-body3 {
+    flex: none; /* Reset flex property */
+    width: auto; /* Reset width */
+    text-align: left; /* Align text to left */
+    margin: 5px 0; /* Add vertical spacing */
+  }
+  
+  .update-btn,
+  .delete-btn {
+    margin: 5px 0; /* Add vertical spacing */
+  }
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  .manage {
+    margin-right: 0; /* Remove right margin */
+  }
+  
+  .manage-body-one,
+  .manage-body-two {
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .tab-hed1,
+  .tab-body-img,
+  .tab-hed2,
+  .tab-body1,
+  .tab-hed3,
+  .tab-body2,
+  .tab-hed4,
+  .tab-body3 {
+    flex: none; /* Reset flex property */
+    width: auto; /* Reset width */
+    text-align: left; /* Align text to left */
+    margin: 5px 0; /* Add vertical spacing */
+  }
+  
+  .update-btn,
+  .delete-btn {
+    margin: 5px 0; /* Add vertical spacing */
+  }
+}
+
+

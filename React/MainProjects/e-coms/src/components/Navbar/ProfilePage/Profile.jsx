@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getUserProfile } from '../../ApiCallll/ApiCall'
 import './Profile.css'
 import { Link } from 'react-router-dom'
+import { removeUserData } from '../../../Redux/Userredux'
 
 const Profile = () => {
   const [dataa1, setData1] = useState([])
@@ -25,6 +26,14 @@ const Profile = () => {
     profileData();
   }, []);
 
+
+  // const dispatch = useDispatch()
+
+  // const loginout = () =>{
+  //  dispatch(removeUserData())
+   
+  // }
+
   return (
     <div className='usermain'> 
       <h3>ProfileData</h3>
@@ -41,6 +50,9 @@ const Profile = () => {
       <div>
         <Link to={'/update'}> <button className='updateBtn'>Update</button> </Link>
       </div>
+      {/* <div className='logoutbutton'>
+        <button onClick={loginout}>Logout</button>
+      </div> */}
     </div>
     </div>
   )

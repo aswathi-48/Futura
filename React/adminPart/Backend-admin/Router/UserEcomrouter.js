@@ -7,7 +7,8 @@ const multer = require('multer')
 const Cart = require("../Models/cartSchema")
 const Order = require('../Models/orderSchema')
 // const OrderUser =reqiure('../Models/orderUserSchema.js')
-const OrderUser= require('../Models/orderUserSchema')
+const OrderUser = require('../Models/orderUserSchema')
+const UserOrders = require("../Models/conformOrder")
 
 
 const storage = multer.diskStorage({
@@ -34,7 +35,7 @@ router.post('/registerData', upload.single('Images'), (req, res) => {
         Email: req.body.Email,
         Password: Crypto.AES.encrypt(req.body.Password, process.env.Crypto_js).toString(),
         Images: req.file.originalname,
-
+       
 
     })
     console.log("!!!!!!!!!!!!!!!!", req.body.Name);
@@ -47,6 +48,15 @@ router.post('/registerData', upload.single('Images'), (req, res) => {
     }
 
 })
+
+
+
+
+
+
+
+
+
 
 
 router.post('/login', async (req, res) => {
@@ -125,13 +135,18 @@ router.get('/getuserdetails/:id', verifyTokenn, verifyTokenAndAuthorization, asy
 
 
 
-router.put('/updateUserProfile/:id', async (req, res) => {
+router.put('/updateUserProfile/:id', upload.single('Images'), async (req, res) => {
     console.log('Request Body:', req.body);
     console.log('^^^', req.params.id);
     try {
         const Updatee = await RegUsers.findByIdAndUpdate(req.params.id,
             {
-                $set: req.body
+                $set: {
+                    Name:req.body.Name,
+                    Email:req.body.Email,
+                    Images: req.file.originalname,
+
+                }
             }, { new: true });
         console.log('Updated User:', Updatee);
         res.status(200).json(Updatee);
@@ -142,7 +157,22 @@ router.put('/updateUserProfile/:id', async (req, res) => {
 });
 
 
+// router.put('/updateUserProfile/:id', upload.single('Images'), async (req, res) => {
+//     try {
+//         const { Name, Email } = req.body;
+//         const updateFields = { Name, Email };
+//         if (req.file) {
+//             updateFields.Images = req.file.filename;
+//         }
 
+//         const updatedUser = await RegUsers.findByIdAndUpdate(req.params.id, { $set: updateFields }, { new: true });
+//         console.log('Updated User:', updatedUser);
+//         res.status(200).json(updatedUser);
+//     } catch (err) {
+//         console.error('Error:', err);
+//         res.status(500).json({ message: 'Server error' });
+//     }
+// });
 //add cart data
 router.post("/postcartData", async (req, res) => {
 
@@ -151,11 +181,13 @@ router.post("/postcartData", async (req, res) => {
         const dbDta = new Cart({
 
 
-            itemName: req.body.itemName, 
+            itemName: req.body.itemName,
             itemPrice: req.body.itemPrice,
             itemQuantity: req.body.quantity,
             itemImage: req.body.itemImage,
-            itemDes:req.body.itemDes
+            itemDes: req.body.itemDes,
+            orderId:req.body.orderId
+            
 
         })
 
@@ -169,10 +201,10 @@ router.post("/postcartData", async (req, res) => {
 
 
 
-router.get('/getcartData', async (req, res) => {
+router.get('/getcartData/:id', async (req, res) => {
     // console.log('*****', req.body);
     try {
-        getcartvalue = await Cart.find()
+        getcartvalue = await Cart.find({orderId:req.params.id})
         // console.log(getcartvalue);
         res.status(200).json(getcartvalue)
     } catch (err) {
@@ -181,11 +213,11 @@ router.get('/getcartData', async (req, res) => {
 })
 
 
-router.delete('/deleteCarts/:id', async (req,res) => {
+router.delete('/deleteCarts/:id', async (req, res) => {
     // console.log('req.body',req.body);
-    console.log("req.params.idddd",req.params.id);
+    console.log("req.params.idddd", req.params.id);
     try {
-        resDelete = await Cart.findByIdAndDelete (req.params.id)
+        resDelete = await Cart.findByIdAndDelete(req.params.id)
         console.log("resdelete", resDelete);
     } catch (err) {
         res.status(500).json(err)
@@ -197,8 +229,8 @@ router.delete('/deleteCarts/:id', async (req,res) => {
 
 
 router.put('/updatequanity/:id', async (req, res) => {
-    console.log("req.body.quan",req.params.id);
-    console.log("quantity",req.body);
+    console.log("req.body.quan", req.params.id);
+    console.log("quantity", req.body);
     try {
         const ResData = await Cart.findByIdAndUpdate(
             req.params.id,
@@ -212,14 +244,28 @@ router.put('/updatequanity/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
- 
+
+
+//delete all cart item after proceed to checkout
+router.delete('/allCartitemDelete', async (req,res)=>{
+    const {loginId} = req.body
+    try{
+        // const DeleteData = await Cart.find()
+        // console.log(DeleteData);
+        await Cart.deleteMany({loginId})
+        res.status(200).json({ message: 'All cart items deleted successfully' });
+    }catch(err){
+        res.status(500).json(err)
+
+    }
+})
 
 
 
 // ***************** buynow clicking
 
-router.post('/postorder', async(req,res) => {
-    console.log('buy now posting',req.body);
+router.post('/postorder', async (req, res) => {
+    console.log('buy now posting', req.body);
     try {
         const DataRes = await Order({
             title: req.body.title,
@@ -236,14 +282,14 @@ router.post('/postorder', async(req,res) => {
 
 
 
-router.get('/getorder/:id', async(req,res)=>{
+router.get('/getorder/:id', async (req, res) => {
     // console.log('dataaaa'.req.body);
-    console.log('req.params.id in getorder',req.params.id);
-    try{
-        const getData = await Order.findOne({title:req.params.id})
-        console.log('data',getData);
+    console.log('req.params.id in getorder', req.params.id);
+    try {
+        const getData = await Order.findOne({ title: req.params.id })
+        console.log('data', getData);
         res.status(200).json(getData)
-    }catch(err){
+    } catch (err) {
         res.status(500).json(err)
     }
 })
@@ -251,35 +297,133 @@ router.get('/getorder/:id', async(req,res)=>{
 
 
 
-router.post('/postOrderUserDetails/',async(req,res) =>{
-    try{
+router.post('/postOrderUserDetails/', async (req, res) => {
+    console.log("datat", req.body);
+    try {
         const User = await OrderUser({
             HouseName: req.body.HouseName,
-            HouseNo:req.body.HouseNo,
-            Pincode:req.body.Pincode,
-            Landmark:req.body.Landmark,
-            city:req.body.city
+            HouseNo: req.body.HouseNo,
+            Pincode: req.body.Pincode,
+            Landmark: req.body.Landmark,
+            city: req.body.city,
+            phone: req.body.phone,
+            ProfileId: req.body.loginId
         })
-        const saveData =await User.save()
+        const saveData = await User.save()
         res.status(200).json(saveData)
-    }catch(err)
-    {
+        console.log(saveData);
+    } catch (err) {
         res.status(500).json(err)
     }
 })
 
 
-router.get('/getorderUser/:id',async(req,res)=>{
-    try{
-        const getuserorder= await OrderUser.findById(req.params.id)
-        console.log("valueeeeee",getuserorder);
+router.get('/getorderUser/:id', async (req, res) => {
+    console.log("userid", req.params.id);
+    try {
+        const getuserorder = await OrderUser.find({ ProfileId: req.params.id })
+        console.log("valueeeeee", getuserorder);
         res.status(200).json(getuserorder)
 
-    }catch(err){
+    } catch (err) {
 
     }
 })
 
 
+router.put('/updateorderuser/:id', async (req, res) => {
+    console.log("**", req.params.id);
+    console.log("*******", req.body);
+    try {
+        console.log("datta", req.body);
+        console.log("iddd", req.params.id);
+        const updatevaluess = await OrderUser.findByIdAndUpdate(req.params.id,
+            {
+                $set: {
+                    HouseName: req.body.HouseName,
+                    HouseNo: req.body.HouseNo,
+                    Pincode: req.body.Pincode,
+                    Landmark: req.body.Landmark,
+                    city: req.body.city,
+                    phone: req.body.phone
+
+                }
+
+            }, { new: true })
+        res.status(200).json(updatevaluess)
+        console.log("****", updatevaluess);
+    } catch (err) {
+        res.status(500).json(err)
+
+    }
+})
+
+// {
+//                     HouseName:req.body.HouseName,
+//                     HouseNo:req.body.HouseNo,
+//                     pincode:req.body.pincode,
+//                     Landmark:req.body.Landmark,
+//                     city:req.body.city,
+//                     phone:req.body.phone
+//                 }
+
+
+
+router.delete('/deleteorderuser/:id', async (req, res) => {
+    console.log("111111111", req.params.id);
+    try {
+        Deleteed = await OrderUser.findByIdAndDelete(req.params.id)
+        console.log('dataaaa', Deleteed);
+    } catch (err) {
+        res.status(500).json(err)
+
+    }
+})
+
+
+
+
+
+// router.post ('/conformDetails',async(req,res) => {
+//     const new_order = await new OrderUser({
+//         itemDetails:req.body.itemDetails,
+//         orderUser:req.res.orderUser
+//     })
+//     try{
+//         const saveitem = new_order.save()
+//         res.status(200).json(saveitem)
+
+//     }catch(err){
+//         res.status(500).json(err)
+//     }
+// })
+
+router.post("/adduserdata", async (req, res) => {
+    console.log("haii", req.body);
+    try {
+        const data = req.body
+        const dbDta = new UserOrders({
+            Details: { ...data }
+        })
+        const saveData = await dbDta.save()
+        console.log("eee data", saveData);
+        res.status(200).json(saveData)
+    } catch (Err) {
+
+    }
+})
+
+router.get('/getuserdata', async (req, res) => {
+    // console.log("**",req.body);
+    try {
+        const resp = await UserOrders.find()
+        console.log("*****************", resp);
+        res.status(200).json(resp)
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+
+    }
+})
 module.exports = router
 

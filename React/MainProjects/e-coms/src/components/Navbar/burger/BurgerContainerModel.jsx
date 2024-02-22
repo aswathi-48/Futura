@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Model from '../../Model'
 import { IoClose } from "react-icons/io5";
-import { postCart } from '../../ApiCallll/ApiCall'
+import { postCart, postOrder } from '../../ApiCallll/ApiCall'
+import { Link } from 'react-router-dom';
 
 const BurgerContainerModel = (props) => {
     const data = {
@@ -15,6 +16,17 @@ const BurgerContainerModel = (props) => {
     
     return await postCart(data)
       }
+
+      const value =  {
+        title:props.title,
+        price:props.price,
+        Images:props.image
+      }
+    
+      const orerHandler = async() => {
+        return await postOrder(value)
+      }
+    
     
   return (
     <Model hideHandler={props.hideHandler}>
@@ -42,7 +54,7 @@ const BurgerContainerModel = (props) => {
     <p>{props.description}</p>
     <p>MRP: {props.price}</p>
     <button className='addtocart' onClick={cartHandler}>AddToCart</button>
-    <button className='buynow'>BuyNow</button>
+    <button className='buynow'> <Link to={`/homeBuyNow/${props.title}`} className='link-buy'><button onClick={orerHandler}>BuyNow</button></Link></button>
     </div>
 
     </div>

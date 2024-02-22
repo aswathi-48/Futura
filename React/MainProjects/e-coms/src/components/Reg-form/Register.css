@@ -28,7 +28,7 @@
 .reg-head{
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 45px;
     height: auto;
    
 }
@@ -42,6 +42,7 @@
 .reg-body{
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .reg-body-cntnt{
@@ -58,6 +59,7 @@
 .reg-body-cntnt input{
     border: none;
     margin-left: 3px;
+    outline: none;
 
 }
 .reg-btn{
@@ -77,8 +79,44 @@
 }
 .reg-para{
     margin-top: 70px;
-    margin-left: 20px;
+    margin-left: 4px;
 }
 .reg-link{
     text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .reg-main-one {
+        max-width: 300px;
+    }
+    .register{
+        margin-left: 0;
+    }
+
+    .reg-body-cntnt {
+        max-width: 200px;
+    }
+
+    .reg-btn {
+        max-width: 220px;
+    }
+    .reg-main{
+        margin-left: 0;
+    }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+    .reg-main-one {
+        max-width: 250px;
+    }
+
+    .reg-body-cntnt {
+        max-width: 180px;
+    }
+
+    .reg-btn {
+        max-width: 200px;
+    }
 }

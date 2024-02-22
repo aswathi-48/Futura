@@ -1,7 +1,7 @@
 import React from 'react'
 import Model from '../../Model'
 import { IoClose } from "react-icons/io5";
-import { postCart } from '../../ApiCallll/ApiCall';
+import { postCart, postOrder } from '../../ApiCallll/ApiCall';
 
 
 const DessertContainerModel = () => {
@@ -16,6 +16,17 @@ const DessertContainerModel = () => {
     return await postCart(data)
       }
 
+      const value =  {
+        title:props.title,
+        price:props.price,
+        Images:props.image
+      }
+    
+      const orerHandler = async() => {
+        return await postOrder(value)
+      }
+    
+
   return (
     <Model hideHandler={props.hideHandler}>
     <div className='containssr'>
@@ -23,7 +34,7 @@ const DessertContainerModel = () => {
      <div className='main'>
     <div className='item__tops'>
     <div className='item__images'>
-    <img src={ `${process.env.PUBLIC_URL}/Images/${props.image}`} alt={props.title} style={{ maxWidth: '200px' }} />
+   {props && <img src={ `${process.env.PUBLIC_URL}/Images/${props.image}`} alt={props.title} style={{ maxWidth: '200px' }} />} 
     </div>
     {/* <div className='item__iconss'>
      <li> <AiOutlineShoppingCart   className='icn' /></li>
@@ -41,7 +52,7 @@ const DessertContainerModel = () => {
     <p>{props.description}</p>
     <p>MRP: {props.price}</p>
     <button className='addtocart' onClick={cartHandler}>AddToCart</button>
-    <button className='buynow'>BuyNow</button>
+    <button className='buynow'> <Link to={`/homeBuyNow/${props.title}`} className='link-buy'><button onClick={orerHandler}>BuyNow</button></Link></button>
     </div>
 
     </div>

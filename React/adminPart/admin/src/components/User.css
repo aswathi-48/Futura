@@ -8,6 +8,7 @@
 
   }
   
+  
   .main-div {
     padding: 50px 160px;
     background: rgb(242, 237, 237);
@@ -65,5 +66,6 @@
     /* margin-left: 100px; */
     background-color: rgb(255, 17, 17);
     color: white;
+    border-radius: 5px;
   }
  

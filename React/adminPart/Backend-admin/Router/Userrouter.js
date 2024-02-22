@@ -40,7 +40,7 @@ router.post('/adminRegData',upload.single('Images') ,(req,res) =>{
     }
 }) 
 
-99
+
 
 router.post ('/adminlogin',async (req,res) => {
 console.log("backend-login",req.body);
@@ -89,7 +89,8 @@ router.get('/getMethod',async (req,res) => {
 })
 
 
-    router.get ('/getadmindetails/:id',verifyTokenn,verifyTokenAndAuthorization,async(req,res) => {
+
+router.get ('/getadmindetails/:id',async(req,res) => {
         console.log('req in getadmin',req.body);
         try{
             const getres = await adminUser.findById(req.params.id)
@@ -101,22 +102,37 @@ router.get('/getMethod',async (req,res) => {
     })
 
 
-    router.put('/updateAdminProfile/:id', async (req, res) => {
-        console.log('^^^^',req.params.id);
-        try{
-            const updateValue = await adminUser.findByIdAndUpdate(req.params.id, 
+    // router.put('/updateAdminProfile/:id', async (req, res) => {
+    //     console.log('^^^^',req.params.id);
+    //     try{
+    //         const updateValue = await adminUser.findByIdAndUpdate(req.params.id, 
+    //             {
+    //             $set: req.body
+    //         }, { new: true });
+    //         res.status(200).json(updateValue)
+    // console.log('mmmm',updateValue);
+
+    //     }catch(err){
+    //         res.status(500).json(err)
+    //     }
+    // })
+
+
+    router.put('/updateUserProfile/:id', upload.single('Images'), async (req, res) => {
+        console.log(req.params.id);
+        try {
+            const updateValue = await adminUser.findByIdAndUpdate(req.params.id,
                 {
-                $set: req.body
-            }, { new: true });
-            res.status(200).json(updateValue)
-    console.log('mmmm',updateValue);
-
-        }catch(err){
-            res.status(500).json(err)
+                    $set: {
+                        Name: req.body.Name,
+                        Email: req.body.Email,
+                        Images: req.file.filename // Save the file name to the database
+                    }
+                }, { new: true });
+            res.status(200).json(updateValue);
+        } catch (err) {
+            res.status(500).json(err);
         }
-    })
-
-
-
+    });
 
 module.exports = router 

@@ -20,7 +20,7 @@
 .log-head{
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 55px;
     height: auto;
    
 }
@@ -34,6 +34,7 @@
 .log-body{
     display: flex;
     justify-content: center;
+    margin-top: 25px;
 }
 
 .log-body-cntnt{
@@ -50,10 +51,12 @@
  .log-body-cntnt input{
      border: none;
      margin-left: 3px;
+     outline: none;
  
  }
  .log-frgt{
-    margin-left: 140px;
+    margin-left: 100px;
+    margin-top: 3px;
  }
  .log-btn{
      border-radius: 5px;
@@ -72,7 +75,7 @@
 }
 .log-para{
     margin-top: 70px;
-    margin-left: 20px;
+    margin-left: 2px;
 }
 .log-link{
     text-decoration: none;

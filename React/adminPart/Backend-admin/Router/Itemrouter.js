@@ -84,7 +84,14 @@ router.put('/updateItems/:id', upload.single('Images'), async (req,res) => {
     try {
         const updateDatas = await itemDetails.findByIdAndUpdate(req.params.id,
             {
-                $set: req.body
+                $set: {
+                    category:req.body.category,
+                    type:req.body.type,
+                    title:req.body.title,
+                    description:req.body.description,
+                    price:req.body.price,
+                    Images: req.file.originalname,
+                }
             }, { new: true });
         res.status(200).json(updateDatas)
 

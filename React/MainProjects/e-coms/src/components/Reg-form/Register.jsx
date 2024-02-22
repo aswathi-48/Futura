@@ -13,6 +13,7 @@ const Register = () => {
     const [Email,setEmail]= useState('')
     const [Password,setPassword] = useState('')
     const [Images,setImages] = useState({})
+    const [Address,setAddress] = useState('')
 
 
      let formData = new FormData()
@@ -20,6 +21,7 @@ const Register = () => {
      formData.append ('Email', Email)
      formData.append ('Password', Password)
      formData.append ("Images",Images)
+     formData.append("Address",Address)
 
     const display = (e) =>{
       e.preventDefault();
@@ -51,12 +53,18 @@ const Register = () => {
                     <MdOutlineLockOpen className='reg-icon'/>
                         <input type="password" placeholder='Passoword' value={Password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
+                    {/* <div className='reg-body-cntnt'>
+                    <CgGirl className='reg-icon'/>
+                        <input type="text" placeholder='address' value={Address} onChange={(e) => setAddress(e.target.value)}/>
+                    </div> */}
                     <div className='reg-body-cntnts'>
                     <input type="file"  filename="Images" onChange={(e)=>setImages(e.target.files[0])} className='img-file'/>
                     </div>
+                    
                     <div className='reg-btn'>
                         <button type='submit'>Create Account</button>
                     </div>
+                   
                     <div className='reg-para'>
                         <p>Already have an account?<Link to='/login' className='reg-link'>Login</Link></p>
                     </div>

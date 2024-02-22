@@ -52,11 +52,14 @@ export const getUserProfile = async(id) => {
 export const updateprofileuser = async (updval) => {
     console.log("updaatee.....",updval);
     try{
-        const updres=await axios.put(`http://localhost:5000/value1/updateUserProfile/${updval._id}`,{
-            Name:updval.Name,
-            Email:updval.Email,
-            Images:updval.Images
-        })
+        const updres=await axios.put(`http://localhost:5000/value1/updateUserProfile/${updval._id}`,
+        // {
+        //     Name:updval.Name,
+        //     Email:updval.Email,
+        //     Images:updval.Images
+        // }
+        updval.formdata
+        )
         console.log("updresss",updres);
       
         return updres
@@ -82,10 +85,10 @@ export const ItemView = async (id) => {
 
 //getcartdetails
 
-export const GetCart = async ()=>{
+export const GetCart = async (id)=>{
     // console.log('********',id);
     try{
-        const res=await axios.get(`http://localhost:5000/value1/getcartData/`)
+        const res=await axios.get(`http://localhost:5000/value1/getcartData/${id}`)
         console.log('valueee',res.data);
         return res
     }catch(err){
@@ -118,6 +121,17 @@ export const deleteCartItems=async(id) =>{
     }
 }
 
+
+//deleteAllCart
+
+export const deleteItems = async()=>{
+    try{
+        const deletee = await axios.delete(`http://localhost:5000/value1/allCartitemDelete`)
+        console.log('deleteedara',deletee);
+    }catch(err){
+        console.log(err);
+    }
+}
 
 
 //quantity inc and dec
@@ -177,8 +191,77 @@ export const postUserOrder = async(val) =>{
     try{
          const postdata = await axios.post("http://localhost:5000/value1/postOrderUserDetails",val)
          console.log("postdataa",postdata);
-        //  return{orderUserdata:postdata.data}
+         console.log("new data",postdata.data);
+         return{orderUserdata:postdata.data}
     }catch(err){
 
+    }
+}
+
+
+//get orderuser
+
+export const getuserorder =async(val) =>{
+  console.log('id from get userorder',val);
+  try{
+    const res = await axios.get(`http://localhost:5000/value1/getorderUser/${val}`)
+    console.log('aaaaaaaaa',res);
+    return res
+  }catch (err){
+    console.log(err);
+  }
+}
+
+
+//delete orderuser 
+
+
+// export const deleteorderuserData = async (id) =>{
+//     console.log("111",id);
+//     try{
+//          const deltedatas = await axios.delete(`http://localhost:5000/value1/deleteorderuser/${id}`)
+//          console.log('delete data',deltedatas.data);
+//          return deltedatas.data
+//     }catch(err){
+//         console.log(err);
+//     }
+// }
+
+
+//update orderuser data
+
+export const UpdateOrderUder = async (updatate) => {
+    console.log("updatatatattts", updatate);
+    try {
+        const update = await axios.put(`http://localhost:5000/value1/updateorderuser/${updatate._id}`, {
+            HouseName: updatate.HouseName,
+            HouseNo: updatate.HouseNo,
+            Pincode: updatate.Pincode,
+            Landmark: updatate.Landmark,
+            city: updatate.city,
+            phone: updatate.phone
+        });
+        console.log("122333333333333", updatate.Landmark);
+        console.log("12345678", update);
+        return update.data;
+    } catch (err) {
+        console.log(err);
+    } 
+}
+
+
+export const addUserDetails=async(data)=>{
+    console.log("dtaa vanna?",data);
+    const userData = data.datas[0]
+    console.log(userData);
+    const itemData = data.item
+    console.log(itemData);
+    const orderId = data.loginId
+    try{
+const res = await axios.post("http://localhost:5000/value1/adduserdata",{userData,itemData,orderId})
+return res
+
+    }catch(err){
+        console.log(err);
     }
 }

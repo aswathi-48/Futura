@@ -16,6 +16,7 @@ const Displayy = () => {
     var id = data && data._id
     console.log('iddd',id);
   }
+  console.log("*&*&",data._id);
 
 
   useEffect(() => {
@@ -26,7 +27,7 @@ const Displayy = () => {
       setData(dataa)
     };
     userData();
-  }, []); // Include data in the dependency array to re-run the effect when it changes
+  },[]); // Include data in the dependency array to re-run the effect when it changes
 
      
 
@@ -41,10 +42,10 @@ const Displayy = () => {
               {item && <img src={`${process.env.PUBLIC_URL}/Images/${item.Images}`} alt="" height={100} />}
             </div>
             <div className='name'>
-              {item.Name}
+              {item && item.Name}
             </div>
             <div className='email'>
-            {item.Email}
+            {item && item.Email}
             </div>
           </div>
         ))} */}
@@ -53,10 +54,10 @@ const Displayy = () => {
             </div>
 
            <div className='name'>
-              {data123.Name}
+              {data123 && data123.Name}
             </div>
             <div className='email'>
-            {data123.Email}
+            {data123 && data123.Email}
             </div>
         <div className='up-btn'>
       <Link to={'/updateProfile'}> <button>Update</button> </Link> 
@@ -68,4 +69,3 @@ const Displayy = () => {
 
 export default Displayy
 
-//  {data && <img src={./Images/${data.Images}} alt="" height={50} width={50}/>}

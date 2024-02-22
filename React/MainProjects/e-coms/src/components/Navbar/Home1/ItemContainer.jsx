@@ -5,10 +5,17 @@ import { postCart } from '../../ApiCallll/ApiCall';
 import './ItemContainer.css'
 import Model from '../../Model';
 import ItemContainerModal from './ItemContainerModal';
+import { useSelector } from 'react-redux';
 // import './Home1.css'
 
 const ItemContainer = (props) => {
   const [viewState,setViewState]=useState(false)
+
+
+  
+  const dataz = useSelector((state) => state.Userrss.userrData[0])
+  const loginId = dataz._id
+
 
   console.log(props.quantity);
     const data = {
@@ -16,6 +23,7 @@ const ItemContainer = (props) => {
         itemName:props.title,
         itemPrice:props.price,
         itemImage:props.image,
+        orderId:loginId
       //  itemDes:props.des
 
     }
@@ -42,7 +50,7 @@ return await postCart(data)
            <div className='item__top'>
            
            <div className='item__image'>
-           <img src={ `${process.env.PUBLIC_URL}/Images/${props.image}`} alt={props.title} style={{ maxWidth: '200px' }} />
+          { props &&<img src={ `${process.env.PUBLIC_URL}/Images/${props.image}`} alt={props.title} style={{ maxWidth: '200px' }} />} 
            </div>
            <div className='item__icons'>
             <li> <AiOutlineShoppingCart onClick={cartHandler}  className='icn' /></li>

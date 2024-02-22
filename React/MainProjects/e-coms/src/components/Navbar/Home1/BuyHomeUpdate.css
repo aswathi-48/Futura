@@ -1,0 +1,56 @@
+.mainz{
+    margin-top: 70px;
+    margin-left: 500px;
+    margin-bottom: 100px;
+}
+
+.inputss{
+    width: 500px;
+    padding: 10px 35px;
+    height: 300px;
+    margin-top: 10px;
+    box-shadow: 10px 10px 10px 4px rgba(147, 145, 145, 0.5);
+}
+.hs_inpts{
+margin-top: 10px;
+margin-left: 50px;
+/* width: 10px; */
+padding: 5px;
+width: 300px;
+
+}
+.btn_up button{
+     border: none;
+     outline: none;
+     padding: 9px;
+     margin-left: 143px;
+     margin-top: 10px;
+     width: 100px;
+     border-radius: 10px;
+     
+}
+
+
+@media only screen and (max-width: 768px) {
+    .mainz {
+        margin-left: 20px; /* Adjust margin for smaller screens */
+        margin-top: 100px;
+    }
+
+    .inputss {
+        width: 80%; /* Take up 90% of the width */
+        margin-left: auto; /* Center the element */
+        margin-right: auto; /* Center the element */
+    }
+
+    .hs_inpts {
+        margin-left: 0; /* Reset margin for smaller screens */
+        width: 90%; /* Take up 90% of the width */
+    }
+
+    .btn_up button {
+        margin-left: auto; /* Center the button */
+        margin-right: auto; /* Center the button */
+        display: block; /* Ensure button is displayed as a block element */
+    }
+}

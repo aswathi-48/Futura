@@ -1,150 +1,185 @@
-// import React, { useEffect, useState } from 'react'
-// import { getOrder } from '../../ApiCallll/ApiCall'
-// import { useParams } from 'react-router-dom';
-
-// const ProductDetail=(props)=>{
-//     const [items,setItem] = useState([])
-//     console.log("iddd",props.id);
-//     useEffect(()=>{
-//         const orderGet = async()=>{
-//             console.log('dataaa',props.id);
-//             try{
-//                  const value = await getOrder(props.id)
-//                  setItem(value.data)
-//                  console.log('valuee',value);
-//             }catch(err){
-//                 console.log(err);
-//             }
-//         }
-//         orderGet()
-//     },[])
-
-//     return(
-//         <div>
-//              {props.title}
-//                {props.price}
-//         </div>
-//     )
-// }
-// const BuyHomDetails = () => {
-//     const [items,setItem] = useState([])
-//     // const { id } = useParams();
-
-    
-//     const [title, setTitle] = useState(); 
-//     const [price, setPrice] = useState( '');
-//     const [Images, setImages] = useState({});
-
-
-    // useEffect(()=>{
-    //     const orderGet = async()=>{
-    //         console.log('dataaa',id);
-    //         try{
-    //              const value = await getOrder(id)
-    //              setItem(value.data)
-    //              console.log('valuee',value);
-    //         }catch(err){
-    //             console.log(err);
-    //         }
-    //     }
-    //     orderGet()
-    // },[id])
-
-
-//     // useEffect(()=>{
-//     //    const fetchdata =async()=>{
-//     //     try{
-//     //         const getdataa = await getOrder(id);
-//     //         setTitle(getdataa.title);
-//     //         setPrice(getdataa.price);
-//     //         // setImages(getdataa.Images)
-
-//     //     }catch(err){
-//     //         console.log(err);
-//     //     }
-//     //    }
-//     //    fetchdata()
-//     // },[id])
-
-// //  const itemDeatils ={items.map((data)=>(
-// //     // <div key={data.id}>
-// //     //     {data.title}
-// //     //     {data.price}
-// //     //     {/* {data} */}
-// //     // </div>
-// //     <ProductDetail
-// //     id={data.id}
-// //    title= {data.title}
-// //         price={data.price}
-// //     />
-// // ))}
-//   return (
-//     <div>
-//          {/* <div>
-//       <h2>Title: {title}</h2>
-//       <p>Price: {price}</p>
-//     </div> */}
- 
-//     <div className='item__container'>
-//         <h1>helloo</h1>
-//         {items.map((data)=>(
-//             // <div key={data.id}>
-//             //     {data.title}
-//             //     {data.price}
-//             //     {/* {data} */}
-//             // </div>
-//             <ProductDetail
-//             id={data.id}
-//            title= {data.title}
-//                 price={data.price}
-//             />
-//         ))}
-//            </div>
-//     </div>
-//   )
-// }
-
-// export default BuyHomDetails
-
-
 
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { getOrder } from '../../ApiCallll/ApiCall'
+import { Link, useNavigate, useNavigation, useParams } from 'react-router-dom'
+import { GetCart, UpdateQuantity, addUserDetails, getOrder, getUserProfile, getuserorder, postUserOrder } from '../../ApiCallll/ApiCall'
+import './BuyHomDetails.css'
+import { useSelector } from 'react-redux'
+import { ProceedPage } from './ProceedPage'
 
-const BuyHomDetails = () => {
-    const [item,setItem] =useState([])
-    const id = useParams()
-console.log("++++++++",id.id);
-var PId=id.id
-    const [title, setTitle] = useState(); 
-       const [price, setPrice] = useState( '');
-       const [Images, setImages] = useState({});
-    
+const BuyHomDetails = (props) => {
 
-  
-    useEffect(()=>{
-        const orderGet = async()=>{
-            // console.log('dataaa',id);
-            try{
-                 const value = await getOrder(PId)
-                 setItem(value)
-                 console.log('valuee',value);
-            }catch(err){
-                console.log(err);
-            }
-        }
-        orderGet()
-    },[])
+  const [quantity, setQuantity] = useState(1)
+
+  console.log("&&&&&&&&&&&&&&&&",props);
 
 
-  return (
-    <div>
-                <div>title:{item&&item.title}</div>
-                <div>price:{item&&item.price}</div>
+  const [item, setItem] = useState([])
+  const id = useParams()
+  console.log("++++++++", id.id);
+  var PId = id.id
+  // const [title, setTitle] = useState(); 
+  //    const [price, setPrice] = useState( '');
+  //    const [Images, setImages] = useState({});
+
+  //    const [HouseName,setHouseName] = useState("")
+  //    const [HouseNo,setHouseNo] = useState('')
+  //    const [Pincode, setPincode] = useState( '');
+  //    const [Landmark,setLandmark]=useState('')
+  //    const [city,setCity] = useState('')
+
+  const [datas, setDatas] = useState([])
+  const dataz = useSelector((state) => state.Userrss.userrData[0])
+  const [cartItem,setCartItem]=useState([])
+  const loginId = dataz._id
+
+  const [state,setState]=useState()
+
+
+  useEffect(() => {
+    const orderGet = async () => {
+      // console.log('dataaa',id);
+      try {
+        const value = await getOrder(PId)
+        setItem(value)
+        console.log('valuee', value);
+        value.data ? setState(true) : setState(false)
+
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    orderGet()
+    const fetchdatas = async () => {
+      try {
+        const getDatas = await getuserorder(loginId)
+        console.log("dataaaaaaaaaass", getDatas);
+        setDatas([getDatas.data[0]])
+        //   setHouseName(getDatas.HouseName)
+        //   setHouseNo(getDatas.HouseNo)
+        //   setPincode(getDatas.Pincode)
+        //   setLandmark(getDatas.Landmark)
+        //   setCity(getDatas.city)
+        // const {} = await postUserOrder()
+        console.log();
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchdatas()
+    const cartShowHandler = async()=>{
+      const res = await GetCart(loginId)
+      console.log(res.data);
+      setCartItem(res.data)
+
+
+    }
+    cartShowHandler()
+
+  }, [])
+  const itemquantity = cartItem.map((li)=>li.itemQuantity)
+   const itemPrice= cartItem.map((li)=>li.itemPrice)
+   console.log("qunatityyyyyy",itemquantity);
+console.log("priceeeeeee",itemPrice);
+
+const subtotal = (itemquantity && itemPrice) ? itemquantity * itemPrice : 0;
+console.log("***********************************",subtotal);
+  console.log(datas);
+  // const addProductDetailHandler =async()=>{
+  //   console.log("haiii");
+  // const res = await addUserDetails({datas,item,loginId})
+  // console.log(res.data);
+  // }
+
+  const navigate = useNavigate();
+
+
+  const [mod, setMod] = useState('')
+
+
+  const hideHandler = () => {
+    setMod(false)
+  }
+  console.log("itemmmmmm",item);
+
+  const functionn = async () => {
+    const addProductDetailHandler = async () => {
+      console.log("haiii");
+      const item = state === true?item:cartItem
+      console.log(item);
       
+      const res = await addUserDetails({ datas, item, loginId })
+      console.log(res.data);
+      setTimeout(() => {
+        navigate('/ ');
+      }, 2000);
+    }
+    addProductDetailHandler()
+
+    const handleOrderItems = () => {
+      setMod(true)
+    }
+    handleOrderItems()
+  }
+ 
+  return (
+    <div className='maain_container'>
+      <div className='main_Heads'>
+        {datas.map((li) => (
+          <div className='adderes'>
+            <div className='adderess'>
+              <p><span className='headspan'>Your Address : </span> {li && li.HouseName}(H) {li && li.HouseNo} {li && li.Landmark}</p>
+              <p>{li && li.Pincode}(Pin) {li && li.city}.. <Link to={`/buyhomeupdate/${PId}`}> <button className='chge_btns'>Change</button> </Link></p>
+            </div>
+          </div>
+        ))}
+        
+        <div className='items'>
+        {state &&  
+        <div className='itemss'>
+        <div className='Details_img'>    
+          {item && <img src={`${process.env.PUBLIC_URL}/Images/${item.Images}`} width={100} />}         
+        </div>
+        <div className='Details_text'>
+          <div className='Details_title'><span>Title:</span> {item && item.title}</div>
+          <div className='Details_price'><span>Price:</span> {item && item.price}</div>
+        
+          {/* //addProductDetailHandler */}
+
+        </div>
+      </div>
+        }
+        {!state &&
+<div className='items1'>        
+         {cartItem.map((li)=>(
+           <div className='itemss'>
+            <div className='Details_img'> 
+           {li && <img src={`/Images/${li.itemImage}`} width={70} />}
+         </div>
+         <div className='Details_text'>
+           <p  className='Details_title'><span>Title:</span> {li.itemName}</p>
+           <p className='Details_price'><span>Price:</span> {li.itemPrice}</p>
+           </div>
+           </div>
+         ))}
+       </div>
+        }
+          <h4 className='subtotal'>Sub Total: {subtotal}</h4>
+
+<div className='del'><p>Free Delivary Avilable</p></div>
+<button className='proceedbtn' onClick={functionn}  >Proceed</button>
+                  </div>
+
+                
+      </div>
+      <div>
+
+        {mod && <ProceedPage orderhidehandler={hideHandler} />}
+      </div>
+      {/* <button className='proceedbtn' onClick={addProductDetailHandler}>proceed</button> */}
+
     </div>
   )
 }
 
 export default BuyHomDetails
+

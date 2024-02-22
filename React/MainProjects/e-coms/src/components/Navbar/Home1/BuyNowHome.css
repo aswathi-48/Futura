@@ -1,9 +1,193 @@
 .main_buyContainer{
-    margin-top: 100px;
+    margin-top: 40px;
 }
-
+.main_buyContainer h3{
+    margin-left: 200px;
+}
 .main_Head{
     margin-left: 300px;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 100px;
+}
+.inputs{
+    border: none;
+}
+.house_inpts{
+    width: 100px;
+}
+.inputs{
+    /* border: 1px solid silver; */
+    width: 500px;
+    padding: 10px 35px;
+    height: 250px;
+    outline: none;
+    box-shadow: 10px 10px 10px 4px rgba(147, 145, 145, 0.5);
+    /* background-color: whitesmoke; */
+    /* background-color: rgba(60, 162, 117, 0.654); */
+
+}
+.hs_inpt{
+    width: 300px;
+    padding: 7px;
+    border: none;
+    outline: none;
+
+    /* background-color: rgba(60, 162, 117, 0.654); */
+
+    
+}
+.hn_inpt{
+    width: 300px;
+    padding: 7px;
+    margin-top: 4px;
+    border: none;
+    /* outline: rgb(229, 226, 226); */
+    outline: none;
+
+}
+.pin_inpt{
+    width: 300px;
+    padding: 7px;
+    margin-top: 4px;
+    border: none;
+    outline: none;
+
+}
+.lan_inpt{
+    width: 300px;
+    padding: 7px;
+    margin-top: 4px;
+    border: none;
+    outline: none;
+
+}
+.city_inpt{
+    width: 300px;
+    padding: 7px;
+    margin-top: 4px;
+    border: none;
+    outline: none;
+
+}
+.pho_inp{
+    width: 300px;
+    padding: 7px;
+    margin-top: 4px;
+    border: none;
+    outline: none;
+    
+}
+.ctn_btn{
+    margin-left: 120px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100px;
+    background-color: whitesmoke;
+    /* color: white; */
+    margin-top: 10px;
+    /* background-color: blue; */
+    border-radius: 5px;
+}
+.ctn_btn:hover{
+    background-color: green;
+    color: white;
+}
+.cti_btn{
+    margin-left: 350px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100px;
+    background-color: whitesmoke;
+    /* color: white; */
+    margin-top: 10px;
+    /* background-color: blue; */
+    border-radius: 5px;
+
+
+}
+.cti_btn:hover{
+    background-color: green;
+    color: white;
+}
+.delbtn{
+    margin-left: 240px;
+}
+
+.map_details{
+    /* border: 1px solid; */
+    width: 320px;
+    padding: 19px 15px;
+    height: 290px;
+    box-shadow: 10px 10px 10px 4px rgba(147, 145, 145, 0.5);
+
+}
+.H_P{
+margin-top: 15px;
+margin-left: 34px;
+}
+.chge_btn{
+    /* margin-left: 350px; */
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100px;
+    background-color: whitesmoke;
+    /* color: white; */
+    margin-top: 10px;
+    /* background-color: blue; */
+    border-radius: 5px;
+
+}
+.chge_btn:hover{
+    background-color: blue;
+    color: white;
+
+}
+
+
+/* For small screens */
+@media only screen and (max-width: 600px) {
+    .main_buyContainer h3 {
+        margin-left: 10px; /* Adjust margin for smaller screens */
+    }
+    /* Adjust other styles as needed for small screens */
+    .inputs {
+        width: 90%; /* Take up 90% of the width */
+        padding: 10px; /* Adjust padding */
+    }
+    .hs_inpt,
+    .hn_inpt,
+    .pin_inpt,
+    .lan_inpt,
+    .city_inpt,
+    .pho_inp {
+        width: 90%; /* Take up 90% of the width */
+        padding: 7px; /* Adjust padding */
+        margin-top: 4px; /* Adjust margin */
+    }
+    .ctn_btn,
+    .cti_btn,
+    .chge_btn {
+        margin-left: 10px; /* Adjust margin for smaller screens */
+        width: 40%; /* Adjust button width */
+    }
+    .map_details {
+        width: 90%; /* Adjust width */
+        padding: 15px; /* Adjust padding */
+    }
+    .H_P {
+        margin-left: 10px; /* Adjust margin */
+    }
+}
+
+/* For medium screens */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Add styles for medium screens if necessary */
+}
+
+/* For large screens */
+@media only screen and (min-width: 1025px) {
+    /* Add styles for large screens if necessary */
 }

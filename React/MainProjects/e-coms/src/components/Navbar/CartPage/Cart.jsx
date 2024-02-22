@@ -3,16 +3,28 @@ import { GetCart, UpdateQuantity, deleteCartItems } from '../../ApiCallll/ApiCal
 import { AiOutlineClose } from "react-icons/ai";
 import './Cart.css'
 import CartItem from './CartItem';
+import { useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
 export const Cart = () => {
   
   const [items,setItems] =useState([])
   const [quantity,quantityState]=useState(1)
 
+  const values = useParams()
+  const id = useParams()
+  var Ids = values.id
+
+
+
+
+  const dataz = useSelector((state) => state.Userrss.userrData[0])
+  const loginId = dataz._id
+
   useEffect(()=>{
     const getCart = async ()=>{
       // console.log('iddd',id);
       try{
-          const CartData = await GetCart();
+          const CartData = await GetCart(loginId);
           console.log(CartData.data);
           setItems(CartData.data)
           console.log(CartData.data.itemQuantity);
@@ -35,6 +47,9 @@ export const Cart = () => {
     }
    }
 
+   
+
+   
 
 
 const TotalPrice = items.reduce((itemPrice,item) => itemPrice + item.itemQuantity * item.itemPrice,0)
@@ -81,6 +96,8 @@ const TotalPrice = items.reduce((itemPrice,item) => itemPrice + item.itemQuantit
 
             </>
         }
+
+        <Link to={`/buyhomedetails/${loginId}`}><button className='checkout_btn'>Proceed To Checkout</button></Link>
     </div>
 );
 }

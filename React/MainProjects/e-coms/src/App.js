@@ -17,6 +17,10 @@ import { useState } from 'react';
 import Dataproviders from './Store/Dataproviders';
 import BuyNowHome from './components/Navbar/Home1/BuyNowHome';
 import BuyHomDetails from './components/Navbar/Home1/BuyHomDetails';
+import { BuyHomUpdate } from './components/Navbar/Home1/BuyHomUpdate';
+import { ProceedPage } from './components/Navbar/Home1/ProceedPage';
+// import CheckOutPage from './components/Navbar/Home1/CheckOutPage';
+import ForgotPass from './components/Login-Form/ForgotPass';
 
 function App() {
   
@@ -73,8 +77,19 @@ const router = createBrowserRouter
     {
       path:'/buyhomedetails/:id',
       element:<BuyHomDetails/>
-    }
-     
+    },
+    {
+      path:"buyhomeupdate/:id",
+      element:<BuyHomUpdate/>
+    },
+    // {
+    //   path:"proceed",
+    //   element:<ProceedPage/>
+    // }
+     {
+      path:"/forgotpass",
+      element:<ForgotPass/>
+     }
 ]
 },
   {

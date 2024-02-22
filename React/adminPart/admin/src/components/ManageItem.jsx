@@ -64,7 +64,7 @@ const DeleteItem = async (id) =>{
 
     {items.map((data) => (
       <div key={data.id} className='manage-body-two'>
-        <div className='tab-body-img'>{data && <img src={`${process.env.PUBLIC_URL}/Images/${data.Images}`} width={50} />}</div>
+        <div className='tab-body-img'>{data && <img src={`${process.env.PUBLIC_URL}/Images/${data.Images}`} width={50} />}  </div>
         <div className='tab-body1'>{data.title}</div>
         <div className='tab-body2'>{data.description}</div>
         <div className='tab-body3'>{data.price}</div>

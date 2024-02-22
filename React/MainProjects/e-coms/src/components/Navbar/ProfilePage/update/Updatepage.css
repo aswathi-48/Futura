@@ -26,7 +26,7 @@
 .upd-head{
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 55px;
     height: auto;
    
 }
@@ -40,6 +40,9 @@
 .upd-body{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
+    
 }
 
 .upd-body-cntnt{
@@ -49,6 +52,7 @@
     width: 250px;
     margin-left: 20px;
     border-radius: 5px;
+    outline: none;
     border: 1px solid rgb(236, 234, 234);
 }
 .upd-body-cntnts input{
@@ -56,6 +60,7 @@
     /* margin-left: 45px; */
     /* margin-top: 15px; */
     /* margin-right: 20px; */
+    outline: none;
 
     /* margin-right: 100px */
 
@@ -68,7 +73,7 @@
     padding: 6px;
 
     margin-left: 20px;
-    border: 1px solid rgb(236, 234, 234);
+    /* border: 1px solid rgb(236, 234, 234); */
 
 }
 .upd-icon{
@@ -77,11 +82,12 @@
 .upd-body-cntnt input{
     border: none;
     margin-left: 3px;
+    outline: none;
 
 }
 .up-btn{
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
     height: 35px;
     width: 260px;
     margin-left: 20px;

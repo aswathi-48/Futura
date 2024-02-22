@@ -40,16 +40,27 @@ const UpdateItems = ({handleget}) => {
         console.log(err);
       }
     };
-
     fetchData(); // Call the async function immediately
-
   }, [id]);
+
+
+
+  let formData = new FormData()
+  formData.append("category",category)
+  formData.append("type",type)
+  formData.append("title",title)
+  formData.append("description",description)
+  formData.append("price",price)
+  formData.append("Images",Images)
+
+  console.log("******",formData);
 
 
   const UpdateItems = async ()=>{
     try{
         console.log('updatevaluee',id);
-        const UpValues = await updateItemDetails({_id:id,category,type,title,description,price,Images})
+        // const UpValues = await updateItemDetails({_id:id,category,type,title,description,price,Images})
+        const UpValues = await updateItemDetails({id,formData})
         console.log("Upvaluesss",UpValues);
     }catch(err){
         console.log(err);
@@ -57,14 +68,9 @@ const UpdateItems = ({handleget}) => {
   }
 
 
-
   return (
     <div className='update-container'>
        <div className='main1-container'>
-       {/* <div className='update-head' >
-            <h1>Update Items</h1>
-        </div> */}
-
         <form onSubmit={UpdateItems}  encType='multipart/form-data'>
           <div className='head'>
             {/* <p>Hey Welcome!</p> */}
@@ -110,15 +116,6 @@ const UpdateItems = ({handleget}) => {
            </div> */}
            <button type='submit' className='sub-btn'>submit</button>
         </form>
-
-
-        {/* <div key={item._id}>
-        <div> <h4>{item.title}</h4></div> 
-         <div> <p>Description: {item.description}</p></div>
-        <div> <p>Category: {item.category}</p></div> 
-        <div> <p>Type: {item.type}</p></div>
-       <div> <p>Price: {item.price}</p></div>
-        </div> */}
      
        </div>
      

@@ -57,7 +57,7 @@ const Dashboard = () => {
                     </div>
                     <div className='dashboard-linkordr'>
                         <p><CiDollar className='icon'/>
-                            <Link className='dash-link'>Orders</Link></p>
+                            <Link to='/orderdetails' className='dash-link'>Orders</Link></p>
                     </div>
                     <div className='dashboard-links'>
                         <div>

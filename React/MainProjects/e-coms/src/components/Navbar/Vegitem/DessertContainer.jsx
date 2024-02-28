@@ -4,17 +4,21 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './DessertContainer.css'
 import { postCart } from '../../ApiCallll/ApiCall';
 import BurgerContainerModel from '../burger/BurgerContainerModel';
+import { useSelector } from 'react-redux';
 
 const DessertContainer = (props) => {
 
   const [viewState,setViewState]=useState(false)
 
-
+  const dataz =  useSelector((state) => state.Userrss.userrData[0])
+  const loginId = dataz._id
     const data = {
         quantity:1,
           itemName:props.title,
           itemPrice:props.price,
-          itemImage:props.image
+          itemImage:props.image,
+          orderId:loginId
+
       }
       const cartHandler=async()=>{
 

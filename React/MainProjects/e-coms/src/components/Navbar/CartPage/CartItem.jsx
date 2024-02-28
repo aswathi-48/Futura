@@ -9,9 +9,6 @@ const CartItem = (props) => {
   console.log('1111111111', quantity);
   console.log('22222', props.quantity);
 
-
-
-
   const DeleteCart = async (id) => {
     console.log('delete using id', id);
     try {
@@ -21,8 +18,6 @@ const CartItem = (props) => {
     }
   }
  
-
-
   const addOnHandler = async () => {
     const quantityState = quantity + 1
     console.log(quantityState);

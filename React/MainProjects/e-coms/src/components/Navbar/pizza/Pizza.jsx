@@ -34,7 +34,7 @@ const Pizza = () => {
       }
     }
     viewItemss()
-  })
+  },[])
 
 
 

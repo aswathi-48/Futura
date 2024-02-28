@@ -55,7 +55,7 @@ export const getadminprofile = async(id) => {
     console.log("id....??",id);
     try{
         const response = await axios.get(`http://localhost:5000/data1/getadmindetails/${id}`)
-        console.log("dataaaa getadmin update ",response);
+        console.log("dataaaa getadmin update ",response.data);
         return response.data
        }catch(err){
         console.log(err);
@@ -85,15 +85,15 @@ export const updateItemDetails = async(updatevalue) =>{
     console.log("updateevalueess",updatevalue);
     try{
         const updateRes = await axios.put(`http://localhost:5000/data2/updateItems/${updatevalue._id}`,
-        // {
-        //     category:updatevalue.category,
-        //     type:updatevalue.type,
-        //     title:updatevalue.title,
-        //     description:updatevalue.description,
-        //     price:updatevalue.price,
-        //     Images:updatevalue.Images
-        // }
-      updatevalue.formData  )
+        {
+            category:updatevalue.category,
+            type:updatevalue.type,
+            title:updatevalue.title,
+            description:updatevalue.description,
+            price:updatevalue.price,
+            Images:updatevalue.Images
+        }
+    )
         console.log("updateResss",updateRes);
         return updateRes
     }catch(err){
@@ -176,15 +176,43 @@ export const viewDetails = async (id) => {
 
 //orderdataasget
 
-export const getOredetails = async(data) =>{
-    console.log("111",data);
+export const getOredetails = async() =>{
     try{
-        const value = await userRequest.get(`http://localhost:5000/value1/getuserdata`,data)
-        console.log("dataget",value.data);
-        const itemData= value.data.map((li)=>li.Details.itemData)
-        console.log("++++++++++",itemData);
+        const value = await userRequest.get(`http://localhost:5000/value1/getuserdata`)
+        console.log(value.data);
+     
         return {Details:value.data}
     }catch(err){
         console.log(err);
     }
+}
+
+
+
+//forgot password
+
+export const forgotPass = async(Email)=>{
+    console.log('emaill',Email);
+    try{
+        const forgotmail = await axios.post('http://localhost:5000/data1/adminmailsend',Email)
+        console.log('forgot',forgotmail.data);
+        return forgotmail.data
+    }catch(err){
+console.log(err);
+    }
+}
+
+
+// / ****** change password ******* 
+export const changePassword = async(data) =>{
+    console.log('datfaytfya',data);
+
+    try{
+        const changingP = await axios.put("http://localhost:5000/data1/changePassword",data)
+        console.log('chageeeeljh',changingP);
+    }catch(err){
+        console.log(err);
+
+    }
+
 }

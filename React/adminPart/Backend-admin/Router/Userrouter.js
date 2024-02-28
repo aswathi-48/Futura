@@ -4,7 +4,9 @@ const Crypto = require('crypto-js')
 const adminUser = require('../Models/Userschema')
 const jwt = require('jsonwebtoken');
 const { verifyTokenn, verifyTokenAndAuthorization } = require('../VerifyToken')
-const multer=require('multer')
+const multer=require('multer');
+// const { signup } = require('../Controller/appcontroller');
+const { signups } = require('../Controller/AdminController');
 
 
 const storage=multer.diskStorage({
@@ -17,6 +19,9 @@ const storage=multer.diskStorage({
 })
 
 const upload=multer({storage:storage});
+
+
+
 
 
 router.post('/adminRegData',upload.single('Images') ,(req,res) =>{
@@ -40,6 +45,41 @@ router.post('/adminRegData',upload.single('Images') ,(req,res) =>{
     }
 }) 
 
+
+router.post('/adminmailsend',signups)
+
+
+
+router.put('/changePassword', async (req, res) => {
+    console.log(req.body);
+    try {
+        const  Id  = req.body.userId;
+        const Password = req.body.Password;
+        console.log('Id',Id);
+        console.log('password',Password);
+
+        // Find the user by Id
+        const user = await adminUser.findOne({ _id: Id });
+        console.log('user',user);
+
+        // If user not found, return an error
+        if (!user) {
+            return res.status(404).json({ response: "User not found" });
+        }
+
+        // Encrypt the new password
+        const encryptedPassword = Crypto.AES.encrypt(Password, process.env.Crypto_js).toString();
+
+        // Update the password
+        user.Password = encryptedPassword;
+        await user.save();
+
+        // Return success response
+        res.status(200).json({ response: "Password changed successfully" });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 
 router.post ('/adminlogin',async (req,res) => {

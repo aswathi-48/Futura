@@ -14,7 +14,8 @@ const PizzaContainerModel = (props) => {
       }
       const cartHandler=async()=>{
     
-    return await postCart(data)
+    const  res =  await postCart(data)
+    console.log(res.cartData);
       }
 
 

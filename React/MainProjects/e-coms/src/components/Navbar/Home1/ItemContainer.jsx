@@ -11,10 +11,11 @@ import { useSelector } from 'react-redux';
 const ItemContainer = (props) => {
   const [viewState,setViewState]=useState(false)
 
-
+console.log(props.state);
   
-  const dataz = useSelector((state) => state.Userrss.userrData[0])
-  const loginId = dataz._id
+  const dataz =  useSelector((state) => state.Userrss.userrData[0])
+  const loginId = props.state&&dataz._id
+  console.log(loginId);
 
 
   console.log(props.quantity);
@@ -27,9 +28,10 @@ const ItemContainer = (props) => {
       //  itemDes:props.des
 
     }
-    const cartHandler=async()=>{
+    const cartHandler = async()=>{
 
-return await postCart(data)
+const res =  await postCart(data)
+console.log("daatatattaa",res.cartData);
     }
 
     

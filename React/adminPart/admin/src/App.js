@@ -15,6 +15,8 @@ import ManageItem from './components/ManageItem';
 import UpdateItems from './components/UpdateItems';
 import OrderDetails from './components/OrderDetails';
 import ForgotPassword from './components/Login/ForgotPassword';
+import OtpVerification from './components/Login/OtpVerification';
+import ChangePassword from './components/Login/ChangePassword';
 
 
 function App() {
@@ -34,20 +36,28 @@ function App() {
       path:"reg",
       element:<RegisterFile/>
     },
-    {
-      path:"log",
-      element:<LoginFile/>
-    },
+    // {
+    //   path:"log",
+    //   element:<LoginFile/>
+    // },
     {
       path:'dash',
       element:<DashContent/>
     },
- 
+    {
+      path:"/forgotpass",
+      element:<ForgotPassword/>
+    },
+    {
+      path:'/verify',
+      element:<OtpVerification/>
+    },
+   {
+    path:'/changePass',
+    element:<ChangePassword/>
+   },
     
-    // {
-    //   path:"/display",
-    //   element:<Displayy/>
-    // },
+   
     {
       path:'/',
       element: Token? <Main/> : <LoginFile/>,
@@ -87,10 +97,6 @@ function App() {
           path:"orderdetails",
           element:<OrderDetails/>
         },
-        {
-          path:"/forgotpass",
-          element:<ForgotPassword/>
-        }
        
       ]
 

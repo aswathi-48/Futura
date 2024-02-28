@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { GetCart, UpdateQuantity, deleteCartItems } from '../../ApiCallll/ApiCall';
+import { GetCart, UpdateQuantity, deleteCartItems, deleteItems } from '../../ApiCallll/ApiCall';
 import { AiOutlineClose } from "react-icons/ai";
 import './Cart.css'
 import CartItem from './CartItem';
@@ -14,9 +14,6 @@ export const Cart = () => {
   const id = useParams()
   var Ids = values.id
 
-
-
-
   const dataz = useSelector((state) => state.Userrss.userrData[0])
   const loginId = dataz._id
 
@@ -24,12 +21,12 @@ export const Cart = () => {
     const getCart = async ()=>{
       // console.log('iddd',id);
       try{
-          const CartData = await GetCart(loginId);
-          console.log(CartData.data);
-          setItems(CartData.data)
-          console.log(CartData.data.itemQuantity);
-          quantityState(CartData.data.itemQuantity)
-          console.log('dataaaa',CartData);
+          const {res} = await GetCart(loginId);
+          // console.log(CartData.data);
+          setItems(res)
+          // console.log(CartData.data.itemQuantity);
+          quantityState(res.itemQuantity)
+          console.log('dataaaa',res);
       }catch(err){
         console.log(err);
       }
@@ -37,25 +34,7 @@ export const Cart = () => {
     getCart()
   },[])
 
-
-   const DeleteCart = async(id) => {
-    console.log('delete using id',id);
-    try{
-     deleteCartItems(id)
-    }catch(err){
-      console.log(err);
-    }
-   }
-
-   
-
-   
-
-
 const TotalPrice = items.reduce((itemPrice,item) => itemPrice + item.itemQuantity * item.itemPrice,0)
-
-
-
 
   return (
     <div className='cart__container'>

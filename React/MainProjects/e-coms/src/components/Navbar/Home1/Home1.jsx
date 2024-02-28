@@ -13,7 +13,7 @@ import { ItemView } from '../../ApiCallll/ApiCall';
 
 
 
-const Home1 = ({ searchQuery }) => {
+const Home1 = (props) => {
 
 
   const[item,setItem]=useState([])
@@ -27,7 +27,7 @@ const showHandler=async()=>{
 showHandler()
 },[])
 
-
+console.log(props.state);
 //filter data using price
 
 
@@ -37,7 +37,7 @@ const [priceRange, setPriceRange] = useState('');
 const filterItemsByPrice = (minPrice, maxPrice) => {
   const filtered = item.filter(item => item.price >= minPrice && item.price < maxPrice);
   setFilteredItems(filtered);
-  setPriceRange(`$${minPrice} - $${maxPrice - 1}`);
+  setPriceRange(`$${minPrice} - $${ maxPrice - 1}`);
 };
 
 const resetFilter = () => {
@@ -97,11 +97,11 @@ const resetFilter = () => {
           ))} */}
            {filteredItems.length > 0 ? (
             filteredItems.map(item => (
-              <ItemContainer key={item.id} title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity} />
+              <ItemContainer state={props.state} key={item.id} title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity} />
             ))
           ) : (
             item.map(item => (
-              <ItemContainer key={item.id} title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity} />
+              <ItemContainer state={props.state} key={item.id} title={item.title} description={item.description} price={item.price} image={item.Images} quantity={item.quantity} />
             ))
           )}
         </ul>

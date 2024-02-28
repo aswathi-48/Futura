@@ -12,7 +12,7 @@ import { Cart } from './components/Navbar/CartPage/Cart';
 import Profile from './components/Navbar/ProfilePage/Profile';
 import { useSelector } from 'react-redux';
 import Updatepage from './components/Navbar/ProfilePage/update/Updatepage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // import PizzaView from './components/Navbar/pizza/PizzaView';
 import Dataproviders from './Store/Dataproviders';
 import BuyNowHome from './components/Navbar/Home1/BuyNowHome';
@@ -21,50 +21,54 @@ import { BuyHomUpdate } from './components/Navbar/Home1/BuyHomUpdate';
 import { ProceedPage } from './components/Navbar/Home1/ProceedPage';
 // import CheckOutPage from './components/Navbar/Home1/CheckOutPage';
 import ForgotPass from './components/Login-Form/ForgotPass';
+import OtpPage from './components/Login-Form/OtpPage';
+import ResetEmail from './components/Login-Form/ResetEmail';
 
 function App() {
-  
+  const[state,setState]=useState()
 const dataas = useSelector ((state) => state.Userrss.userrData[0])
 console.log("data from user",dataas);
-
+useEffect(()=>{
+  Token?setState(true):setState(false)
+},[])
 if(dataas)
 {
   var Token = dataas && dataas.accesstoken
   console.log('tokenn',Token);
 }
-
+console.log(state);
 const router = createBrowserRouter
   ([
     {
       path:'/',
-      element: <Root  />  ,
+      element:  <Root  />  ,
       children:[
         {
           path:'/',
-          element:<Home1/>
+          element:!Token?<Home1 state={state}/>:<Home1 state={state}/>
         },
         {
           path:'/pizza',
-          element:<Men/>
+          element:!Token?<Men />:<Men state={state}/>
         },
         {
           path:'/Burger',
-          element:<Women/>
+          element:!Token?<Women/>:<Women state={state}/>
         },
         {
           path:'/VegItem',
-          element:<Kids/>
+          element:!Token?<Kids/>:<Kids state={state}/>
         },
         {
           path:'/cart',
-          element:<Cart/>
+          element:Token?<Cart/>:<Home1/>
         },
        { path:'/profile',
-        element:<Profile/>
+        element:Token?<Profile/>:<Home1/>
       },
      {
       path:"/update",
-      element:<Updatepage/>
+      element:Token?<Updatepage/>:<Home1/>
      },
     //  {
     //   path:"/pizzaview",
@@ -89,7 +93,13 @@ const router = createBrowserRouter
      {
       path:"/forgotpass",
       element:<ForgotPass/>
-     }
+     },
+{     path:'/verify',
+element:<OtpPage/>
+},{
+  path:'/changePage',
+  element:<ResetEmail/>
+}
 ]
 },
   {

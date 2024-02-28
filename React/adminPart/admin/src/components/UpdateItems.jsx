@@ -59,8 +59,8 @@ const UpdateItems = ({handleget}) => {
   const UpdateItems = async ()=>{
     try{
         console.log('updatevaluee',id);
-        // const UpValues = await updateItemDetails({_id:id,category,type,title,description,price,Images})
-        const UpValues = await updateItemDetails({id,formData})
+        const UpValues = await updateItemDetails({_id:id,category,type,title,description,price,Images})
+        // const UpValues = await updateItemDetails({id,formData })
         console.log("Upvaluesss",UpValues);
     }catch(err){
         console.log(err);

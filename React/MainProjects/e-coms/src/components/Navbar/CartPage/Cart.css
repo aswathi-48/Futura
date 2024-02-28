@@ -136,12 +136,15 @@ background-color: rgb(79, 79, 79);
     margin-left: 38%;
     /* letter-spacing: 1px; */
     font-size: 22px;
-    color: rgb(57, 57, 57);
+    /* color: rgb(57, 57, 57); */
+    color: whitesmoke;
     margin-bottom: 40px;
+background-color: green;
+
     height: 50px;
     width: 280px;
     margin-top: 0px;
 }
 .checkout_btn:hover{
- color: blue;
+ /* color: blue; */
 }

@@ -39,16 +39,20 @@
     display: flex;
     justify-content: center;
 }
-
+.reg-body-cntnts input{
+    /* margin-left:150px; */
+    padding: 20px 30px;
+}
 .reg-body-cntnt{
     padding: 6px;
     margin-top: 10px;
     height: 25px;
     width: 250px;
-    margin-left: 45px;
+    margin-left: 85px;
     border-radius: 5px;
     border: 1px solid rgb(236, 234, 234);
 }
+
 .reg-body-cntnts input{
     width: 250px;
     /* margin-left: 13px; */
@@ -70,7 +74,7 @@
     margin-top: 10px;
     height: 35px;
     width: 260px;
-    margin-left: 45px;
+    margin-left: 85px;
 
     border: 1px solid rgb(236, 234, 234);
     background-color: rgb(241, 55, 55);
@@ -84,7 +88,7 @@
 }
 .reg-para{
     /* margin-top: 70px; */
-    margin-left: 60px;
+    margin-left: 88px;
 }
 .reg-link{
     text-decoration: none;

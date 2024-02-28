@@ -1,8 +1,9 @@
 const mongoose=require('mongoose')
 const UserSchemaa=new mongoose.Schema({
-    email: {
+    Email: {
         type:String,
         required:true,
+        unique:false
     },
     otp: {
         type:String,
@@ -14,16 +15,16 @@ const UserSchemaa=new mongoose.Schema({
     },
 
 
-    password:{
-        type:String,
-        required:true,
-    },
-    varified:{
-        type:Boolean,
-        default:false,
-    }  
+    // password:{
+    //     type:String,
+    //     required:true,
+    // },
+    // varified:{
+    //     type:Boolean,
+    //     default:false,
+    // }  
     
     
 
 })
-module.exports=mongoose.model('NodeMailer',UserSchemaa)
+module.exports=mongoose.model('forgotpass',UserSchemaa)

@@ -6,8 +6,12 @@ import './ItemContainerModel.css'
 import { IoClose } from "react-icons/io5";
 import { postCart, postOrder } from '../../ApiCallll/ApiCall';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const  ItemContainerModal = (props) => {
+  
+  const dataz = useSelector((state) => state.Userrss.userrData[0])
+  const loginId = dataz._id
 
   console.log(props,'**************************************************');
 
@@ -16,11 +20,13 @@ const  ItemContainerModal = (props) => {
       itemName:props.title,
       itemPrice:props.price,
       itemImage:props.image,
-      itemDes:props.des
+      itemDes:props.deso,
+      orderId:loginId
   }
   const cartHandler=async()=>{
 
-return await postCart(data)
+const res = await postCart(data)
+console.log("[pppppp",res.cartData);
   }
 
 

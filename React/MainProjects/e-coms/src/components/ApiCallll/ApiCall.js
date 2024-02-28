@@ -37,7 +37,7 @@ export const LoginValue =async (LogValue,dispatch) => {
 export const getUserProfile = async(id) => {
     console.log("id..?",id);
     try{
-        const res1 = await userRequest.get(`/getuserdetails/${id}`)
+        const res1 = await axios.get(`http://localhost:5000/value1/getuserdetails/${id}`)
         console.log('dataa getuser',res1);
         return res1.data
     }catch(err){
@@ -90,7 +90,13 @@ export const GetCart = async (id)=>{
     try{
         const res=await axios.get(`http://localhost:5000/value1/getcartData/${id}`)
         console.log('valueee',res.data);
-        return res
+        let sum=0
+        for(let i=0;i<res.data.length;i++){
+            let totalAmount = res.data[i].itemPrice * res.data[i].itemQuantity
+            console.log("totallllllllllllllllllllllllll",totalAmount);
+            sum+=totalAmount
+        }
+        return {res:res.data,sum}
     }catch(err){
         console.log(err);
     }
@@ -101,7 +107,7 @@ export const postCart = async(data)=>{
     console.log("cartdata",data);
     try{
 const res = await axios.post("http://localhost:5000/value1/postcartData",data)
-console.log(res.data);
+console.log("res.daatat",res.data);
 return {cartData:res.data}
     }catch(err){
         console.log(err);
@@ -124,9 +130,10 @@ export const deleteCartItems=async(id) =>{
 
 //deleteAllCart
 
-export const deleteItems = async()=>{
+export const deleteItems = async(data)=>{
+    console.log("haiaiiaididsis",data);
     try{
-        const deletee = await axios.delete(`http://localhost:5000/value1/allCartitemDelete`)
+        const deletee = await axios.delete(`http://localhost:5000/value1/allCartitemDelete?id=${data}`,)
         console.log('deleteedara',deletee);
     }catch(err){
         console.log(err);
@@ -254,7 +261,7 @@ export const addUserDetails=async(data)=>{
     console.log("dtaa vanna?",data);
     const userData = data.datas[0]
     console.log(userData);
-    const itemData = data.item
+    const itemData = data.items
     console.log(itemData);
     const orderId = data.loginId
     try{
@@ -264,4 +271,50 @@ return res
     }catch(err){
         console.log(err);
     }
+}
+
+
+
+
+
+export const SearchApi = async(searchText) =>{
+   try{
+    const search = await axios.get(`http://localhost:5000//data2/searchText/${searchText}`)
+    console.log("search..",search);
+    return search.data;
+   }catch(err){
+    console.log(err);
+   }
+}
+
+
+
+
+//Forgot pAssword
+
+
+export const forgotPass = async(Email)=>{
+    console.log('emaill',Email);
+    try{
+        const forgotmail = await axios.post('http://localhost:5000/value1/mailSend',Email)
+        console.log('forgot',forgotmail.data);
+        return forgotmail.data
+    }catch(err){
+console.log(err);
+    }
+}
+
+
+// / ****** change password ******* 
+export const changePass = async(data) =>{
+    console.log('datfaytfya',data);
+
+    try{
+        const changingP = await axios.put("http://localhost:5000/value1/changePass",data)
+        console.log('chageeeeljh',changingP);
+    }catch(err){
+        console.log(err);
+
+    }
+
 }

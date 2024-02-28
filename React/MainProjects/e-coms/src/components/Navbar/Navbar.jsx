@@ -10,16 +10,17 @@ import { FaRegUser } from "react-icons/fa";
 import { IoMdLogOut } from "react-icons/io";
 import { useDispatch } from 'react-redux';
 import { removeUserData } from '../../Redux/Userredux';
-
+import { SearchApi } from '../ApiCallll/ApiCall';
+import img from './Home1/img/Tasty_Eats__1_-removebg-preview.png'
 
 const Navbar = ({ onSearch }) => {
    
 
-    const [searchQuery,setSearchQuery] = useState('')
-    // const [seachResult,setSearchResults]=useState([])
+    const [searchText,setSearchText] = useState('')
+    const [seachResults,setSearchResults]=useState([])
 
-    console.log("*3838333333",searchQuery);
-
+    // console.log("*3838333333",searchQuery);
+ 
     const dispatch = useDispatch()
 
    const loginout = () =>{
@@ -33,14 +34,27 @@ const Navbar = ({ onSearch }) => {
 //     onSearch(query); // Notify the parent component about the search query
 //   };
 
+const submitSearch = async () =>{
+    try{
+        const seachResult = await SearchApi(searchText);
+        console.log(searchText);
+        setSearchResults(seachResult)
+        console.log("search result ............",seachResult);
+    }catch(err){
+        console.log(err);
+    }
+}
+
 
     return (
         <div className='Nav'>
             <div className='Nav-main'>
                 <div className='Nav-logo'>
-                    {/* <img src={img} alt="" /> */}
+                  <h2><img src={img} alt="" className='imgggg' /></h2>  
+                  
                 </div>
                 <div className='Nav-cat'>
+                 
                     <Link to='/'> <button>Home</button></Link>
                     <Link to='/pizza'> <button>Pizza</button></Link>
                     <Link to={'/burger'}> <button>Burger</button></Link>
@@ -49,9 +63,9 @@ const Navbar = ({ onSearch }) => {
                 </div>
                 <div className='Nav-search'>
                     <div className='icons-one'>
-                        <FiSearch className='search-icon' />
+                        <FiSearch className='search-icon' onClick={submitSearch}/>
                     </div>
-                    <input type="text" placeholder="Search items..." value={searchQuery}  onChange={(e) => setSearchQuery(e.target.value)}  />
+                    <input type="text" placeholder="Search items..." value={searchText}  onChange={(e) => setSearchText(e.target.value)}  />
                     {/* <button>search</button> */}
                     {/* <input
             type='text'

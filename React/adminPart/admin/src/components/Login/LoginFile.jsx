@@ -40,13 +40,13 @@ const LoginFile = () => {
                         <input type="password" placeholder='Passoword' onChange={(e)=>setPassword(e.target.value)} />
                     </div>
                     <div className='log-frgt'> 
-                      <Link to={'/forgotpass'}>  <p>Forget Password?</p></Link>
+                      <Link to='/forgotpass' className='forgetlink'>  <p className='forget'>Forget Password?</p></Link>
                     </div>
                     <div className='log-btn'>
                         <button onClick={display}>Login</button>
                     </div>
                     <div className='log-para'>
-                    <p>Don't have an account?<Link to='/register' className='log-link'>Register</Link></p>
+                    <p>Don't have an account?<Link to='/reg' className='log-link'>Register</Link></p>
                     </div>
                 </div>
             </div>

@@ -5,16 +5,19 @@ import { Link } from 'react-router-dom';
 import { postCart } from '../../ApiCallll/ApiCall';
 import './PizzaContainer.css'
 import PizzaContainerModel from './PizzaContainerModel';
+import { useSelector } from 'react-redux';
 
 const PizzaContainer = (props) => {
   const [viewState,setViewState]=useState(false)
-
+  const dataz =  useSelector((state) => state.Userrss.userrData[0])
+  const loginId = dataz._id
 
     const data = {
         quantity:1,
           itemName:props.title,
           itemPrice:props.price,
-          itemImage:props.image
+          itemImage:props.image,
+          orderId:loginId
       }
       const cartHandler=async()=>{
 

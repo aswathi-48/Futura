@@ -43,7 +43,7 @@ const User = () => {
           <tbody className='ctnt-div'>
             {value.map((item) => (
               <tr key={item._id}>
-                <td>{item && <img src={`${process.env.PUBLIC_URL}/Images/${item.Images}`} alt='' height={70} style={{borderRadius:50}}/>}</td>
+                <td>{item && <img src={`${process.env.PUBLIC_URL}/Images/${item.Images}`} alt='' height={70} style={{borderRadius:66}}/>}</td>
                 <td className='name-item'>{item.Name}</td>
                 <td className='email-item'>{item.Email}</td>
                 <td>

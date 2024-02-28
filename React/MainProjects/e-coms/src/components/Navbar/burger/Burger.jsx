@@ -23,7 +23,7 @@ const Burger = () => {
       }
     }
     viewItemss()
-  })
+  },[])
 
   return (
     <div className='burger-container'>

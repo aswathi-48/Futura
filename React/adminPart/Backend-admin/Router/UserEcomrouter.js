@@ -8,7 +8,10 @@ const Cart = require("../Models/cartSchema")
 const Order = require('../Models/orderSchema')
 // const OrderUser =reqiure('../Models/orderUserSchema.js')
 const OrderUser = require('../Models/orderUserSchema')
-const UserOrders = require("../Models/conformOrder")
+const UserOrders = require("../Models/conformOrder");
+
+
+const { signup } = require('../Controller/appcontroller');
 
 
 const storage = multer.diskStorage({
@@ -51,12 +54,39 @@ router.post('/registerData', upload.single('Images'), (req, res) => {
 
 
 
+router.post('/mailSend',signup)
 
 
+router.put('/changePass', async (req, res) => {
+    console.log(req.body);
+    try {
+        const  Id  = req.body.userId;
+        const Password = req.body.Password;
+        console.log('Id',Id);
+        console.log('password',Password);
 
+        // Find the user by Id
+        const user = await RegUsers.findOne({ _id: Id });
+        console.log('user',user);
 
+        // If user not found, return an error
+        if (!user) {
+            return res.status(404).json({ response: "User not found" });
+        }
 
+        // Encrypt the new password
+        const encryptedPassword = Crypto.AES.encrypt(Password, process.env.Crypto_js).toString();
 
+        // Update the password
+        user.Password = encryptedPassword;
+        await user.save();
+
+        // Return success response
+        res.status(200).json({ response: "Password changed successfully" });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 
 router.post('/login', async (req, res) => {
@@ -121,7 +151,7 @@ router.delete('/userDetailsDelete/:id', async (req, res) => {
 
 
 
-router.get('/getuserdetails/:id', verifyTokenn, verifyTokenAndAuthorization, async (req, res) => {
+router.get('/getuserdetails/:id', async (req, res) => {
     console.log('req in getuser', req.body);
 
     try {
@@ -248,11 +278,13 @@ router.put('/updatequanity/:id', async (req, res) => {
 
 //delete all cart item after proceed to checkout
 router.delete('/allCartitemDelete', async (req,res)=>{
-    const {loginId} = req.body
+    console.log(
+        "jidhsudhsduhsds",req.query.id)
+    
     try{
         // const DeleteData = await Cart.find()
         // console.log(DeleteData);
-        await Cart.deleteMany({loginId})
+        await Cart.deleteMany({orderId:req.query.id})
         res.status(200).json({ message: 'All cart items deleted successfully' });
     }catch(err){
         res.status(500).json(err)
@@ -414,7 +446,7 @@ router.post("/adduserdata", async (req, res) => {
 })
 
 router.get('/getuserdata', async (req, res) => {
-    // console.log("**",req.body);
+    console.log("**",req.body);
     try {
         const resp = await UserOrders.find()
         console.log("*****************", resp);
@@ -425,5 +457,32 @@ router.get('/getuserdata', async (req, res) => {
 
     }
 })
+
+
+router.searchText = async (req,res )=>{
+    try{
+        const searchText = req.params.searchText;
+        console.log("search text ",searchText);
+        const searchRegex = new RegExp(searchText,"i")
+
+        const search = await itemDetailes.find({
+            $or:[{title:searchRegex}]
+        });
+        if(!search.length === 0){
+          return res.json({message:"no item found"})
+        }
+        res.json(search)
+    }catch(err){
+        res.status(500).json(err)
+
+    }
+}
+
+
+
+
+
+
+
 module.exports = router
 

@@ -79,20 +79,23 @@ router.delete('/itemsDelete/:id', async (req, res) => {
 
 
 
-router.put('/updateItems/:id', upload.single('Images'), async (req,res) => {
+router.put('/updateItems/:id', async (req,res) => {
     console.log("req.params.idd", req.params.id);
+    // console.log("datata",req.body.upda);
     try {
         const updateDatas = await itemDetails.findByIdAndUpdate(req.params.id,
             {
-                $set: {
-                    category:req.body.category,
-                    type:req.body.type,
-                    title:req.body.title,
-                    description:req.body.description,
-                    price:req.body.price,
-                    Images: req.file.originalname,
-                }
+                $set: req.body
+                // {
+                //     category:req.body.category,
+                //     type:req.body.type,
+                //     title:req.body.title,
+                //     description:req.body.description,
+                //     price:req.body.price,
+                //     Images: req.file.originalname,
+                // }
             }, { new: true });
+            console.log("updatteee",updateDatas);
         res.status(200).json(updateDatas)
 
     } catch (err) {

@@ -55,14 +55,19 @@
  
  }
  .log-frgt{
-    margin-left: 100px;
-    margin-top: 3px;
+    margin-left: 50px;
+    margin-top: 30px;
+    text-decoration: none;
+ }
+ .log-frgt p{
+    margin-top: 10px;
+    text-decoration: none;
  }
  .log-btn{
      border-radius: 5px;
-     margin-top: 10px;
+     margin-top: 20px;
      height: 35px;
-     width: 260px;
+     width: 250px;
      border: 1px solid rgb(236, 234, 234);
      background-color: rgb(241, 55, 55);
  }
@@ -74,7 +79,7 @@
     color: white;
 }
 .log-para{
-    margin-top: 70px;
+    margin-top: 20px;
     margin-left: 2px;
 }
 .log-link{

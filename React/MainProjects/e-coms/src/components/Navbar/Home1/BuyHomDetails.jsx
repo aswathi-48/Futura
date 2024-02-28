@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useNavigation, useParams } from 'react-router-dom'
-import { GetCart, UpdateQuantity, addUserDetails, getOrder, getUserProfile, getuserorder, postUserOrder } from '../../ApiCallll/ApiCall'
+import { GetCart, UpdateQuantity, addUserDetails, deleteItems, getOrder, getUserProfile, getuserorder, postUserOrder } from '../../ApiCallll/ApiCall'
 import './BuyHomDetails.css'
 import { useSelector } from 'react-redux'
 import { ProceedPage } from './ProceedPage'
@@ -17,19 +17,11 @@ const BuyHomDetails = (props) => {
   const id = useParams()
   console.log("++++++++", id.id);
   var PId = id.id
-  // const [title, setTitle] = useState(); 
-  //    const [price, setPrice] = useState( '');
-  //    const [Images, setImages] = useState({});
-
-  //    const [HouseName,setHouseName] = useState("")
-  //    const [HouseNo,setHouseNo] = useState('')
-  //    const [Pincode, setPincode] = useState( '');
-  //    const [Landmark,setLandmark]=useState('')
-  //    const [city,setCity] = useState('')
 
   const [datas, setDatas] = useState([])
   const dataz = useSelector((state) => state.Userrss.userrData[0])
   const [cartItem,setCartItem]=useState([])
+  const [totalAmount,setTotalAmount]=useState()
   const loginId = dataz._id
 
   const [state,setState]=useState()
@@ -42,7 +34,7 @@ const BuyHomDetails = (props) => {
         const value = await getOrder(PId)
         setItem(value)
         console.log('valuee', value);
-        value.data ? setState(true) : setState(false)
+        value ? setState(true) : setState(false)
 
       } catch (err) {
         console.log(err);
@@ -67,9 +59,11 @@ const BuyHomDetails = (props) => {
     };
     fetchdatas()
     const cartShowHandler = async()=>{
-      const res = await GetCart(loginId)
+      const {res,sum} = await GetCart(loginId)
       console.log(res.data);
-      setCartItem(res.data)
+      console.log("summmmm",sum);
+      setTotalAmount(sum)
+      setCartItem(res)
 
 
     }
@@ -81,8 +75,12 @@ const BuyHomDetails = (props) => {
    console.log("qunatityyyyyy",itemquantity);
 console.log("priceeeeeee",itemPrice);
 
-const subtotal = (itemquantity && itemPrice) ? itemquantity * itemPrice : 0;
-console.log("***********************************",subtotal);
+// const subtotal = (itemquantity && itemPrice) ? (parseFloat(itemquantity) * parseFloat(itemPrice )): 0;
+// const subtotal = 
+// console.log("***********************************",subtotal);
+
+// const subtotals =(parseFloat(itemquantity) *parseFloat(itemPrice))
+const buyNowprice = item&&item.price
   console.log(datas);
   // const addProductDetailHandler =async()=>{
   //   console.log("haiii");
@@ -102,12 +100,19 @@ console.log("***********************************",subtotal);
   console.log("itemmmmmm",item);
 
   const functionn = async () => {
+    const deleteCartHandler = async ()=>{
+      const res = await deleteItems(loginId)
+      console.log(res);
+      }
+      deleteCartHandler()
+    
     const addProductDetailHandler = async () => {
+      
       console.log("haiii");
-      const item = state === true?item:cartItem
+      const items = state === true ? item : cartItem
       console.log(item);
       
-      const res = await addUserDetails({ datas, item, loginId })
+      const res = await addUserDetails({ datas, items, loginId })
       console.log(res.data);
       setTimeout(() => {
         navigate('/ ');
@@ -142,6 +147,8 @@ console.log("***********************************",subtotal);
         <div className='Details_text'>
           <div className='Details_title'><span>Title:</span> {item && item.title}</div>
           <div className='Details_price'><span>Price:</span> {item && item.price}</div>
+          {/* <h4 className='subtotal'>Sub Total:{subtotals}</h4> */}
+
         
           {/* //addProductDetailHandler */}
 
@@ -149,7 +156,7 @@ console.log("***********************************",subtotal);
       </div>
         }
         {!state &&
-<div className='items1'>        
+        <div className='items1'>        
          {cartItem.map((li)=>(
            <div className='itemss'>
             <div className='Details_img'> 
@@ -159,11 +166,13 @@ console.log("***********************************",subtotal);
            <p  className='Details_title'><span>Title:</span> {li.itemName}</p>
            <p className='Details_price'><span>Price:</span> {li.itemPrice}</p>
            </div>
+
            </div>
          ))}
        </div>
         }
-          <h4 className='subtotal'>Sub Total: {subtotal}</h4>
+           <h4 className='subtotal'>Sub Total: {state === true?buyNowprice:totalAmount}</h4>
+        
 
 <div className='del'><p>Free Delivary Avilable</p></div>
 <button className='proceedbtn' onClick={functionn}  >Proceed</button>

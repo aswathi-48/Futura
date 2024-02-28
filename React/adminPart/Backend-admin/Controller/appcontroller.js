@@ -1,10 +1,12 @@
-const NodeMailer = require('/nodemailer');
-const mailer =require('../Models/user')
+const NodeMailer = require('nodemailer');
+// const mailer =require('../Models/user')
 const mailer = require('../Models/user')
 const dotenv = require('dotenv')
+const RegUsers = require('../Models/userEcomschema')
+
 dotenv.config()
 
-const transpoter = NodeMailer.createtransport({
+const transpoter = NodeMailer.createTransport({
     service:"gmail",
     auth:{
         user:process.env.EMAIL,
@@ -17,38 +19,47 @@ console.log('check ****',Math.random());
 function generateOTP(){
     return Math.floor(1000 + Math.random() * 9000).toString();
 }
-const registerData =async(req,res)=> {
-    const {email} =req.body;
 
-    console.log('123',email);
+
+
+const signup =async(req,res)=> {
+    console.log("**",req.body);
+    const {Email} =req.body;
+
+    console.log('123',Email);
     const otp = generateOTP();
     const otpExpiration =new Date(Date.now() + 5 * 60 * 1000);
 
-    console.log(
+    console.log("otpppp",
         otp,
         otpExpiration,
-        email
+        Email
     );
-    const user =new mailer({
-        email,
+    const data1 = await RegUsers.findOne({Email})
+    console.log('backend email',data1._id);
+    const UserId = data1._id
+    console.log(UserId,"****************");
+
+    const user = new mailer({
+        Email,
         otp,
-        otpExpiration
+        otpExpiration,
+        UserId
     });
+    console.log('useer',user);
     try{
-        await user.save();
-        // res.status(200).json(user)
-       
+       const res1= await user.save();
         const mailOptions ={
             from: process.env.EMAIL,
-            to:email,
+            to:Email,
             subject: "Your OTP Code",
             text: `Your OTP code is showen below: ${otp}`,
         };
         console.log("mail options",mailOptions);
-        const info=await transpoter.sendMail(mailOptions);
-
+        const info = await transpoter.sendMail(mailOptions);
+        console.log(res1,"***********");
         console.log("Email sent:", info.response);
-        return res.status(200).json({message:"OTP sent successfully",otp});
+        return res.status(200).json({message:"OTP sent successfully",otp,UserId});
 
     }catch(err){
         console.error("Error saving user:",err);
@@ -61,10 +72,4 @@ const registerData =async(req,res)=> {
 
 
 
-
-
-
-
-
-
-module.exports = {registerData};
+module.exports = {signup};

@@ -1,5 +1,5 @@
 .order_container{
-    margin-left: 350px;
+    margin-left: 250px;
     /* display: flex; */
 }
 .deails_all_data{
@@ -17,6 +17,10 @@ span{
     padding: 19px 35px;
     /* box-shadow: 10px 10px 10px 4px rgba(147, 145, 145, 0.5); */
     border-radius: 5px;
+
+}
+.items_detailss{
+    padding: 19px 35px;
 
 }
 .all_data{

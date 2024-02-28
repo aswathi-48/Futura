@@ -2,14 +2,18 @@ import React from 'react'
 import Model from '../../Model'
 import { IoClose } from "react-icons/io5";
 import { postCart, postOrder } from '../../ApiCallll/ApiCall';
+import { useSelector } from 'react-redux';
 
 
 const DessertContainerModel = () => {
+  const dataz =  useSelector((state) => state.Userrss.userrData[0])
+  const loginId = dataz._id
     const data = {
         quantity:1,
           itemName:props.title,
           itemPrice:props.price,
-          itemImage:props.image
+          itemImage:props.image,
+          orderId:loginId
       }
       const cartHandler=async()=>{
     
